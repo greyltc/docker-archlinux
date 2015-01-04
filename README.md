@@ -3,6 +3,8 @@ docker-archlinux-builder
 
 This builds a new archlinux docker image from scratch.
 
+Get the complete prebuilt docker image from here: https://registry.hub.docker.com/u/l3iggs/archlinux/
+
 The following script was used to generate the Dockerfile and root file system image here:
 ```bash
 #!/bin/bash
