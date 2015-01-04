@@ -10,6 +10,8 @@ The following script was used to generate the Dockerfile and root file system im
 cat > Dockerfile << EOF
 # Arch Linux base docker container
 # Generated on `date`
+# Read the following to learn how the root filesystem image was generated:
+# https://github.com/l3iggs/docker-archlinux-builder/blob/master/README.md
 FROM scratch
 MAINTAINER l3iggs <l3iggs@live.com>
 ADD archlinux.tar.xz /
