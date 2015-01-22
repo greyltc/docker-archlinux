@@ -5,7 +5,7 @@ This builds a new archlinux docker image from scratch.
 
 Get the prebuilt docker image from here: https://registry.hub.docker.com/u/l3iggs/archlinux/
 
-Or follow these instructions to build a baseline archlinux docker image yourself: 
+Or follow these instructions to build a baseline Arch Linux docker image from scratch yourself: 
 
 1. **Make sure you're running Arch Linux**  
 1. **Install dependencies**  
