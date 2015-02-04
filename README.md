@@ -20,4 +20,4 @@ You'll be asked for your sudo password.
 `./buildme.sh`  
 1. **Build your baseline Arch Linux docker image**  
 `docker build -t archlinux .`  
-1. **Profit**
+1. **Profit.**
