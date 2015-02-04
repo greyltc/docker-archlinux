@@ -22,7 +22,7 @@ curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage-arch
 
 cd /tmp
 echo "Building Arch Linux-docker root filesystem archive."
-sudo ./mkimage-arch.sh
+sudo /tmp/mkimage-arch.sh
 echo "Arch Linux-docker root filesystem archive build complete."
 mv /tmp/archlinux.tar.xz ${DIR}/
 
