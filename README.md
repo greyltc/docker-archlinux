@@ -1,6 +1,6 @@
 docker-archlinux
 ====================
-Minimal Arch Linux docker image 
+Minimal Arch Linux docker image with trustable, traceable & inspectable origin  
 
 ## Usage
 Get the trustable, AUTOMATED BUILD prebuilt image from [https://registry.hub.docker.com/u/l3iggs/archlinux/](https://registry.hub.docker.com/u/l3iggs/archlinux/):  
