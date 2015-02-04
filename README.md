@@ -4,7 +4,9 @@ Minimal Arch Linux docker image with trustable, traceable & inspectable origin
 
 ## Usage
 Get the trustable, AUTOMATED BUILD prebuilt image from [https://registry.hub.docker.com/u/l3iggs/archlinux/](https://registry.hub.docker.com/u/l3iggs/archlinux/):  
-`docker pull l3iggs/archlinux`  
+```
+docker pull l3iggs/archlinux
+```  
 or build it locally yourself from the source repository:  
 
 1. **Make sure you're running Arch Linux**  
