@@ -22,9 +22,9 @@ curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage-arch
 
 cd /tmp
 echo "Building Arch Linux-docker root filesystem archive."
-sudo /tmp/mkimage-arch.sh
+sudo /tmp/mkimage-arch.sh # this leaves /tmp/archlinux.tar.xz behind :-/
 echo "Arch Linux-docker root filesystem archive build complete."
-mv /tmp/archlinux.tar.xz ${DIR}/
+cp /tmp/archlinux.tar.xz ${DIR}/
 
 rm /tmp/mkimage-arch.sh
 rm /tmp/mkimage-arch-pacman.conf
