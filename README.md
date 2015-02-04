@@ -17,7 +17,7 @@ or build it locally yourself from the source repository:
 1. **Build the root file system archive**  
 You'll be asked for your sudo password.  
 `cd docker-archlinux`  
-`./buildit.sh`  
+`./buildme.sh`  
 1. **Build your baseline Arch Linux docker image**  
 `docker build -t archlinux .`  
 1. **Profit**
