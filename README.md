@@ -3,7 +3,7 @@ docker-archlinux
 Minimal Arch Linux docker image 
 
 ## Usage
-Get the trustable, AUTOMATED BUILD prebuilt image from https://registry.hub.docker.com/u/l3iggs/archlinux/ :
+Get the trustable, AUTOMATED BUILD prebuilt image from [https://registry.hub.docker.com/u/l3iggs/archlinux/:](https://registry.hub.docker.com/u/l3iggs/archlinux/)
 ```bash
 docker pull l3iggs/archlinux
 ```  
