@@ -18,7 +18,7 @@ sed -i '/docker run -i -t archlinux echo Success./d' mkimage-arch.sh
 
 curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage-arch-pacman.conf > mkimage-arch-pacman.conf
 
-su -c './mkimage-arch.sh'
+sudo ./mkimage-arch.sh
 
 rm mkimage-arch.sh
 rm mkimage-arch-pacman.conf
