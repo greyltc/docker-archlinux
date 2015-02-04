@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 cat > Dockerfile << EOF
 # Arch Linux baseline docker container
 # Generated on `date`
@@ -19,9 +21,10 @@ sed -i '/docker run -i -t archlinux echo Success./d' /tmp/mkimage-arch.sh
 curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage-arch-pacman.conf > /tmp/mkimage-arch-pacman.conf
 
 cd /tmp
-echo "Building Arch Linux-docker root filesystem archive"
+echo "Building Arch Linux-docker root filesystem archive."
 sudo ./mkimage-arch.sh
-echo "Building Arch Linux-docker root filesystem archive"
+echo "Arch Linux-docker root filesystem archive build complete."
+mv /tmp/archlinux.tar.xz ${DIR}/
 
-rm mkimage-arch.sh
-rm mkimage-arch-pacman.conf
+rm /tmp/mkimage-arch.sh
+rm /tmp/mkimage-arch-pacman.conf
