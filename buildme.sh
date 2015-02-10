@@ -19,7 +19,7 @@ curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage-arch
 chmod +x /tmp/mkimage-arch.sh
 
 sed -i 's/| docker import - archlinux/-af archlinux.tar.xz/g' /tmp/mkimage-arch.sh
-sed -i '/docker run -i -t archlinux echo Success./d' /tmp/mkimage-arch.sh
+sed -i '/docker run -t archlinux echo Success./d' /tmp/mkimage-arch.sh
 
 curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage-arch-pacman.conf > /tmp/mkimage-arch-pacman.conf
 
