@@ -5,3 +5,6 @@
 FROM scratch
 MAINTAINER l3iggs <l3iggs@live.com>
 ADD archlinux.tar.xz /
+RUN pacman -Syyu --needed --noconfirm
+RUN pacman -S --needed --noconfirm reflector
+RUN reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
