@@ -11,7 +11,7 @@ or build it locally yourself from the source repository:
 
 1. **Make sure you're running Arch Linux**  
 1. **Install dependencies**  
-`sudo pacman -Suy git expect arch-install-scripts docker`  
+`sudo pacman -Suy --needed git expect arch-install-scripts docker`  
 1. **Clone the Dockerfile repo**  
 `git clone https://github.com/l3iggs/docker-archlinux.git`  
 1. **Build the root file system archive**  
