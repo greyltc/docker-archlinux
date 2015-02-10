@@ -11,9 +11,9 @@ FROM scratch
 MAINTAINER l3iggs <l3iggs@live.com>
 ADD archlinux.tar.xz /
 RUN pacman -Syyu --needed --noconfirm
-RUN pacman -S --needed --noconfirm reflector
-RUN reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
-RUN pacman -Rs --noconfirm reflector
+
+# install, run and remove reflector all in one line to prevent extra layer size
+RUN pacman -S --needed --noconfirm reflector; reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist; pacman -Rs --noconfirm reflector
 EOF
 
 curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage-arch.sh > /tmp/mkimage-arch.sh
