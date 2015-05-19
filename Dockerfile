@@ -1,5 +1,5 @@
 # Arch Linux baseline docker container
-# Generated on Wed May  6 14:22:21 CEST 2015
+# Generated on Tue May 19 22:22:07 CEST 2015
 # Read the following to learn how the root filesystem image was generated:
 # https://github.com/l3iggs/docker-archlinux/blob/master/README.md
 FROM scratch
