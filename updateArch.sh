@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install reflector
-pacman -S --no-confirm --needed reflector
+pacman -S --noconfirm --needed reflector
 
 # backup the old mirrorlist
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
@@ -13,5 +13,5 @@ curl https://www.archlinux.org/mirrorlist/all/ > /etc/pacman.d/mirrorlist
 reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 
 # upgrade packages
-pacman -Syyua --no-confirm --needed
+pacman -Syyu --noconfirm --needed
 
