@@ -1,11 +1,13 @@
 # Arch Linux baseline docker container
-# Generated on Thu Sep 17 11:56:45 BST 2015
+# Generated on Tue Jan  5 18:59:34 GMT 2016
 # Read the following to learn how the root filesystem image was generated:
 # https://github.com/l3iggs/docker-archlinux/blob/master/README.md
 FROM scratch
 MAINTAINER l3iggs <l3iggs@live.com>
-ADD archlinux.tar.xz /
-RUN pacman -Syyu --needed --noconfirm
 
-# install, run and remove reflector all in one line to prevent extra layer size
-RUN pacman -S --needed --noconfirm reflector; reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist; pacman -Rs --noconfirm reflector
+# copy in the previously generated file system
+ADD archlinux.tar.xz /
+
+# update mirrorlist and packages
+ADD updateArch.sh /usr/sbin/updateArch.sh
+RUN chmod +x /usr/sbin/updateArch.sh; updateArch.sh
