@@ -6,9 +6,9 @@ cat > Dockerfile << EOF
 # Arch Linux baseline docker container
 # Generated on `date`
 # Read the following to learn how the root filesystem image was generated:
-# https://github.com/l3iggs/docker-archlinux/blob/master/README.md
+# https://github.com/greyltc/docker-archlinux/blob/master/README.md
 FROM scratch
-MAINTAINER l3iggs <l3iggs@live.com>
+MAINTAINER Grey Christoforo <grey@christoforo.net>
 
 # copy in the previously generated file system
 ADD archlinux.tar.xz /
@@ -18,13 +18,20 @@ ADD updateArch.sh /usr/sbin/updateArch.sh
 RUN chmod +x /usr/sbin/updateArch.sh; updateArch.sh
 EOF
 
+# fetch the official Arch Linux generation script from Docker's github account
 curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage-arch.sh > /tmp/mkimage-arch.sh
 chmod +x /tmp/mkimage-arch.sh
 
-sed -i 's,| docker import - archlinux,-af /tmp/archlinux.tar.xz,g' /tmp/mkimage-arch.sh
-sed -i '/docker run --rm -t archlinux echo Success./d' /tmp/mkimage-arch.sh
+# instead of importing the image we'll dump the newly created image into a file: /tmp/archlinux.tar.xz
+sed -i 's,| docker import - $DOCKER_IMAGE_NAME,-af /tmp/archlinux.tar.xz,g' /tmp/mkimage-arch.sh
+
+# remove this line since it makes no sense now
+sed -i '/docker run --rm -t $DOCKER_IMAGE_NAME echo Success./d' /tmp/mkimage-arch.sh
+
+# change the ownership of the new image
 sed -i '$a chown '${USER}' /tmp/archlinux.tar.xz' /tmp/mkimage-arch.sh
 
+# fetch the fixed pacman.conf 
 curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage-arch-pacman.conf > /tmp/mkimage-arch-pacman.conf
 
 cd /tmp
