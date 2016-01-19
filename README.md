@@ -3,15 +3,15 @@ docker-archlinux
 Minimal Arch Linux docker image with trustable, traceable & inspectable origin  
 
 ## Intro
-This image is built through the use of the official Docker build script for Arch Linux containers which is maintained by the Docker team. Have a  look at the script here:
+This image is built through the use of a slightly modified official Docker build script for Arch Linux containers which is maintained by the Docker team. Have a  look at the script here:
 https://github.com/docker/docker/blob/master/contrib/mkimage-arch.sh  
 
 The file system used in docker-archlinux is in the tar.xz file in this repo. Feel free to inspect it to prove to yourself that it's safe!
 
 ## Usage
-Get the trustable, AUTOMATED BUILD prebuilt image from [https://registry.hub.docker.com/u/l3iggs/archlinux/](https://registry.hub.docker.com/u/l3iggs/archlinux/):  
+Get the trustable, AUTOMATED BUILD prebuilt image from [https://hub.docker.com/r/greyltc/archlinux](https://hub.docker.com/r/greyltc/archlinux):  
 ```
-docker pull l3iggs/archlinux
+docker pull greyltc/archlinux
 ```  
 or build it locally yourself from the source repository:  
 
