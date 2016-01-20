@@ -14,7 +14,7 @@ MAINTAINER Grey Christoforo <grey@christoforo.net>
 ADD archlinux.tar.xz /
 
 # update mirrorlist and packages
-RUN updateArch.sh
+RUN ["/bin/bash", "/usr/bin/updateArch.sh"]
 EOF
 
 # fetch the official Arch Linux generation script from Docker's github account
