@@ -9,4 +9,4 @@ MAINTAINER Grey Christoforo <grey@christoforo.net>
 ADD archlinux.tar.xz /
 
 # update mirrorlist and packages
-RUN ["/bin/bash", "/usr/bin/updateArch.sh"]
+RUN ["/usr/bin/bash", "/usr/bin/updateArch.sh"]
