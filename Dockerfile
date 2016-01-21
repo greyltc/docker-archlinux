@@ -10,4 +10,6 @@ ADD archlinux.tar.xz /
 
 # update mirrorlist and packages
 ADD updateArch.sh /usr/bin/updateArch.sh
-RUN updateArch.sh
+RUN ["/usr/bin/bash", "$(date)"]
+RUN echo usr/bin/updateArch.sh
+#RUN updateArch.sh
