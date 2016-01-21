@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # install reflector
 pacman -S --noconfirm --needed reflector
