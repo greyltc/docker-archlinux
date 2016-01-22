@@ -15,6 +15,9 @@ MAINTAINER Grey Christoforo <grey@christoforo.net>
 ADD archlinux.tar.xz /
 
 # update mirrorlist and packages
+RUN date
+RUN ls -alh /usr/bin
+RUN file /usr/bin/updateArch.sh
 RUN updateArch.sh
 EOF
 
