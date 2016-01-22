@@ -35,7 +35,7 @@ chmod +x /tmp/mkimage-arch.sh
 sed -i 's,arch-chroot $ROOTFS /bin/sh -c '\''echo $PACMAN_MIRRORLIST > /etc/pacman.d/mirrorlist'\'',install -m755 -D /tmp/updateArch.sh -t "$ROOTFS/usr/bin"; arch-chroot $ROOTFS /bin/sh -c '\''touch /usr/bin/updateArch.sh; sync; echo "content" > /usr/bin/content.sh'\'',g' /tmp/mkimage-arch.sh
 
 # instead of importing the image we'll dump the newly created image into a file: /tmp/archlinux.tar.xz
-sed -i 's,tar --numeric-owner --xattrs --acls -C $ROOTFS -c . | docker import - $DOCKER_IMAGE_NAME,cd $ROOTFS;XZ_OPT="-9e -T 0" tar --numeric-owner --xattrs --acls -Jcf /tmp/archlinux.tar.xz *,g' /tmp/mkimage-arch.sh
+sed -i 's,tar --numeric-owner --xattrs --acls -C $ROOTFS -c . | docker import - $DOCKER_IMAGE_NAME,cd $ROOTFS;XZ_OPT="-9 -T 0" tar --numeric-owner --xattrs --acls -Jcf /tmp/archlinux.tar.xz *,g' /tmp/mkimage-arch.sh
 
 # remove this line since it makes no sense now
 sed -i '/docker run --rm -t $DOCKER_IMAGE_NAME echo Success./d' /tmp/mkimage-arch.sh
