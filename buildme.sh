@@ -50,7 +50,7 @@ sudo /tmp/mkimage-arch.sh
 
 if [ -f /tmp/archlinux.tar.xz ]; then
     echo "Arch Linux-docker root filesystem archive build complete!"
-    cp /tmp/archlinux.tar.xz ${DIR}/
+    mv /tmp/archlinux.tar.xz ${DIR}/archlinux.tar.xz
     
 else
     echo "The Arch Linux-docker root filesystem archive build failed."
@@ -58,5 +58,4 @@ fi
 
 rm -rf /tmp/mkimage-arch.sh
 rm -rf /tmp/mkimage-arch-pacman.conf
-rm -rf /tmp/archlinux.tar.xz
 
