@@ -15,7 +15,8 @@ MAINTAINER Grey Christoforo <grey@christoforo.net>
 ADD archlinux.tar.xz /
 
 # update mirrorlist and packages
-RUN updateArch.sh
+RUN date
+#RUN updateArch.sh
 EOF
 
 # fetch the official Arch Linux generation script from Docker's github account
@@ -26,7 +27,7 @@ chmod +x /tmp/mkimage-arch.sh
 sed -i 's,arch-chroot $ROOTFS /bin/sh -c '\''echo $PACMAN_MIRRORLIST > /etc/pacman.d/mirrorlist'\'',install -m755 -D /tmp/updateArch.sh -t "$ROOTFS/usr/bin",g' /tmp/mkimage-arch.sh
 
 # instead of importing the image we'll dump the newly created image into a file: /tmp/archlinux.tar.xz
-sed -i 's,| docker import - $DOCKER_IMAGE_NAME,-af /tmp/archlinux.tar.xz,g' /tmp/mkimage-arch.sh
+sed -i 's,tar --numeric-owner --xattrs --acls -C $ROOTFS -c . | docker import - $DOCKER_IMAGE_NAME,cd $ROOTFS;XZ_OPT=-9e tar --numeric-owner --xattrs --acls -Jcf /tmp/archlinux.tar.xz *,g' /tmp/mkimage-arch.sh
 
 # remove this line since it makes no sense now
 sed -i '/docker run --rm -t $DOCKER_IMAGE_NAME echo Success./d' /tmp/mkimage-arch.sh
