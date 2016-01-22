@@ -5,7 +5,7 @@ cp -a "$DIR/updateArch.sh" /tmp/.
 
 cat > Dockerfile << EOF
 # Arch Linux baseline docker container
-# Generated on `date`
+# Generated on `date` from commit `git rev-parse --short HEAD`
 # Read the following to learn how the root filesystem image was generated:
 # https://github.com/greyltc/docker-archlinux/blob/master/README.md
 FROM scratch
