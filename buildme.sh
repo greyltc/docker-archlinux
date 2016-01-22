@@ -21,8 +21,6 @@ RUN date
 RUN ls -alh /usr/bin
 RUN ls -alh /bin
 RUN file /usr/bin/bash
-RUN touch /usr/bin/content.sh
-RUN cat /usr/bin/content.sh
 RUN ["/usr/bin/bash", "/usr/bin/gettext.sh", "--help"]
 RUN file /usr/bin/updateArch.sh
 RUN ["/usr/bin/bash", "/usr/bin/updateArch.sh"]
