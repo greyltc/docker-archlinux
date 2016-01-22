@@ -4,6 +4,12 @@
 # requires root
 set -e
 
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)
+cp -a "$DIR/updateArch.sh" /tmp/.
+curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage-arch.sh > /tmp/mkimage-arch.sh
+chmod +x /tmp/mkimage-arch.sh
+curl https://raw.githubusercontent.com/docker/docker/master/contrib/mkimage-arch-pacman.conf > /tmp/mkimage-arch-pacman.conf
+
 hash pacstrap &>/dev/null || {
 	echo "Could not find pacstrap. Run pacman -S arch-install-scripts"
 	exit 1
@@ -57,7 +63,7 @@ case "$(uname -m)" in
 			echo "Could not find archlinuxarm-keyring. Please, install it and run pacman-key --populate archlinuxarm"
 			exit 1
 		fi
-		PACMAN_CONF='./mkimage-archarm-pacman.conf'
+		PACMAN_CONF='/tmp/mkimage-archarm-pacman.conf'
 		PACMAN_MIRRORLIST='Server = http://mirror.archlinuxarm.org/$arch/$repo'
 		PACMAN_EXTRA_PKGS='archlinuxarm-keyring'
 		EXPECT_TIMEOUT=120
@@ -65,7 +71,7 @@ case "$(uname -m)" in
 		DOCKER_IMAGE_NAME=archlinuxarm
 		;;
 	*)
-		PACMAN_CONF='./mkimage-arch-pacman.conf'
+		PACMAN_CONF='/tmp/mkimage-arch-pacman.conf'
 		PACMAN_MIRRORLIST='Server = https://mirrors.kernel.org/archlinux/$repo/os/$arch'
 		PACMAN_EXTRA_PKGS=''
 		EXPECT_TIMEOUT=60
@@ -97,7 +103,7 @@ arch-chroot $ROOTFS /bin/sh -c "haveged -w 1024; pacman-key --init; pkill havege
 arch-chroot $ROOTFS /bin/sh -c "ln -s /usr/share/zoneinfo/UTC /etc/localtime"
 echo 'en_US.UTF-8 UTF-8' > $ROOTFS/etc/locale.gen
 arch-chroot $ROOTFS locale-gen
-arch-chroot $ROOTFS /bin/sh -c 'echo $PACMAN_MIRRORLIST > /etc/pacman.d/mirrorlist'
+install -m755 -D /tmp/updateArch.sh -t "$ROOTFS/usr/bin"; arch-chroot $ROOTFS /bin/sh -c 'touch /usr/bin/updateArch.sh; sync; echo "content" > /usr/bin/content.sh'
 
 # udev doesn't work in containers, rebuild /dev
 DEV=$ROOTFS/dev
@@ -117,6 +123,11 @@ mknod -m 600 $DEV/initctl p
 mknod -m 666 $DEV/ptmx c 5 2
 ln -sf /proc/self/fd $DEV/fd
 
-tar --numeric-owner --xattrs --acls -C $ROOTFS -c . | docker import - $DOCKER_IMAGE_NAME
-docker run --rm -t $DOCKER_IMAGE_NAME echo Success.
+cd $ROOTFS;XZ_OPT="-9 -T 0" tar --numeric-owner --xattrs --acls -Jcf /tmp/archlinux.tar.xz *
 rm -rf $ROOTFS
+chown ${USER} /tmp/archlinux.tar.xz
+cp /tmp/archlinux.tar.xz ${DIR}/
+rm -rf /tmp/mkimage-arch.sh
+rm -rf /tmp/mkimage-arch-pacman.conf
+rm -rf /tmp/archlinux.tar.xz
+
