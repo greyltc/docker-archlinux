@@ -12,3 +12,5 @@ pacman -Rs reflector --noconfirm
 # upgrade packages
 pacman -Syyu --noconfirm --needed
 
+# remove all cached packages
+pacman --noconfirm -Scc
