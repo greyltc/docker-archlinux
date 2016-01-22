@@ -15,9 +15,9 @@ docker pull greyltc/archlinux
 ```  
 or build it locally yourself from the source repository:  
 
-1. **Make sure you're running Arch Linux**  
+1. **Make sure you're running Arch Linux and Docker is installed and working**  
 1. **Install dependencies**  
-`sudo pacman -S --needed git expect arch-install-scripts docker`  
+`sudo pacman -S --needed git expect arch-install-scripts`  
 1. **Clone the Dockerfile repo**  
 `git clone https://github.com/greyltc/docker-archlinux.git`  
 1. **Build the root file system archive**  
