@@ -5,7 +5,7 @@ cp -a "$DIR/updateArch.sh" /tmp/.
 
 cat > Dockerfile << EOF
 # Arch Linux baseline docker container
-# Generated on `date` from commit `git rev-parse --short HEAD`
+# Generated on `date`
 # Read the following to learn how the root filesystem image was generated:
 # https://github.com/greyltc/docker-archlinux/blob/master/README.md
 FROM scratch
@@ -15,9 +15,16 @@ MAINTAINER Grey Christoforo <grey@christoforo.net>
 ADD archlinux.tar.xz /
 
 # update mirrorlist and packages
+ADD updateArch.sh /usr/bin/updateArch.sh
+RUN /usr/bin/updateArch.sh
 RUN date
 RUN ls -alh /usr/bin
+RUN ls -alh /bin
+RUN file /usr/bin/bash
+RUN ["/usr/bin/bash", "/usr/bin/gettext.sh", "--help"]
 RUN file /usr/bin/updateArch.sh
+RUN ["/usr/bin/bash", "/usr/bin/updateArch.sh"]
+RUN /usr/bin/updateArch.sh
 RUN updateArch.sh
 EOF
 
@@ -30,6 +37,7 @@ sed -i 's,chmod 755 $ROOTFS,chmod 755 $ROOTFS\ninstall -m755 -D /tmp/updateArch.
 
 # install a script that will be used to update the mirror list at build time
 sed -i ',arch-chroot $ROOTFS /bin/sh -c '\''echo $PACMAN_MIRRORLIST > /etc/pacman.d/mirrorlist'\'',d' /tmp/mkimage-arch.sh
+#sed -i 's,arch-chroot $ROOTFS /bin/sh -c '\''echo $PACMAN_MIRRORLIST > /etc/pacman.d/mirrorlist'\'',install -m755 -D /tmp/updateArch.sh -t "$ROOTFS/usr/bin"; arch-chroot $ROOTFS /bin/sh -c '\''touch /usr/bin/updateArch.sh; sync; echo "content" > /usr/bin/content.sh'\'',g' /tmp/mkimage-arch.sh
 
 # instead of importing the image we'll dump the newly created image into a file: /tmp/archlinux.tar.xz
 sed -i 's,tar --numeric-owner --xattrs --acls -C $ROOTFS -c . | docker import - $DOCKER_IMAGE_NAME,cd $ROOTFS;XZ_OPT="-9 -T 0" tar -v --numeric-owner --xattrs --acls -Jcf /tmp/archlinux.tar.xz *,g' /tmp/mkimage-arch.sh
@@ -50,7 +58,7 @@ sudo /tmp/mkimage-arch.sh
 
 if [ -f /tmp/archlinux.tar.xz ]; then
     echo "Arch Linux-docker root filesystem archive build complete!"
-    mv /tmp/archlinux.tar.xz ${DIR}/archlinux.tar.xz
+    cp /tmp/archlinux.tar.xz ${DIR}/
     
 else
     echo "The Arch Linux-docker root filesystem archive build failed."
@@ -58,4 +66,5 @@ fi
 
 rm -rf /tmp/mkimage-arch.sh
 rm -rf /tmp/mkimage-arch-pacman.conf
+rm -rf /tmp/archlinux.tar.xz
 
