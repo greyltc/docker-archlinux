@@ -6,8 +6,8 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)
 
 cat > "$DIR/Dockerfile" << EOF
 # Arch Linux baseline docker container
-# Generated on `date` from this specific GutHub repo and commit:
-# https://github.com/greyltc/docker-archlinux/tree/`git rev-parse HEAD`
+# Generated on `date` using code in this GitHub repo:
+# https://github.com/greyltc/docker-archlinux
 FROM scratch
 MAINTAINER Grey Christoforo <grey@christoforo.net>
 
