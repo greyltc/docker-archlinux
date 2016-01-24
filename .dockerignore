@@ -1,1 +1,7 @@
 .git/
+README.md
+setup-arch-docker-container.sh
+arch-bootstrap.sh
+Dockerfile
+buildme.sh
+
