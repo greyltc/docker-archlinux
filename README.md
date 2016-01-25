@@ -17,7 +17,7 @@ docker pull greyltc/archlinux
 or alternatively build it locally yourself from the source repository:  
 
 1. **Install dependencies**  
-Use your favorite Linux distro's package manager to install the following comands/packages: fakechroot, fakeroot, chroot, xz, coreutils, wget, sed, gawk, tar, gzip, git, docker, bash
+Use your favorite Linux distro's package manager to install the following commands/packages: fakechroot, fakeroot, chroot, xz, coreutils, wget, sed, gawk, tar, gzip, git, docker, bash
 1. **Clone the Dockerfile repo**  
 `git clone https://github.com/greyltc/docker-archlinux.git`  
 1. **Build the root file system archive**  
