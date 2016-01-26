@@ -16,12 +16,14 @@ ADD archlinux.tar.xz /
 
 # perform initial container setup tasks
 RUN setup-arch-docker-container
+
+# this allows the system profile to be sourced at every shell
+ENV ENV /etc/profile
 EOF
 
 # make the root filesystem
 TEMP_ROOT=./tmproot
-rm -rf $TEMP_ROOT
-mkdir -p $TEMP_ROOT
+mkdir $TEMP_ROOT
 echo -e "\033[1mGenerating Arch Linux root filesystem...\033[0m"
 fakechroot fakeroot "$DIR/arch-bootstrap.sh" -a x86_64 $TEMP_ROOT
 echo -e "\033[1mRoot filesystem generation complete.\033[0m"
@@ -38,5 +40,4 @@ XZ_OPT="-9 -T 0" tar --owner=0 --group=0 --xattrs --acls -Jcf ../archlinux.tar.x
 popd
 echo -e "\033[1mRoot fs archive generation complete.\033[0m"
 
-rm -rf rm -rf $TEMP_ROOT
-
+rm -rf $TEMP_ROOT
