@@ -102,7 +102,7 @@ configure_minimal_system() {
   echo "root:x:0:0:root:/root:/bin/bash" > "$DEST/etc/passwd" 
   echo 'root:$1$GT9AUpJe$oXANVIjIzcnmOpY07iaGi/:14657::::::' > "$DEST/etc/shadow"
   touch "$DEST/etc/group"
-  echo "bootstrap" > "$DEST/etc/hostname"
+  #echo "bootstrap" > "$DEST/etc/hostname"
   
   DEV=$DEST/dev
   rm -rf $DEV
@@ -215,6 +215,12 @@ main() {
   
   # don't leave anything in the package cache
   chroot $DEST /bin/sh -c 'paccache -r -k0'
+  
+  # don't leave the resolv.conf behind
+  chroot $DEST /bin/sh -c 'rm /etc/resolv.conf'
+  
+  # get rid of all the manual pages
+  chroot $DEST /bin/sh -c 'rm -rf /usr/share/man/*'
   
   debug "done"
 }
