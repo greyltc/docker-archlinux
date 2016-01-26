@@ -14,12 +14,12 @@ pacman -S --noconfirm archlinux-keyring
 # install sed now because we're about to use it to modify pacman.conf
 pacman -S --noconfirm sed
 
-# overwrite/cleanup temporary files, bringing them up to date with the latest from pacman
-mv /etc/passwd.pacorig /etc/passwd
+# cleanup some pacorig files
+rm /etc/passwd.pacorig
 rm /etc/resolv.conf.pacorig
-mv /etc/shadow.pacorig /etc/shadow
-mv /etc/pacman.d/mirrorlist.pacorig /etc/pacman.d/mirrorlist
-mv /etc/pacman.conf.pacorig /etc/pacman.conf
+rm /etc/shadow.pacorig
+rm /etc/pacman.d/mirrorlist.pacorig
+rm /etc/pacman.conf.pacorig
 
 # space checking in the cotainer doesn't work; disable it
 sed -i "s/^[[:space:]]*\(CheckSpace\)/# \1/" /etc/pacman.conf
