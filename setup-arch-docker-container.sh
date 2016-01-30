@@ -5,6 +5,8 @@ set -o pipefail
 ldconfig
 
 # populate keychain
+echo "keyserver hkp://pgp.mit.edu" >> /usr/share/gnupg/dirmngr-conf.skel
+sed -i "s,#keyserver-options auto-key-retrieve,keyserver-options auto-key-retrieve,g" /usr/share/gnupg/gpg-conf.skel
 pacman-key --init
 pacman-key --populate archlinux
 
@@ -94,8 +96,6 @@ paccache -r -k0
 cp /etc/skel/.[^.]* /root
 
 # setup gnupg
-echo "keyserver hkp://pgp.mit.edu" >> /usr/share/gnupg/dirmngr-conf.skel
-sed -i "s,#keyserver-options auto-key-retrieve,keyserver-options auto-key-retrieve,g" /usr/share/gnupg/gpg-conf.skel
 gpg --refresh-keys
 
 # remove all the manual files
