@@ -3,7 +3,6 @@ docker-archlinux
 Minimal Arch Linux docker image with trustable, traceable & inspectable origin  
 
 ## Intro
-I've been frustirated with the lack of transparency of the baseline containers that we often build our Docker images from. Often they come with some blurb about their origin (this container was build with [bla]) that is difficult to verify.
 This project contains a script, `buildme.sh`, which uses a slightly modified Arch bootstrapping script from [this project](
 https://github.com/tokland/arch-bootstrap) to create an Arch Linux root filesystem archive suitable for use in a Docker container.
 
@@ -14,7 +13,7 @@ Get the trustable, AUTOMATED BUILD prebuilt image from [https://hub.docker.com/r
 ```
 docker pull greyltc/archlinux
 ```  
-or alternatively build it locally yourself from the source repository:  
+or alternatively build it locally yourself from the source repository like this:
 
 1. **Install dependencies**  
 Use your favorite Linux distro's package manager to install the following commands/packages: fakechroot, fakeroot, chroot, xz, coreutils, wget, sed, gawk, tar, gzip, git, docker, bash
