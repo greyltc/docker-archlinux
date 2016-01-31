@@ -102,3 +102,6 @@ cp -r /etc/skel/.[^.]* /root
 
 # remove all the manual files
 rm -rf /usr/share/man/*
+
+# set the root user's password to blank
+echo "root:" | chpasswd -e
