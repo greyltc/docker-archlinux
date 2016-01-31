@@ -9,10 +9,10 @@ pacman-key --init
 pacman-key --populate archlinux
 
 # reinstall the keyring because its install also failed in the chroot
-pacman -S --noconfirm archlinux-keyring
+pacman -S --noconfirm --noprogressbar archlinux-keyring
 
 # install sed now because we're about to use it to modify pacman.conf
-pacman -S --noconfirm sed
+pacman -S --noconfirm --noprogressbar sed
 
 # cleanup some pacorig files
 rm /etc/passwd.pacorig
@@ -58,7 +58,7 @@ IFS=' ' read -r -a BASE_ARRAY <<< "$BASE_PACKAGES"
 PACKAGES=($(comm -13 <(printf '%s\n' "${PKGIGNORE[@]}" | LC_ALL=C sort) <(printf '%s\n' "${BASE_ARRAY[@]}" | LC_ALL=C sort)))
 
 # install relevant packages from the base group
-pacman -S --noconfirm --needed "${PACKAGES[@]}"
+pacman -S --noprogressbar --noconfirm --needed "${PACKAGES[@]}"
 
 # set the timezone
 ln -s /usr/share/zoneinfo/UTC /etc/localtime
@@ -68,19 +68,19 @@ echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 locale-gen
 
 # use reflector to rank the fastest mirrors
-pacman -S --noconfirm --needed reflector
+pacman -S --noconfirm --needed --noprogressbar reflector
 rm /etc/pacman.d/mirrorlist
 reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Rs reflector --noconfirm
 
 # update all packages and cache
-pacman -Syyu --noconfirm --needed
+pacman -Syyu --noprogressbar --noconfirm
 
 # install zsh shell and use it as sh
 # this allows us to source /etc/profile from every RUN command so that 
 # PATH is always what we expect it to be by setting ENV=/etc/profile
 # in the Dockerfile
-pacman -S --noconfirm zsh
+pacman -S --noconfirm --noprogressbar zsh
 rm /usr/bin/sh
 ln -s /usr/bin/zsh /usr/bin/sh
 
