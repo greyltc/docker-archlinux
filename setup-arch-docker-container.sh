@@ -64,7 +64,10 @@ pacman -S --noprogressbar --noconfirm --needed "${PACKAGES[@]}"
 ln -s /usr/share/zoneinfo/UTC /etc/localtime
 
 # set the locale
-echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+LANGUAGE=en_US
+TEXT_ENCODING=UTF-8
+echo "${LANGUAGE}.${TEXT_ENCODING} ${TEXT_ENCODING}" >> /etc/locale.gen
+echo LANG="${LANGUAGE}.${TEXT_ENCODING}" > /etc/locale.conf
 locale-gen
 
 # use reflector to rank the fastest mirrors
