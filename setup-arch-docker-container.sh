@@ -48,8 +48,6 @@ PKGIGNORE=(
     usbutils
     vi
     xfsprogs
-    e2fsprogs
-    krb5
 )
 
 # these are the packages in the base group
