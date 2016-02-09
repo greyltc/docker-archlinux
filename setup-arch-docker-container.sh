@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -o pipefail
 
+# overwrite temp config files with defaults
+PACNEW=/etc/pacman.conf.pacnew mv $PACNEW ${PACNEW%.pacnew}
+PACNEW=/etc/pacman.d/mirrorlist.pacnew mv $PACNEW ${PACNEW%.pacnew}
+PACNEW=/etc/shadow.pacnew mv $PACNEW ${PACNEW%.pacnew}
+PACNEW=/etc/resolv.conf.pacnew mv $PACNEW ${PACNEW%.pacnew}
+PACNEW=/etc/passwd.pacnew mv $PACNEW ${PACNEW%.pacnew}
+
 # this fails in the chroot during setup, so let's run it now to build the cache
 ldconfig
 
