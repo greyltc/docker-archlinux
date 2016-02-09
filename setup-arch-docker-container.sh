@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 set -o pipefail
 
-# overwrite temp config files with defaults
-PACNEW=/etc/pacman.conf.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
-PACNEW=/etc/pacman.d/mirrorlist.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
-PACNEW=/etc/shadow.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
-PACNEW=/etc/resolv.conf.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
-PACNEW=/etc/passwd.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
-
 # this fails in the chroot during setup, so let's run it now to build the cache
 ldconfig
 
@@ -27,9 +20,6 @@ rm /etc/resolv.conf.pacorig
 rm /etc/shadow.pacorig
 rm /etc/pacman.d/mirrorlist.pacorig
 rm /etc/pacman.conf.pacorig
-
-# space checking in the cotainer doesn't work; disable it
-sed -i "s/^[[:space:]]*\(CheckSpace\)/# \1/" /etc/pacman.conf
 
 # these are packages from the base group that we specifically don't want in this image for various reasons
 # taken from here: https://github.com/docker/docker/blob/master/contrib/mkimage-arch.sh
@@ -66,6 +56,15 @@ PACKAGES=($(comm -13 <(printf '%s\n' "${PKGIGNORE[@]}" | LC_ALL=C sort) <(printf
 
 # install relevant packages from the base group
 pacman -S --noprogressbar --noconfirm --needed "${PACKAGES[@]}"
+
+PACNEW=/etc/pacman.conf.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
+PACNEW=/etc/pacman.d/mirrorlist.pacnew bash -c 'rm $PACNEW'
+PACNEW=/etc/shadow.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
+#PACNEW=/etc/resolv.conf.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
+PACNEW=/etc/passwd.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
+
+# space checking in the cotainer doesn't work; disable it
+sed -i "s/^[[:space:]]*\(CheckSpace\)/# \1/" /etc/pacman.conf
 
 # set the timezone
 ln -s /usr/share/zoneinfo/UTC /etc/localtime
