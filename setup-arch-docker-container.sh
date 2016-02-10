@@ -9,17 +9,10 @@ pacman-key --init
 pacman-key --populate archlinux
 
 # reinstall the keyring because its install also failed in the chroot
-pacman -S --noconfirm --noprogressbar archlinux-keyring
+pacman -S --force --noconfirm --noprogressbar archlinux-keyring
 
 # install sed now because we're about to use it to modify pacman.conf
-pacman -S --noconfirm --noprogressbar sed
-
-# cleanup some pacorig files
-rm /etc/passwd.pacorig
-rm /etc/resolv.conf.pacorig
-rm /etc/shadow.pacorig
-rm /etc/pacman.d/mirrorlist.pacorig
-rm /etc/pacman.conf.pacorig
+pacman -S --force --noconfirm --noprogressbar sed
 
 # these are packages from the base group that we specifically don't want in this image for various reasons
 # taken from here: https://github.com/docker/docker/blob/master/contrib/mkimage-arch.sh
@@ -51,17 +44,18 @@ PKGIGNORE=(
 BASE_PACKAGES="$(pacman -Sg base | awk 'BEGIN {ORS=" "} {print $2}')"
 IFS=' ' read -r -a BASE_ARRAY <<< "$BASE_PACKAGES"
 
-# these are the packages in the base group that we don't want to ignore
+# these are the packages in the base group minus the ones we're ignoring
 PACKAGES=($(comm -13 <(printf '%s\n' "${PKGIGNORE[@]}" | LC_ALL=C sort) <(printf '%s\n' "${BASE_ARRAY[@]}" | LC_ALL=C sort)))
 
 # install relevant packages from the base group
-pacman -S --noprogressbar --noconfirm --needed "${PACKAGES[@]}"
+pacman -S --force --noprogressbar --noconfirm "${PACKAGES[@]}"
 
-PACNEW=/etc/pacman.conf.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
-PACNEW=/etc/pacman.d/mirrorlist.pacnew bash -c 'rm $PACNEW'
-PACNEW=/etc/shadow.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
-#PACNEW=/etc/resolv.conf.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
-PACNEW=/etc/passwd.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
+# cleanup the pacnews
+#PACNEW=/etc/pacman.conf.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
+#rm /etc/pacman.d/resolv.conf.pacnew
+#rm /etc/pacman.d/mirrorlist.pacnew
+#PACNEW=/etc/shadow.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
+#PACNEW=/etc/passwd.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
 
 # space checking in the cotainer doesn't work; disable it
 sed -i "s/^[[:space:]]*\(CheckSpace\)/# \1/" /etc/pacman.conf
