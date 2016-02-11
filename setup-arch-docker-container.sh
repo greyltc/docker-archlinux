@@ -68,9 +68,6 @@ pacman -S --noconfirm --noprogressbar zsh
 rm /usr/bin/sh
 ln -s /usr/bin/zsh /usr/bin/sh
 
-# remove all cached package archives
-paccache -r -k0
-
 # setup gnupg
 echo "keyserver hkp://keys.gnupg.net" >> /usr/share/gnupg/gpg-conf.skel
 sed -i "s,#keyserver-options auto-key-retrieve,keyserver-options auto-key-retrieve,g" /usr/share/gnupg/gpg-conf.skel
@@ -81,9 +78,8 @@ cp /usr/share/gnupg/dirmngr-conf.skel /etc/skel/.gnupg/dirmngr.conf
 # copy over the skel files for the root user
 cp -r /etc/skel/.[^.]* /root
 
-# remove all the manual files
-rm -rf /usr/share/man/*
-
 # set the root user's password to blank
 echo "root:" | chpasswd -e
 
+# do image size reducing things
+cleanup-image
