@@ -40,6 +40,9 @@ install -m755 -D "$DIR/setup-arch-docker-container.sh" "$TMP_ROOT/usr/bin/setup-
 curl -L 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fixDetails.sh' > "$TMP_ROOT/usr/bin/fix-details"
 chmod +x "$TMP_ROOT/usr/bin/fix-details"
 
+# inject the image size reducer
+install -m755 -D "$DIR/cleanupImage.sh" "$TMP_ROOT/usr/sbin/cleanup-image"
+
 # dockerify the rootfs
 echo -e "\033[1mDoing Docker things to the root file system.\033[0m"
 pushd $TMP_ROOT
