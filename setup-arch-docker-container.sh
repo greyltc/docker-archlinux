@@ -1,26 +1,20 @@
-#!/usr/bin/env bash
-set -o pipefail
+#!/usr/bin/sh
 
-# this fails in the chroot during setup, so let's run it now to build the cache
+# this might fail in the chroot during setup, so let's run it now to build the cache
 ldconfig
 
-# populate keychain
-pacman-key --init
-pacman-key --populate archlinux
+# properly reinstall the bare minimum packages required for pacman, plus the filesystem and dash
+# this list can be generated under Arch Linux by running:
+# bash <(curl -L 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/get-pacman-dependencies.sh')
+pacman --noconfirm -Sy --force coreutils bash grep gawk file tar sed acl archlinux-keyring attr bzip2 curl e2fsprogs expat glibc gpgme keyutils krb5 libarchive libassuan libgpg-error libidn libssh2 lzo openssl pacman pacman-mirrorlist xz zlib filesystem dash
 
-# reinstall the keyring because its install also failed in the chroot
-pacman -S --noconfirm --noprogressbar archlinux-keyring
+# fix up some small details
+fix-details
 
-# install sed now because we're about to use it to modify pacman.conf
-pacman -S --noconfirm --noprogressbar sed
+# space checking in the cotainer doesn't work; disable it
+sed -i "s/^[[:space:]]*\(CheckSpace\)/# \1/" /etc/pacman.conf
 
-# cleanup some pacorig files
-rm /etc/passwd.pacorig
-rm /etc/resolv.conf.pacorig
-rm /etc/shadow.pacorig
-rm /etc/pacman.d/mirrorlist.pacorig
-rm /etc/pacman.conf.pacorig
-
+cat << 'EOF' > /tmp/needs-bash
 # these are packages from the base group that we specifically don't want in this image for various reasons
 # taken from here: https://github.com/docker/docker/blob/master/contrib/mkimage-arch.sh
 PKGIGNORE=(
@@ -51,30 +45,8 @@ PKGIGNORE=(
 BASE_PACKAGES="$(pacman -Sg base | awk 'BEGIN {ORS=" "} {print $2}')"
 IFS=' ' read -r -a BASE_ARRAY <<< "$BASE_PACKAGES"
 
-# these are the packages in the base group that we don't want to ignore
+# these are the packages in the base group minus the ones we're ignoring
 PACKAGES=($(comm -13 <(printf '%s\n' "${PKGIGNORE[@]}" | LC_ALL=C sort) <(printf '%s\n' "${BASE_ARRAY[@]}" | LC_ALL=C sort)))
-
-# install relevant packages from the base group
-pacman -S --noprogressbar --noconfirm --needed "${PACKAGES[@]}"
-
-PACNEW=/etc/pacman.conf.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
-PACNEW=/etc/pacman.d/mirrorlist.pacnew bash -c 'rm $PACNEW'
-PACNEW=/etc/shadow.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
-#PACNEW=/etc/resolv.conf.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
-PACNEW=/etc/passwd.pacnew bash -c 'mv $PACNEW ${PACNEW%.pacnew}'
-
-# space checking in the cotainer doesn't work; disable it
-sed -i "s/^[[:space:]]*\(CheckSpace\)/# \1/" /etc/pacman.conf
-
-# set the timezone
-ln -s /usr/share/zoneinfo/UTC /etc/localtime
-
-# set the locale
-LANGUAGE=en_US
-TEXT_ENCODING=UTF-8
-echo "${LANGUAGE}.${TEXT_ENCODING} ${TEXT_ENCODING}" >> /etc/locale.gen
-echo LANG="${LANGUAGE}.${TEXT_ENCODING}" > /etc/locale.conf
-locale-gen
 
 # use reflector to rank the fastest mirrors
 pacman -S --noconfirm --needed --noprogressbar reflector
@@ -82,8 +54,11 @@ rm /etc/pacman.d/mirrorlist
 reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Rs reflector --noconfirm
 
-# update all packages and cache
-pacman -Syyu --noprogressbar --noconfirm
+# install relevant packages from the base group and update everything
+pacman -Syyu --needed --noprogressbar --noconfirm "${PACKAGES[@]}"
+EOF
+bash /tmp/needs-bash
+rm /tmp/needs-bash
 
 # install zsh shell and use it as sh
 # this allows us to source /etc/profile from every RUN command so that 
@@ -92,12 +67,6 @@ pacman -Syyu --noprogressbar --noconfirm
 pacman -S --noconfirm --noprogressbar zsh
 rm /usr/bin/sh
 ln -s /usr/bin/zsh /usr/bin/sh
-
-# fix TERM not being set
-echo "export TERM=xterm" >> /etc/profile
-
-# remove all cached package archives
-paccache -r -k0
 
 # setup gnupg
 echo "keyserver hkp://keys.gnupg.net" >> /usr/share/gnupg/gpg-conf.skel
@@ -109,8 +78,8 @@ cp /usr/share/gnupg/dirmngr-conf.skel /etc/skel/.gnupg/dirmngr.conf
 # copy over the skel files for the root user
 cp -r /etc/skel/.[^.]* /root
 
-# remove all the manual files
-rm -rf /usr/share/man/*
-
 # set the root user's password to blank
 echo "root:" | chpasswd -e
+
+# do image size reducing things
+cleanup-image
