@@ -8,12 +8,13 @@ ldconfig
 # bash <(curl -L 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/get-pacman-dependencies.sh')
 pacman --noconfirm -Sy --force coreutils bash grep gawk file tar sed acl archlinux-keyring attr bzip2 curl e2fsprogs expat glibc gpgme keyutils krb5 libarchive libassuan libgpg-error libidn libssh2 lzo openssl pacman pacman-mirrorlist xz zlib filesystem dash
 
-# fix up some small details
+# fix up some small details, contents here: https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fixDetails.sh
 fix-details
 
 # space checking in the cotainer doesn't work; disable it
-sed -i "s/^[[:space:]]*\(CheckSpace\)/# \1/" /etc/pacman.conf
+sed -i "s/^[[:space:]]*\(CheckSpace\)/#\1/" /etc/pacman.conf
 
+# this stuff requires bash to run
 cat << 'EOF' > /tmp/needs-bash
 # these are packages from the base group that we specifically don't want in this image for various reasons
 # taken from here: https://github.com/docker/docker/blob/master/contrib/mkimage-arch.sh
@@ -56,7 +57,6 @@ rm /tmp/needs-bash
 
 # use reflector to rank the fastest mirrors
 pacman -S --noconfirm --needed --noprogressbar reflector
-rm /etc/pacman.d/mirrorlist
 reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Rs reflector --noconfirm
 
@@ -76,10 +76,10 @@ cp /usr/share/gnupg/gpg-conf.skel /etc/skel/.gnupg/gpg.conf
 cp /usr/share/gnupg/dirmngr-conf.skel /etc/skel/.gnupg/dirmngr.conf
 
 # copy over the skel files for the root user
-cp -r /etc/skel/.[^.]* /root
+cp -r $(find /etc/skel -name ".*") /root
 
 # set the root user's password to blank
-echo "root:" | chpasswd -e
+#echo "root:" | chpasswd -e
 
 # do image size reducing things
 cleanup-image
