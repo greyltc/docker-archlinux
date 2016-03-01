@@ -10,7 +10,7 @@ The filesystem used in [the greyltc/archlinux container on the Docker registry](
 
 ## Usage
 Get the trustable, AUTOMATED BUILD prebuilt image from [https://hub.docker.com/r/greyltc/archlinux](https://hub.docker.com/r/greyltc/archlinux):  
-```
+```bash
 docker pull greyltc/archlinux
 ```  
 or alternatively build it locally yourself from the source repository like this:
@@ -25,3 +25,8 @@ Use your favorite Linux distro's package manager to install the following comman
 1. **Build your baseline Arch Linux docker image**  
 `docker build -t archlinux .`  
 1. **Profit.**
+
+Once you have the image, you could take a look inside:
+```bash
+docker run -i -t greyltc/archlinux bash
+```
