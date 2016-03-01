@@ -48,23 +48,23 @@ IFS=' ' read -r -a BASE_ARRAY <<< "$BASE_PACKAGES"
 # these are the packages in the base group minus the ones we're ignoring
 PACKAGES=($(comm -13 <(printf '%s\n' "${PKGIGNORE[@]}" | LC_ALL=C sort) <(printf '%s\n' "${BASE_ARRAY[@]}" | LC_ALL=C sort)))
 
+# install relevant packages from the base group
+pacman -S --needed --noprogressbar --noconfirm "${PACKAGES[@]}"
+EOF
+bash /tmp/needs-bash
+rm /tmp/needs-bash
+
 # use reflector to rank the fastest mirrors
 pacman -S --noconfirm --needed --noprogressbar reflector
 rm /etc/pacman.d/mirrorlist
 reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Rs reflector --noconfirm
 
-# install relevant packages from the base group and update everything
-pacman -Syyu --needed --noprogressbar --noconfirm "${PACKAGES[@]}"
-EOF
-bash /tmp/needs-bash
-rm /tmp/needs-bash
-
-# install zsh shell and use it as sh
+# install zsh shell and use it as sh, also update all packages
 # this allows us to source /etc/profile from every RUN command so that 
 # PATH is always what we expect it to be by setting ENV=/etc/profile
 # in the Dockerfile
-pacman -S --noconfirm --noprogressbar zsh
+pacman -Syyu --noconfirm --noprogressbar zsh
 rm /usr/bin/sh
 ln -s /usr/bin/zsh /usr/bin/sh
 
