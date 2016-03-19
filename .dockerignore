@@ -1,4 +1,5 @@
 .git/
+updateThis.sh
 README.md
 setup-arch-docker-container.sh
 Dockerfile
