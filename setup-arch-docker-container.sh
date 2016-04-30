@@ -68,6 +68,7 @@ curl "https://www.archlinux.org/mirrorlist/?country=all&protocol=https&ip_versio
 sed -i 's/^#Server/Server/' /tmp/mirrorlist
 rankmirrors -n 6 /tmp/mirrorlist > /tmp/fastmirrorlist
 mv /tmp/fastmirrorlist /etc/pacman.d/mirrorlist
+pacman -Syy
 echo "Mirrorlist updated."
 EOF
 chmod +x /etc/get-new-mirrors
