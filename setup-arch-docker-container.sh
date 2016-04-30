@@ -60,6 +60,18 @@ pacman -S --noconfirm --needed --noprogressbar reflector
 reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Rs reflector --noconfirm
 
+cat << 'EOF' > /sbin/get-new-mirrors
+#!/usr/bin/env bash
+set -e -u -o pipefail
+echo "Finding the fastest Arch mirrors..."
+curl "https://www.archlinux.org/mirrorlist/?country=all&protocol=https&ip_version=4&use_mirror_status=on" > /tmp/mirrorlist
+sed -i 's/^#Server/Server/' /tmp/mirrorlist
+rankmirrors -n 6 /tmp/mirrorlist > /tmp/fastmirrorlist
+mv /tmp/fastmirrorlist /etc/pacman.d/mirrorlist
+echo "Mirrorlist updated."
+EOF
+chmod +x /etc/get-new-mirrors
+
 # install zsh shell and use it as sh, also update all packages
 # this allows us to source /etc/profile from every RUN command so that 
 # PATH is always what we expect it to be by setting ENV=/etc/profile
