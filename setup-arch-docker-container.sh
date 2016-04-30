@@ -71,7 +71,7 @@ mv /tmp/fastmirrorlist /etc/pacman.d/mirrorlist
 pacman -Syy
 echo "Mirrorlist updated."
 EOF
-chmod +x /etc/get-new-mirrors
+chmod +x /sbin/get-new-mirrors
 
 # install zsh shell and use it as sh, also update all packages
 # this allows us to source /etc/profile from every RUN command so that 
