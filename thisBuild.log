@@ -1,23 +1,23 @@
 [1mGenerating Arch Linux root filesystem...[0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6884  100  6884    0     0  37066      0 --:--:-- --:--:-- --:--:-- 37010
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6884  100  6884    0     0  36773      0 --:--:-- --:--:-- --:--:-- 36812
 --- Step 1: Creating minimal root fs
 --- destination directory: ./tmproot
 --- core repository: http://mirror.rackspace.com/archlinux/core/os/x86_64
---- temporary directory: /tmp/tmp.NhETlY6vF0
+--- temporary directory: /tmp/tmp.Cmc82pEK6x
 --- fetch packages list: http://mirror.rackspace.com/archlinux/core/os/x86_64/
 --- pacman package and dependencies: acl archlinux-keyring attr bzip2 curl e2fsprogs expat glibc gpgme keyutils krb5 libarchive libassuan libgpg-error libidn libssh2 lzo openssl pacman pacman-mirrorlist xz zlib filesystem dash
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/acl-2.2.52-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/acl-2.2.52-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/acl-2.2.52-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/archlinux-keyring-20160402-1-any.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/archlinux-keyring-20160402-1-any.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/archlinux-keyring-20160402-1-any.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/attr-2.4.47-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/attr-2.4.47-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/attr-2.4.47-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/bzip2-1.0.6-5-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/bzip2-1.0.6-5-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/bzip2-1.0.6-5-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/curl-7.48.0-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/curl-7.48.0-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/curl-7.48.0-1-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
@@ -27,171 +27,57 @@ tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/e2fsprogs-1.42.13-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/e2fsprogs-1.42.13-1-x86_64.pkg.tar.xz
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/expat-2.1.1-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/expat-2.1.1-1-x86_64.pkg.tar.xz
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/glibc-2.23-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/glibc-2.23-2-x86_64.pkg.tar.xz
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/e2fsprogs-1.42.13-1-x86_64.pkg.tar.xz
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/expat-2.1.1-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/expat-2.1.1-2-x86_64.pkg.tar.xz
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/glibc-2.23-4-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/glibc-2.23-4-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/gpgme-1.6.0-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/gpgme-1.6.0-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/gpgme-1.6.0-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/keyutils-1.5.9-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/keyutils-1.5.9-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/keyutils-1.5.9-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/krb5-1.13.2-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/krb5-1.13.2-3-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/krb5-1.13.2-3-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libarchive-3.1.2-8-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/libarchive-3.1.2-8-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/libarchive-3.1.2-8-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libassuan-2.4.2-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/libassuan-2.4.2-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/libassuan-2.4.2-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libgpg-error-1.22-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/libgpg-error-1.22-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/libgpg-error-1.22-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libidn-1.32-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/libidn-1.32-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/libidn-1.32-1-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libssh2-1.7.0-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/libssh2-1.7.0-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/libssh2-1.7.0-2-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/lzo-2.09-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/lzo-2.09-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/lzo-2.09-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/openssl-1.0.2.h-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/openssl-1.0.2.h-1-x86_64.pkg.tar.xz
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-5.0.1-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/pacman-5.0.1-3-x86_64.pkg.tar.xz
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-mirrorlist-20160504-1-any.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/pacman-mirrorlist-20160504-1-any.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/openssl-1.0.2.h-1-x86_64.pkg.tar.xz
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-5.0.1-4-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/pacman-5.0.1-4-x86_64.pkg.tar.xz
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-mirrorlist-20160524-1-any.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/pacman-mirrorlist-20160524-1-any.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/xz-5.2.2-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/xz-5.2.2-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/xz-5.2.2-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/zlib-1.2.8-4-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/zlib-1.2.8-4-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/zlib-1.2.8-4-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/filesystem-2015.09-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/filesystem-2015.09-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/filesystem-2015.09-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/dash-0.5.8-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.NhETlY6vF0/dash-0.5.8-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.Cmc82pEK6x/dash-0.5.8-1-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 --- configure DNS and pacman
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
 --- done
 [1mRoot filesystem generation complete.[0m
 [1mInstalling setup script.[0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   959  100   959    0     0   5182      0 --:--:-- --:--:-- --:--:--  5211
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   959  100   959    0     0   5325      0 --:--:-- --:--:-- --:--:--  5327
 [1mDoing Docker things to the root file system.[0m
 ~/git/docker-archlinux/tmproot ~/git/docker-archlinux
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
-dlsym(acl_get_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_fd
-dlsym(acl_get_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_get_file
-dlsym(acl_set_fd): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_fd
-dlsym(acl_set_file): /usr/lib/libfakeroot/libfakeroot.so: undefined symbol: acl_set_file
 ~/git/docker-archlinux
 ~/git/docker-archlinux/tmproot ~/git/docker-archlinux
 [1mCompressing root filesystem archive...[0m
