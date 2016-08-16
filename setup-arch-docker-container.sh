@@ -8,9 +8,6 @@ ldconfig
 # bash <(curl -L 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/get-pacman-dependencies.sh')
 pacman --noconfirm -Sy --force coreutils bash grep gawk file tar sed acl archlinux-keyring attr bzip2 curl e2fsprogs expat glibc gpgme keyutils krb5 libarchive libassuan libgpg-error libidn libssh2 lzo lz4 openssl pacman pacman-mirrorlist xz zlib filesystem dash
 
-# fix up some small details, contents here: https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fixDetails.sh
-fix-details
-
 # space checking in the cotainer doesn't work; disable it
 sed -i "s/^[[:space:]]*\(CheckSpace\)/#\1/" /etc/pacman.conf
 
@@ -54,6 +51,9 @@ pacman -S --needed --noprogressbar --noconfirm "${PACKAGES[@]}"
 EOF
 bash /tmp/needs-bash
 rm /tmp/needs-bash
+
+# fix up some small details, contents here: https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fixDetails.sh
+fix-details
 
 # use reflector to rank the fastest mirrors
 pacman -S --noconfirm --needed --noprogressbar reflector
