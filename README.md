@@ -1,6 +1,6 @@
 docker-archlinux
 ====================
-Minimal Arch Linux docker image with trustable, traceable & inspectable origin  
+Minimal Arch Linux docker image with trustable, traceable & inspectable origin   
 
 ## Intro
 This project contains a script, `buildme.sh`, which uses a slightly modified Arch bootstrapping script from [this project](
