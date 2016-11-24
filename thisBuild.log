@@ -1,24 +1,24 @@
 [1mGenerating Arch Linux root filesystem...[0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6940  100  6940    0     0  44690      0 --:--:-- --:--:-- --:--:-- 44774
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6940  100  6940    0     0  41316      0 --:--:-- --:--:-- --:--:-- 41556
 --- Step 1: Creating minimal root fs
 --- destination directory: ./tmproot
 --- core repository: http://mirror.rackspace.com/archlinux/core/os/x86_64
---- temporary directory: /tmp/tmp.a2Sl6QVySl
+--- temporary directory: /tmp/tmp.pCYBD68YKP
 --- fetch packages list: http://mirror.rackspace.com/archlinux/core/os/x86_64/
 --- get ready to ignore a bunch of SCHILY.fflags errors!
 --- pacman package and dependencies: acl archlinux-keyring attr bzip2 curl e2fsprogs expat glibc gpgme keyutils krb5 libarchive libassuan libgpg-error libssh2 lz4 lzo openssl pacman pacman-mirrorlist xz zlib filesystem dash
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/acl-2.2.52-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/acl-2.2.52-3-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/acl-2.2.52-3-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/archlinux-keyring-20161101-1-any.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/archlinux-keyring-20161101-1-any.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/archlinux-keyring-20161101-1-any.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/attr-2.4.47-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/attr-2.4.47-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/attr-2.4.47-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/bzip2-1.0.6-5-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/bzip2-1.0.6-5-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/bzip2-1.0.6-5-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/curl-7.51.0-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/curl-7.51.0-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/curl-7.51.0-1-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
@@ -44,7 +44,7 @@ tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/e2fsprogs-1.43.3-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/e2fsprogs-1.43.3-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/e2fsprogs-1.43.3-1-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
@@ -68,11 +68,11 @@ tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/expat-2.2.0-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/expat-2.2.0-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/expat-2.2.0-2-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/glibc-2.24-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/glibc-2.24-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/glibc-2.24-2-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
@@ -128,18 +128,18 @@ tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/gpgme-1.7.1-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/gpgme-1.7.1-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/gpgme-1.7.1-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/keyutils-1.5.9-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/keyutils-1.5.9-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/keyutils-1.5.9-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/krb5-1.13.4-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/krb5-1.13.4-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/krb5-1.13.4-1-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libarchive-3.2.1-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/libarchive-3.2.1-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/libarchive-3.2.1-2-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
@@ -165,36 +165,36 @@ tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libassuan-2.4.3-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/libassuan-2.4.3-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/libassuan-2.4.3-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libgpg-error-1.24-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/libgpg-error-1.24-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/libgpg-error-1.24-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libssh2-1.8.0-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/libssh2-1.8.0-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/libssh2-1.8.0-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/lz4-131-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/lz4-131-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/lz4-131-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/lzo-2.09-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/lzo-2.09-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/lzo-2.09-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/openssl-1.0.2.j-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/openssl-1.0.2.j-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/openssl-1.0.2.j-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-5.0.1-4-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/pacman-5.0.1-4-x86_64.pkg.tar.xz
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-mirrorlist-20161101-1-any.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/pacman-mirrorlist-20161101-1-any.pkg.tar.xz
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/xz-5.2.2-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/xz-5.2.2-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/pacman-5.0.1-4-x86_64.pkg.tar.xz
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-mirrorlist-20161121-1-any.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/pacman-mirrorlist-20161121-1-any.pkg.tar.xz
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/xz-5.2.2-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/xz-5.2.2-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/zlib-1.2.8-4-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/zlib-1.2.8-4-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/zlib-1.2.8-4-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/filesystem-2015.09-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/filesystem-2015.09-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/filesystem-2015.09-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/dash-0.5.9.1-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.a2Sl6QVySl/dash-0.5.9.1-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.pCYBD68YKP/dash-0.5.9.1-1-x86_64.pkg.tar.xz
 --- configure DNS and pacman
 --- done
 [1mRoot filesystem generation complete.[0m
 [1mInstalling setup script.[0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   971  100   971    0     0   5534      0 --:--:-- --:--:-- --:--:--  5548
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   971  100   971    0     0   6130      0 --:--:-- --:--:-- --:--:--  6106100   971  100   971    0     0   6125      0 --:--:-- --:--:-- --:--:--  6106
 [1mDoing Docker things to the root file system.[0m
 ~/git/docker-archlinux/tmproot ~/git/docker-archlinux
 ~/git/docker-archlinux
