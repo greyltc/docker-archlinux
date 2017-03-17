@@ -1,4 +1,4 @@
-[![](https://images.microbadger.com/badges/image/greyltc/archlinux.svg)](http://microbadger.com/images/greyltc/docker-archlinux) [![](https://images.microbadger.com/badges/version/greyltc/archlinux.svg)](http://microbadger.com/images/greyltc/archlinux)
+[![](https://images.microbadger.com/badges/image/greyltc/archlinux.svg)](http://microbadger.com/images/greyltc/archlinux) [![](https://images.microbadger.com/badges/version/greyltc/archlinux.svg)](https://hub.docker.com/r/greyltc/archlinux/)
 
 docker-archlinux
 ====================
