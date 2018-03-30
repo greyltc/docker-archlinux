@@ -107,8 +107,12 @@ groupadd -r uucp
 groupadd -r video
 groupadd -r users
 
-useradd -u 1 bin -g daemon,sys
-useradd -u 2 daemon -g adm,bin
+useradd -u 1 bin
+usermod -a -G daemon bin
+usermod -a -G sys bin
+useradd -u 2 daemon
+usermod -a -G adm daemon
+usermod -a -G bin daemon
 useradd -u 8 mail -D /var/spool/mail
 useradd -u 14 ftp -D /srv/ftp
 useradd -u 33 http -D /srv/http
