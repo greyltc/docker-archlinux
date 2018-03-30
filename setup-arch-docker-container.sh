@@ -115,7 +115,7 @@ usermod -a -G adm daemon
 usermod -a -G bin daemon
 useradd -N -u 8 -d /var/spool/mail mail 
 useradd -N -u 14 -d /srv/ftp ftp 
-useradd -N -u 33 -d /srv/http http
+useradd -u 33 -d /srv/http http
 
 # install zsh shell and use it as sh, also update all packages
 # this allows us to source /etc/profile from every RUN command so that 
