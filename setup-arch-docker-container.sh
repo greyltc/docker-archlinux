@@ -113,10 +113,10 @@ usermod -a -G sys bin
 useradd -N -u 2 daemon
 usermod -a -G adm daemon
 usermod -a -G bin daemon
-useradd -N -u 8 mail -D /var/spool/mail
-useradd -N -u 14 ftp -D /srv/ftp
-useradd -N -u 33 http -D /srv/http
-useradd -N -u 0 root -D /root
+useradd -N -u 8 -d /var/spool/mail mail 
+useradd -N -u 14 -d /srv/ftp ftp 
+useradd -N -u 33 -d /srv/http http
+useradd -N -u 0 -d /root root
 useradd -N -u 65534 nobody
 
 # install zsh shell and use it as sh, also update all packages
