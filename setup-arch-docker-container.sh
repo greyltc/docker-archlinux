@@ -107,18 +107,17 @@ groupadd -r uucp
 groupadd -r video
 groupadd -r users
 
-useradd -u 1 bin
+useradd -N -u 1 bin
 usermod -a -G daemon bin
 usermod -a -G sys bin
-useradd -u 2 daemon
+useradd -N -u 2 daemon
 usermod -a -G adm daemon
 usermod -a -G bin daemon
-useradd -u 8 mail -D /var/spool/mail
-useradd -u 14 ftp -D /srv/ftp
-useradd -u 33 http -D /srv/http
-useradd -u 0 root -D /root
-useradd -u 65534 nobody
-
+useradd -N -u 8 mail -D /var/spool/mail
+useradd -N -u 14 ftp -D /srv/ftp
+useradd -N -u 33 http -D /srv/http
+useradd -N -u 0 root -D /root
+useradd -N -u 65534 nobody
 
 # install zsh shell and use it as sh, also update all packages
 # this allows us to source /etc/profile from every RUN command so that 
