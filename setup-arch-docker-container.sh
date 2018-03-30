@@ -1,5 +1,5 @@
 #!/usr/bin/sh
-set -e -u -o pipefail
+set -e
 
 # this might fail in the chroot during setup, so let's run it now to build the cache
 ldconfig
