@@ -87,7 +87,6 @@ echo "keyserver hkp://keys.gnupg.net" >> /usr/share/gnupg/gpg-conf.skel
 sed -i "s,#keyserver-options auto-key-retrieve,keyserver-options auto-key-retrieve,g" /usr/share/gnupg/gpg-conf.skel
 mkdir -p /etc/skel/.gnupg
 cp /usr/share/gnupg/gpg-conf.skel /etc/skel/.gnupg/gpg.conf
-cp /usr/share/gnupg/dirmngr-conf.skel /etc/skel/.gnupg/dirmngr.conf
 
 # copy over the skel files for the root user
 cp -r $(find /etc/skel -name ".*") /root
