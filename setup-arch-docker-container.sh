@@ -74,6 +74,48 @@ echo "Mirrorlist updated."
 EOF
 chmod +x /sbin/get-new-mirrors
 
+# create the users & groups that systemd-sysusers.service would have
+groupadd -g 3 sys
+groupadd -g 8 mem
+groupadd -g 11 ftp
+groupadd -g 12 mail
+groupadd -g 19 log
+groupadd -g 25 smmsp
+groupadd -g 26 proc
+groupadd -g 50 games
+groupadd -g 54 lock
+groupadd -g 90 network
+groupadd -g 94 floppy
+groupadd -g 96 scanner
+groupadd -g 98 power
+groupadd -r daemon
+groupadd -r adm
+groupadd -r bin
+groupadd -r wheel
+groupadd -r kmem
+groupadd -g 5 tty
+groupadd -r utmp
+groupadd -r audio
+groupadd -r disk
+groupadd -r input
+groupadd -r kvm
+groupadd -r lp
+groupadd -r optical
+groupadd -r render
+groupadd -r storage
+groupadd -r uucp
+groupadd -r video
+groupadd -r users
+
+useradd -u 1 bin -G daemon,sys
+useradd -u 2 daemon -G adm,bin
+useradd -u 8 mail -D /var/spool/mail
+useradd -u 14 ftp -D /srv/ftp
+useradd -u 33 http -D /srv/http
+useradd -u 0 root -D /root
+useradd -u 65534 nobody
+
+
 # install zsh shell and use it as sh, also update all packages
 # this allows us to source /etc/profile from every RUN command so that 
 # PATH is always what we expect it to be by setting ENV=/etc/profile
@@ -93,30 +135,6 @@ cp -r $(find /etc/skel -name ".*") /root
 
 # set the root user's password to blank
 #echo "root:" | chpasswd -e
-
-# create the users & groups that systemd-sysusers.service would have
-groupadd -g 3 sys
-groupadd -g 8 mem
-groupadd -g 11 ftp
-groupadd -g 12 mail
-groupadd -g 19 log
-groupadd -g 25 smmsp
-groupadd -g 26 proc
-groupadd -g 50 games
-groupadd -g 54 lock
-groupadd -g 90 network
-groupadd -g 94 floppy
-groupadd -g 96 scanner
-groupadd -g 98 power
-groupadd -r daemon
-groupadd -r adm
-groupadd -r bin
-
-useradd -u 1 bin -G daemon,sys
-useradd -u 2 daemon -G adm,bin
-useradd -u 8 mail -D /var/spool/mail
-useradd -u 14 ftp -D /srv/ftp
-useradd -u 33 http -D /srv/http
 
 # do image size reducing things
 cleanup-image
