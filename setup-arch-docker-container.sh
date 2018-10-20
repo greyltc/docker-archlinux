@@ -61,6 +61,9 @@ pacman -S --noconfirm --needed --noprogressbar reflector
 reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Rs reflector --noconfirm
 
+# need pacman-contrib for rankmirrors
+pacman -S --noconfirm --needed --noprogressbar pacman-contrib
+
 cat << 'EOF' > /sbin/get-new-mirrors
 #!/usr/bin/env bash
 set -e -u -o pipefail
