@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e -u -o pipefail
 
-./buildme.sh |& tee thisBuild.log
+./build_root_targz.sh |& tee thisBuild.log
 git add thisBuild.log
 git add archlinux.tar.xz
 git add Dockerfile

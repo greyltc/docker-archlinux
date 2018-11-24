@@ -7,7 +7,7 @@ ldconfig
 # properly reinstall the bare minimum packages required for pacman, plus the filesystem and dash
 # this list can be generated under Arch Linux by running:
 # bash <(curl -L 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/get-pacman-dependencies.sh')
-pacman --noconfirm -Sy --force coreutils bash grep gawk file tar sed acl archlinux-keyring attr bzip2 curl e2fsprogs expat glibc gpgme keyutils krb5 libarchive libassuan libgpg-error libidn2 libnghttp2 libpsl libssh2 libunistring lz4 openssl pacman pacman-mirrorlist xz zlib zstd filesystem dash
+pacman --noconfirm --noprogressbar -Sy --force coreutils bash grep gawk file tar sed acl archlinux-keyring attr bzip2 curl e2fsprogs expat glibc gpgme keyutils krb5 libarchive libassuan libgpg-error libidn2 libnghttp2 libpsl libssh2 libunistring lz4 openssl pacman pacman-mirrorlist xz zlib zstd filesystem dash
 
 # space checking in the cotainer doesn't work; disable it
 sed -i "s/^[[:space:]]*\(CheckSpace\)/#\1/" /etc/pacman.conf
@@ -17,6 +17,7 @@ cat << 'EOF' > /tmp/needs-bash
 # these are packages from the base group that we specifically don't want in this image for various reasons
 # taken from here: https://github.com/docker/docker/blob/master/contrib/mkimage-arch.sh
 PKGIGNORE=(
+    linux-firmware
     cryptsetup
     device-mapper
     dhcpcd
@@ -41,11 +42,11 @@ PKGIGNORE=(
 )
 
 # these are the packages in the base group
-BASE_PACKAGES="$(pacman -Sg base | awk 'BEGIN {ORS=" "} {print $2}')"
+BASE_PACKAGES="$(pacman -Sg base | sort -u | awk 'BEGIN {ORS=" "} {print $2}')"
 IFS=' ' read -r -a BASE_ARRAY <<< "$BASE_PACKAGES"
 
 # these are the packages in the base group minus the ones we're ignoring
-PACKAGES=($(comm -13 <(printf '%s\n' "${PKGIGNORE[@]}" | LC_ALL=C sort) <(printf '%s\n' "${BASE_ARRAY[@]}" | LC_ALL=C sort)))
+PACKAGES=($(comm -13 <(printf '%s\n' "${PKGIGNORE[@]}" | LC_ALL=LC_COLLATE sort -d) <(printf '%s\n' "${BASE_ARRAY[@]}" | LC_ALL=LC_COLLATE sort -d)))
 
 # install relevant packages from the base group
 pacman -S --needed --noprogressbar --noconfirm "${PACKAGES[@]}"
