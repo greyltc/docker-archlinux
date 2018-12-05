@@ -1,5 +1,6 @@
 .git/
 updateThis.sh
+travisUpdateThis.sh
 README.md
 setup-arch-docker-container.sh
 Dockerfile
