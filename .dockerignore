@@ -5,5 +5,3 @@ setup-arch-docker-container.sh
 Dockerfile
 buildme.sh
 buildme.log
-gitPush.sh
-gitTravisPush.sh
