@@ -7,3 +7,5 @@ Dockerfile
 buildme.sh
 buildme.log
 .travis.yaml
+travis_key
+travis_key.enc
