@@ -1,7 +1,11 @@
 .git/
 updateThis.sh
+travisUpdateThis.sh
 README.md
 setup-arch-docker-container.sh
 Dockerfile
 buildme.sh
 buildme.log
+.travis.yaml
+travis_key
+travis_key.enc
