@@ -1,4 +1,4 @@
-[![](https://images.microbadger.com/badges/image/greyltc/archlinux.svg)](http://microbadger.com/images/greyltc/archlinux) [![](https://images.microbadger.com/badges/version/greyltc/archlinux.svg)](https://hub.docker.com/r/greyltc/archlinux/)
+[![](https://images.microbadger.com/badges/image/greyltc/archlinux.svg)](http://microbadger.com/images/greyltc/archlinux) [![](https://images.microbadger.com/badges/version/greyltc/archlinux.svg)](https://hub.docker.com/r/greyltc/archlinux/) [![Travis Build Status](https://travis-ci.org/greyltc/docker-archlinux.svg?branch=master)](https://travis-ci.org/greyltc/docker-archlinux)
 
 docker-archlinux
 ====================
