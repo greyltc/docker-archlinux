@@ -4,7 +4,7 @@ set -e -u -o pipefail
 ./build_root_targz.sh |& tee thisBuild.log
 
 git config user.name "Travis CI"
-git config user.email "kicad.klc.bot@gmail.com"
+git config user.email "travis@rob.ot"
 
 git add thisBuild.log
 git add archlinux.tar.xz
@@ -22,5 +22,5 @@ export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChec
 git remote set-url --push origin git@github.com:greyltc/docker-archlinux.git
 
 TAG="$(date -u -I)-travis"
-git tag -a ${TAG} -m "$(date) snapshot" travis
+git tag -a ${TAG} -m "$(date) snapshot" master
 git push origin ${TAG} --force -v --progress
