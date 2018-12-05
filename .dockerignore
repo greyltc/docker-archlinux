@@ -5,3 +5,4 @@ setup-arch-docker-container.sh
 Dockerfile
 buildme.sh
 buildme.log
+.travis.yaml
