@@ -17,12 +17,16 @@ eval `ssh-agent -s`
 
 ssh-add travis_key
 
-git commit -m "$(date -u -I): bump to latest Arch Linux -- travis"
+git commit -m "$(date -u -I): bump to latest Arch Linux -- via travis"
 
 export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 
 git remote set-url --push origin git@github.com:greyltc/docker-archlinux.git
 
 TAG="$(date -u -I)-travis"
+git push origin master
 git tag ${TAG} master --force
-git push origin ${TAG} --force -v --progress
+#git tag -a $(date -I) -m "$(date) snapshot" --force
+#git push --tags --force
+#git tag ${TAG} master --force
+#git push origin ${TAG} --tags --force -v --progress
