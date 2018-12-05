@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e -u -o pipefail
 
+cd $TRAVIS_BUILD_DIR
+
 ./build_root_targz.sh |& tee thisBuild.log
 
 git config user.name "Travis CI"
@@ -22,5 +24,5 @@ export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChec
 git remote set-url --push origin git@github.com:greyltc/docker-archlinux.git
 
 TAG="$(date -u -I)-travis"
-git tag -a ${TAG} -m "$(date) snapshot" master
+git tag ${TAG} master
 git push origin ${TAG} --force -v --progress
