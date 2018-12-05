@@ -8,5 +8,5 @@ before_install:
 - sudo apt-get install -y fakeroot fakechroot
 script:
 - cd $TRAVIS_BUILD_DIR
-- git checkout travis
+- git checkout master
 - bash ./travisUpdateThis.sh
