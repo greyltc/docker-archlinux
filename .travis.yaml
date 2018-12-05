@@ -1,0 +1,17 @@
+dist: xenial
+git:
+  depth: 1
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y fakeroot fakechroot
+script:
+  - cd $TRAVIS_BUILD_DIR
+  - git checkout travis
+  - bash -c './build_root_targz.sh |& tee thisBuild.log'
+  - git add "thisBuild.log"
+  - git add "archlinux.tar.xz"
+  - git add "Dockerfile"
+  - git commit -m "$(date): bump to latest Arch Linux -- travis"
+  # Make a deploy key
+  # - openssl aes-256-cbc -K $encrypted_fd4d87192dd3_key -iv $encrypted_fd4d87192dd3_iv -in travis_key.enc -out travis_key -d
+  # - travis_wait 60 bash $TRAVIS_BUILD_DIR/push.sh
