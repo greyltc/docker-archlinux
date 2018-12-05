@@ -17,7 +17,7 @@ eval `ssh-agent -s`
 
 ssh-add travis_key
 
-git commit -m "$(date): bump to latest Arch Linux -- travis"
+git commit -m "$(date -u -I): bump to latest Arch Linux -- travis"
 
 export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 
