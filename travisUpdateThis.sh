@@ -24,5 +24,5 @@ export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChec
 git remote set-url --push origin git@github.com:greyltc/docker-archlinux.git
 
 TAG="$(date -u -I)-travis"
-git tag ${TAG}
+git tag ${TAG} --force
 git push origin ${TAG} --force -v --progress
