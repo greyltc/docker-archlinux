@@ -1,36 +1,36 @@
 [1mGenerating Arch Linux root filesystem...[0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  7083  100  7083    0     0  27551      0 --:--:-- --:--:-- --:--:-- 27667
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  7083  100  7083    0     0  16330      0 --:--:-- --:--:-- --:--:-- 16357
 --- Step 1: Creating minimal root fs
 --- destination directory: ./tmproot
 --- core repository: http://mirror.rackspace.com/archlinux/core/os/x86_64
---- temporary directory: /tmp/tmp.yZ5H9VPeWA
+--- temporary directory: /tmp/tmp.TWblGw9eG1
 --- fetch packages list: http://mirror.rackspace.com/archlinux/core/os/x86_64/
 --- get ready to ignore a bunch of SCHILY.fflags errors!
 --- pacman package and dependencies: acl archlinux-keyring attr bzip2 curl e2fsprogs expat glibc gpgme keyutils krb5 libarchive libassuan libgpg-error libidn2 libnghttp2 libpsl libssh2 libunistring lz4 openssl pacman pacman-mirrorlist xz zlib zstd filesystem dash
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/acl-2.2.53-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/acl-2.2.53-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/acl-2.2.53-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/archlinux-keyring-20190827-1-any.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/archlinux-keyring-20190827-1-any.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/archlinux-keyring-20190827-1-any.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/attr-2.4.48-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/attr-2.4.48-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/attr-2.4.48-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/bzip2-1.0.8-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/bzip2-1.0.8-2-x86_64.pkg.tar.xz
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/curl-7.65.3-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/curl-7.65.3-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/bzip2-1.0.8-2-x86_64.pkg.tar.xz
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/curl-7.66.0-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/curl-7.66.0-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/e2fsprogs-1.45.3-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/e2fsprogs-1.45.3-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/e2fsprogs-1.45.3-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/expat-2.2.7-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/expat-2.2.7-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/expat-2.2.7-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/glibc-2.29-4-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/glibc-2.29-4-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/glibc-2.29-4-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/gpgme-1.13.1-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/gpgme-1.13.1-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/gpgme-1.13.1-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/keyutils-1.6.1-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/keyutils-1.6.1-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/keyutils-1.6.1-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/krb5-1.17-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/krb5-1.17-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/krb5-1.17-1-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
@@ -216,112 +216,17 @@ tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libarchive-3.4.0-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/libarchive-3.4.0-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/libarchive-3.4.0-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libassuan-2.5.3-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/libassuan-2.5.3-1-x86_64.pkg.tar.xz
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libgpg-error-1.36-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/libgpg-error-1.36-1-x86_64.pkg.tar.xz
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
+--- uncompress package: /tmp/tmp.TWblGw9eG1/libassuan-2.5.3-1-x86_64.pkg.tar.xz
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libgpg-error-1.36-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/libgpg-error-1.36-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libidn2-2.2.0-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/libidn2-2.2.0-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/libidn2-2.2.0-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libnghttp2-1.39.2-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/libnghttp2-1.39.2-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/libnghttp2-1.39.2-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libpsl-0.21.0-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/libpsl-0.21.0-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/libpsl-0.21.0-1-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
@@ -360,215 +265,28 @@ tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libssh2-1.8.2-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/libssh2-1.8.2-1-x86_64.pkg.tar.xz
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libssh2-1.9.0-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/libssh2-1.9.0-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libunistring-0.9.10-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/libunistring-0.9.10-1-x86_64.pkg.tar.xz
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/lz4-1:1.9.1-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/lz4-1:1.9.1-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/libunistring-0.9.10-1-x86_64.pkg.tar.xz
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/lz4-1:1.9.2-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/lz4-1:1.9.2-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/openssl-1.1.1.d-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/openssl-1.1.1.d-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/openssl-1.1.1.d-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-5.1.3-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/pacman-5.1.3-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/pacman-5.1.3-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-mirrorlist-20190821-1-any.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/pacman-mirrorlist-20190821-1-any.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/pacman-mirrorlist-20190821-1-any.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/xz-5.2.4-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/xz-5.2.4-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/xz-5.2.4-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/zlib-1:1.2.11-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/zlib-1:1.2.11-3-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/zlib-1:1.2.11-3-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/zstd-1.4.2-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/zstd-1.4.2-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/zstd-1.4.2-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/filesystem-2019.05-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/filesystem-2019.05-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/filesystem-2019.05-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/dash-0.5.10.2-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.yZ5H9VPeWA/dash-0.5.10.2-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.TWblGw9eG1/dash-0.5.10.2-1-x86_64.pkg.tar.xz
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
@@ -589,7 +307,7 @@ tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
 [1mInstalling setup script.[0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   972  100   972    0     0   4060      0 --:--:-- --:--:-- --:--:--  4066
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   972  100   972    0     0   4290      0 --:--:-- --:--:-- --:--:--  4300
 [1mDoing Docker things to the root file system.[0m
 ~/build/greyltc/docker-archlinux/tmproot ~/build/greyltc/docker-archlinux
 ~/build/greyltc/docker-archlinux
