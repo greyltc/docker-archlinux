@@ -1,4 +1,6 @@
-dist: bionic
+os: linux
+arch: arm64
+dist: bionic 
 git:
   depth: 1
 before_install:
