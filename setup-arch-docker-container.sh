@@ -5,13 +5,10 @@ set -e
 ldconfig
 
 # install/reinstall everything needed for a minimal Arch system
-pacman --noconfirm --noprogressbar -Syy --overwrite \* -Syyu base
+pacman --noconfirm --noprogressbar -Syy --overwrite \* -Syyu base pacman-contrib
 
 # fix up some small details, contents here: https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fixDetails.sh
 fix-details
-
-# need pacman-contrib for rankmirrors
-pacman -Syyu --noconfirm --needed --noprogressbar pacman-contrib
 
 cat << 'EOF' > /sbin/get-new-mirrors
 #!/usr/bin/env bash
