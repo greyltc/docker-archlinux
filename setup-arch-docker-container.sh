@@ -5,7 +5,7 @@ set -e
 ldconfig
 
 # install/reinstall everything needed for a minimal Arch system
-pacman --noconfirm --noprogressbar -Syy --overwrite \* -Syyu base pacman-contrib
+pacman --noconfirm --noprogressbar -Syyu --overwrite \* base pacman-contrib
 
 # fix up some small details, contents here: https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fixDetails.sh
 fix-details
