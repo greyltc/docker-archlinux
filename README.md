@@ -23,7 +23,7 @@ Use your favorite Linux distro's package manager to install the following comman
 `git clone https://github.com/greyltc/docker-archlinux.git`  
 1. **Build the root file system archive**  
 `cd docker-archlinux`  
-`./buildme.sh # this generates a new root filesystem archive: archlinux.tar.xz`  
+`./build_root_targz.sh # this generates a new root filesystem archive: archlinux.tar.xz`  
 1. **Build your baseline Arch Linux docker image**  
 `docker build -t archlinux .`  
 1. **Profit.**
