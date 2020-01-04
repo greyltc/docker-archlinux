@@ -1,38 +1,38 @@
 [1mGenerating Arch Linux root filesystem...[0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  7205  100  7205    0     0  88950      0 --:--:-- --:--:-- --:--:-- 88950
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 26  7205   26  1895    0     0  11770      0 --:--:-- --:--:-- --:--:-- 11697100  7205  100  7205    0     0  44202      0 --:--:-- --:--:-- --:--:-- 43932
 --- Step 1: Creating minimal root fs
 --- destination directory: ./tmproot
 --- core repository: http://mirror.rackspace.com/archlinux/core/os/x86_64
---- temporary directory: /tmp/tmp.VhLtxhspLv
+--- temporary directory: /tmp/tmp.L7M3sqQRZa
 --- fetch packages list: http://mirror.rackspace.com/archlinux/core/os/x86_64/
 --- get ready to ignore a bunch of SCHILY.fflags errors!
 --- pacman package and dependencies: acl archlinux-keyring attr bzip2 curl e2fsprogs expat glibc gpgme keyutils krb5 libarchive libassuan libgpg-error libidn2 libnghttp2 libpsl libssh2 libunistring lz4 openssl pacman pacman-mirrorlist xz zlib zstd filesystem dash
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/acl-2.2.53-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/acl-2.2.53-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/acl-2.2.53-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/archlinux-keyring-20191219-1-any.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/archlinux-keyring-20191219-1-any.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/archlinux-keyring-20191219-1-any.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/attr-2.4.48-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/attr-2.4.48-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/attr-2.4.48-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/bzip2-1.0.8-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/bzip2-1.0.8-3-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/bzip2-1.0.8-3-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/curl-7.67.0-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/curl-7.67.0-3-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/curl-7.67.0-3-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/e2fsprogs-1.45.4-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/e2fsprogs-1.45.4-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/e2fsprogs-1.45.4-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/expat-2.2.9-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/expat-2.2.9-3-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/expat-2.2.9-3-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/glibc-2.30-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/glibc-2.30-3-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/glibc-2.30-3-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/gpgme-1.13.1-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/gpgme-1.13.1-3-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/gpgme-1.13.1-3-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/keyutils-1.6.1-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/keyutils-1.6.1-3-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/keyutils-1.6.1-3-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/krb5-1.17-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/krb5-1.17-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/krb5-1.17-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libarchive-3.4.1-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.VhLtxhspLv/libarchive-3.4.1-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/libarchive-3.4.1-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -103,44 +103,44 @@ usr/share/man/man5/libarchive-formats.5.gz
 usr/share/man/man5/mtree.5.gz
 usr/share/man/man5/tar.5.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libassuan-2.5.3-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/libassuan-2.5.3-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/libassuan-2.5.3-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libgpg-error-1.36-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/libgpg-error-1.36-3-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/libgpg-error-1.36-3-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libidn2-2.3.0-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/libidn2-2.3.0-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/libidn2-2.3.0-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libnghttp2-1.39.2-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/libnghttp2-1.39.2-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/libnghttp2-1.39.2-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libpsl-0.21.0-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/libpsl-0.21.0-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/libpsl-0.21.0-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libssh2-1.9.0-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/libssh2-1.9.0-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/libssh2-1.9.0-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libunistring-0.9.10-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/libunistring-0.9.10-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/libunistring-0.9.10-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/lz4-1:1.9.2-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/lz4-1:1.9.2-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/lz4-1:1.9.2-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/openssl-1.1.1.d-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/openssl-1.1.1.d-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/openssl-1.1.1.d-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-5.2.1-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/pacman-5.2.1-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/pacman-5.2.1-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-mirrorlist-20200103-1-any.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/pacman-mirrorlist-20200103-1-any.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/pacman-mirrorlist-20200103-1-any.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/xz-5.2.4-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/xz-5.2.4-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/xz-5.2.4-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/zlib-1:1.2.11-4-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/zlib-1:1.2.11-4-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/zlib-1:1.2.11-4-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/zstd-1.4.4-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/zstd-1.4.4-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/zstd-1.4.4-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/filesystem-2019.10-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/filesystem-2019.10-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/filesystem-2019.10-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/dash-0.5.10.2-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.VhLtxhspLv/dash-0.5.10.2-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.L7M3sqQRZa/dash-0.5.10.2-2-x86_64.pkg.tar.xz
 --- configure DNS and pacman
 --- done
 [1mRoot filesystem generation complete.[0m
 [1mInstalling setup script.[0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   972  100   972    0     0   7902      0 --:--:-- --:--:-- --:--:--  7902
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   972  100   972    0     0  17357      0 --:--:-- --:--:-- --:--:-- 17357
 [1mDoing Docker things to the root file system.[0m
 ~/build/greyltc/docker-archlinux/tmproot ~/build/greyltc/docker-archlinux
 ~/build/greyltc/docker-archlinux
