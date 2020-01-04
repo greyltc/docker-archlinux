@@ -38,7 +38,7 @@ docker tag $IMAGE_ID docker.pkg.github.com/greyltc/docker-archlinux/base:$(date 
 docker tag $IMAGE_ID docker.pkg.github.com/greyltc/docker-archlinux/base:latest
 docker push docker.pkg.github.com/greyltc/docker-archlinux/base:$(date -I)
 docker push docker.pkg.github.com/greyltc/docker-archlinux/base:latest
-docker logout
+docker logout docker.pkg.github.com
 
 # push the container to dockerhub
 echo "$DOCKERHUB_TOKEN" | docker login --username greyltc --password-stdin
