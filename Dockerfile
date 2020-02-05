@@ -1,5 +1,5 @@
 # Arch Linux baseline docker container
-# Generated on Wed Jan 29 19:02:38 UTC 2020 using code in this GitHub repo:
+# Generated on Wed Feb  5 19:03:16 UTC 2020 using code in this GitHub repo:
 # https://github.com/greyltc/docker-archlinux
 FROM scratch
 MAINTAINER Grey Christoforo <grey@christoforo.net>
