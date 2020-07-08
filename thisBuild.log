@@ -1,16 +1,16 @@
 [1mGenerating Arch Linux root filesystem...[0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  7205  100  7205    0     0  21191      0 --:--:-- --:--:-- --:--:-- 21129
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  7205  100  7205    0     0  38736      0 --:--:-- --:--:-- --:--:-- 38736
 --- Step 1: Creating minimal root fs
 --- destination directory: ./tmproot
 --- core repository: http://mirror.rackspace.com/archlinux/core/os/x86_64
---- temporary directory: /tmp/tmp.JVYNpgRGHS
+--- temporary directory: /tmp/tmp.PwpGJwUO7k
 --- fetch packages list: http://mirror.rackspace.com/archlinux/core/os/x86_64/
 --- get ready to ignore a bunch of SCHILY.fflags errors!
 --- pacman package and dependencies: acl archlinux-keyring attr bzip2 curl e2fsprogs expat glibc gpgme keyutils krb5 libarchive libassuan libgpg-error libidn2 libnghttp2 libpsl libssh2 libunistring lz4 openssl pacman pacman-mirrorlist xz zlib zstd filesystem dash
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/acl-2.2.53-3-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/acl-2.2.53-3-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/acl-2.2.53-3-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -112,7 +112,7 @@ usr/share/man/man3/acl_valid.3.gz
 usr/share/man/man5/
 usr/share/man/man5/acl.5.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/archlinux-keyring-20200622-1-any.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/archlinux-keyring-20200622-1-any.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/archlinux-keyring-20200622-1-any.pkg.tar.zst
 .BUILDINFO
 .INSTALL
 .MTREE
@@ -125,7 +125,7 @@ usr/share/pacman/keyrings/archlinux-revoked
 usr/share/pacman/keyrings/archlinux-trusted
 usr/share/pacman/keyrings/archlinux.gpg
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/attr-2.4.48-3-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/attr-2.4.48-3-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/attr-2.4.48-3-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -202,9 +202,9 @@ usr/share/man/man3/attr_removef.3.gz
 usr/share/man/man3/attr_set.3.gz
 usr/share/man/man3/attr_setf.3.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/bzip2-1.0.8-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.JVYNpgRGHS/bzip2-1.0.8-3-x86_64.pkg.tar.xz
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/curl-7.71.0-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/curl-7.71.0-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/bzip2-1.0.8-3-x86_64.pkg.tar.xz
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/curl-7.71.1-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/curl-7.71.1-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -687,7 +687,7 @@ usr/share/zsh/
 usr/share/zsh/site-functions/
 usr/share/zsh/site-functions/_curl
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/e2fsprogs-1.45.6-2-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/e2fsprogs-1.45.6-2-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/e2fsprogs-1.45.6-2-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -894,9 +894,9 @@ usr/share/ss/
 usr/share/ss/ct_c.awk
 usr/share/ss/ct_c.sed
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/expat-2.2.9-3-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.JVYNpgRGHS/expat-2.2.9-3-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/expat-2.2.9-3-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/glibc-2.31-5-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/glibc-2.31-5-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/glibc-2.31-5-x86_64.pkg.tar.zst
 .BUILDINFO
 .INSTALL
 .MTREE
@@ -2478,7 +2478,7 @@ var/db/
 var/db/Makefile
 var/db/nscd/
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/gpgme-1.13.1-7-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/gpgme-1.13.1-7-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/gpgme-1.13.1-7-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -2558,7 +2558,7 @@ usr/share/info/gpgme.info-1.gz
 usr/share/info/gpgme.info-2.gz
 usr/share/info/gpgme.info.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/keyutils-1.6.1-4-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/keyutils-1.6.1-4-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/keyutils-1.6.1-4-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -2635,7 +2635,7 @@ usr/share/man/man8/
 usr/share/man/man8/key.dns_resolver.8.gz
 usr/share/man/man8/request-key.8.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/krb5-1.18.2-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/krb5-1.18.2-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/krb5-1.18.2-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -2846,7 +2846,7 @@ var/lib/
 var/lib/krb5kdc/
 var/lib/krb5kdc/kdc.conf
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libarchive-3.4.3-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/libarchive-3.4.3-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/libarchive-3.4.3-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -2917,9 +2917,9 @@ usr/share/man/man5/libarchive-formats.5.gz
 usr/share/man/man5/mtree.5.gz
 usr/share/man/man5/tar.5.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libassuan-2.5.3-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.JVYNpgRGHS/libassuan-2.5.3-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/libassuan-2.5.3-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libgpg-error-1.38-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/libgpg-error-1.38-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/libgpg-error-1.38-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3018,9 +3018,9 @@ usr/share/man/
 usr/share/man/man1/
 usr/share/man/man1/gpgrt-config.1.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libidn2-2.3.0-1-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.JVYNpgRGHS/libidn2-2.3.0-1-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/libidn2-2.3.0-1-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libnghttp2-1.41.0-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/libnghttp2-1.41.0-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/libnghttp2-1.41.0-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3040,15 +3040,15 @@ usr/share/licenses/
 usr/share/licenses/libnghttp2/
 usr/share/licenses/libnghttp2/COPYING
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libpsl-0.21.0-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.JVYNpgRGHS/libpsl-0.21.0-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/libpsl-0.21.0-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libssh2-1.9.0-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.JVYNpgRGHS/libssh2-1.9.0-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/libssh2-1.9.0-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libunistring-0.9.10-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.JVYNpgRGHS/libunistring-0.9.10-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/libunistring-0.9.10-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/lz4-1:1.9.2-2-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.JVYNpgRGHS/lz4-1:1.9.2-2-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/lz4-1:1.9.2-2-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/openssl-1.1.1.g-2-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/openssl-1.1.1.g-2-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/openssl-1.1.1.g-2-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -7161,7 +7161,7 @@ usr/share/man/man7/scrypt.7ssl.gz
 usr/share/man/man7/ssl.7ssl.gz
 usr/share/man/man7/x509.7ssl.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-5.2.1-6-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/pacman-5.2.1-6-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/pacman-5.2.1-6-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -7535,7 +7535,7 @@ var/cache/pacman/pkg/
 var/lib/
 var/lib/pacman/
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-mirrorlist-20200606-1-any.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/pacman-mirrorlist-20200606-1-any.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/pacman-mirrorlist-20200606-1-any.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -7543,7 +7543,7 @@ etc/
 etc/pacman.d/
 etc/pacman.d/mirrorlist
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/xz-5.2.5-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/xz-5.2.5-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/xz-5.2.5-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -7709,9 +7709,9 @@ usr/share/man/man1/xzgrep.1.gz
 usr/share/man/man1/xzless.1.gz
 usr/share/man/man1/xzmore.1.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/zlib-1:1.2.11-4-x86_64.pkg.tar.xz
---- uncompress package: /tmp/tmp.JVYNpgRGHS/zlib-1:1.2.11-4-x86_64.pkg.tar.xz
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/zlib-1:1.2.11-4-x86_64.pkg.tar.xz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/zstd-1.4.5-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/zstd-1.4.5-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/zstd-1.4.5-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -7747,7 +7747,7 @@ usr/share/man/man1/zstdcat.1.gz
 usr/share/man/man1/zstdgrep.1.gz
 usr/share/man/man1/zstdless.1.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/filesystem-2020.05.20-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/filesystem-2020.05.20-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/filesystem-2020.05.20-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -7868,7 +7868,7 @@ var/spool/
 var/spool/mail/
 var/tmp/
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/dash-0.5.11-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.JVYNpgRGHS/dash-0.5.11-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.PwpGJwUO7k/dash-0.5.11-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .INSTALL
 .MTREE
@@ -7889,7 +7889,7 @@ usr/share/man/man1/dash.1.gz
 [1mInstalling setup script.[0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   972  100   972    0     0   1837      0 --:--:-- --:--:-- --:--:--  1833
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   972    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   972  100   972    0     0   5491      0 --:--:-- --:--:-- --:--:--  5460
 [1mDoing Docker things to the root file system.[0m
 ~/build/greyltc/docker-archlinux/tmproot ~/build/greyltc/docker-archlinux
 ~/build/greyltc/docker-archlinux
