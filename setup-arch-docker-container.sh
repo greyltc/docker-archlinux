@@ -7,14 +7,14 @@ ldconfig
 # install/reinstall everything needed for a minimal Arch system
 pacman --noconfirm --noprogressbar -Syyu --overwrite \* base pacman-contrib
 
-# fix up some small details, contents here: https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fixDetails.sh
+# fix up some small details, contents here: https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fix-details.sh
 fix-details
 
 cat << 'EOF' > /sbin/get-new-mirrors
 #!/usr/bin/env bash
 set -e -u -o pipefail
 echo "Finding the fastest Arch mirrors..."
-curl "https://www.archlinux.org/mirrorlist/?country=all&protocol=https&ip_version=4&use_mirror_status=on" > /tmp/mirrorlist
+curl --silent "https://archlinux.org/mirrorlist/?country=all&protocol=https&ip_version=4&use_mirror_status=on" > /tmp/mirrorlist
 sed -i 's/^#Server/Server/' /tmp/mirrorlist
 rankmirrors -n 6 /tmp/mirrorlist > /tmp/fastmirrorlist
 mv /tmp/fastmirrorlist /etc/pacman.d/mirrorlist

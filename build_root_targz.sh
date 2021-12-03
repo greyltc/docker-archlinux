@@ -24,7 +24,7 @@ EOF
 echo -e "\033[1mGenerating Arch Linux root filesystem...\033[0m"
 TMP_ROOT=./tmproot
 rm -rf $TMP_ROOT || True
-bash <(curl -L 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/arch-bootstrap.sh') -s1 $TMP_ROOT
+bash <(curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/arch-bootstrap.sh') -s1 $TMP_ROOT
 echo -e "\033[1mRoot filesystem generation complete.\033[0m"
 
 # inject our setup script
@@ -32,7 +32,7 @@ echo -e "\033[1mInstalling setup script.\033[0m"
 install -m755 -D "$DIR/setup-arch-docker-container.sh" "$TMP_ROOT/usr/bin/setup-arch-docker-container"
 
 # inject the details fixer
-curl -L 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fixDetails.sh' > "$TMP_ROOT/usr/bin/fix-details"
+curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fix-details.sh' > "$TMP_ROOT/usr/bin/fix-details"
 chmod +x "$TMP_ROOT/usr/bin/fix-details"
 
 # inject the image size reducer
@@ -70,7 +70,7 @@ popd
 rm -rf archlinux.tar.xz
 pushd $TMP_ROOT
 echo -e "\033[1mCompressing root filesystem archive...\033[0m"
-XZ_OPT="-9 -T 0" tar --owner=0 --group=0 --xattrs --acls -Jcf ../archlinux.tar.xz *
+XZ_OPT="-9e --threads=0" tar --owner=0 --group=0 --xattrs --acls -Jcf ../archlinux.tar.xz *
 popd
 echo -e "\033[1mRoot fs archive generation complete.\033[0m"
 
