@@ -1,6 +1,6 @@
 .git/
 .github/
-CI/
+ci/
 updateThis.sh
 README.md
 setup-arch-docker-container.sh
