@@ -67,7 +67,7 @@ jobs:
 
       - name: Build root tarball
         run: |
-          ci/do-update.sh amd64
+          ci/do-update.sh x86_64
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -77,14 +77,14 @@ jobs:
         with:
           images: ${{ env.REGISTRY1 }}/${{ env.IMAGE_NAME1 }}
 
-      - name: Build and export to Docker
+      - name: Build out useful image and export to docker
         uses: docker/build-push-action@v2
         with:
           context: .
           load: true
           tags: ${{ env.TEST_TAG }}
 
-      - name: Test
+      - name: Test the image
         run: |
           docker run --rm ${{ env.TEST_TAG }} uname -a
 
