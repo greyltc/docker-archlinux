@@ -6,7 +6,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)
 # build architecture
 ARCH=$1
 
-cat > "$DIR/Dockerfile" << EOF
+cat > "${DIR}/Dockerfile" << EOF
 # Arch Linux baseline docker container
 # Generated on `date` using code in this GitHub repo:
 # https://github.com/greyltc/docker-archlinux
@@ -34,23 +34,23 @@ if [ ! -e ${TMP_ROOT} ]; then
     exit 1
 fi
 #TODO: work in ARCH here
-bash <(curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/arch-bootstrap.sh') -s1 $TMP_ROOT
+bash <(curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/arch-bootstrap.sh') -s1 "${TMP_ROOT}"
 echo -e "\033[1mRoot filesystem generation complete.\033[0m"
 
 # inject our setup script
 echo -e "\033[1mInstalling setup script.\033[0m"
-install -m755 -D "$DIR/setup-arch-docker-container.sh" "$TMP_ROOT/usr/bin/setup-arch-docker-container"
+install -m755 -D "${DIR}/setup-arch-docker-container.sh" "${TMP_ROOT}/usr/bin/setup-arch-docker-container"
 
 # inject the details fixer
-curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fix-details.sh' > "$TMP_ROOT/usr/bin/fix-details"
-chmod +x "$TMP_ROOT/usr/bin/fix-details"
+curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fix-details.sh' > "${TMP_ROOT}/usr/bin/fix-details"
+chmod +x "${TMP_ROOT}/usr/bin/fix-details"
 
 # inject the image size reducer
-install -m755 -D "$DIR/cleanupImage.sh" "$TMP_ROOT/usr/sbin/cleanup-image"
+install -m755 -D "${DIR}/cleanup-image.sh" "$TMP_ROOT/usr/sbin/cleanup-image"
 
 # dockerify the rootfs
 echo -e "\033[1mDoing Docker things to the root file system.\033[0m"
-pushd $TMP_ROOT
+pushd "${TMP_ROOT}"
 rm -rf dev
 mkdir -p dev
 
@@ -79,11 +79,11 @@ rm -rf etc/shadow*
 popd
 
 # make the root filesystem archive
-rm -f archlinux-${ARCH}.tar.xz
+rm -rf "${DIR}/archlinux-${ARCH}.tar.xz"
 pushd "${TMP_ROOT}"
 echo -e "\033[1mCompressing root filesystem archive...\033[0m"
-XZ_OPT="-9e --threads=0" tar --owner=0 --group=0 --xattrs --acls -Jcf ../archlinux-${ARCH}.tar.xz *
+XZ_OPT="-9e --threads=0" tar --owner=0 --group=0 --xattrs --acls -Jcf "${DIR}/archlinux-${ARCH}.tar.xz" *
 popd
 echo -e "\033[1mRoot fs archive generation complete.\033[0m"
 
-rm -r "${TMP_ROOT}"
+rm -rf "${TMP_ROOT}"
