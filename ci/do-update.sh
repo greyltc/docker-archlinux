@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e -u -o pipefail
 
-ARCH="$1"
+ARCH=${1}
 
 pushd $(git rev-parse --show-toplevel)
 ./build-root-tarxz.sh ${ARCH} |& tee build-${ARCH}.log
