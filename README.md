@@ -1,4 +1,4 @@
-[![ci workflow](https://img.shields.io/github/workflow/status/docker/metadata-action/test?label=ci&logo=github&style=flat-square)](https://github.com/greyltc/docker-archlinux/actions?workflow=ci)
+[![ci](https://github.com/greyltc/docker-archlinux/actions/workflows/ci.yml/badge.svg)](https://github.com/greyltc/docker-archlinux/actions/workflows/ci.yml)
 
 docker-archlinux
 ====================
