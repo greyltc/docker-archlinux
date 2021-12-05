@@ -61,6 +61,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install deps
+        run: |
+          sudo apt-get install -y fakeroot fakechroot zstd
+
+      - name: Build root tarball
+        run: |
+          ci/do-update.sh amd64
+
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
       - name: Extract Docker metadata
