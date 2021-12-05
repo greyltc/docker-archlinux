@@ -4,7 +4,7 @@ set -e -u -o pipefail
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)
 
 # build architecture
-ARCH=$1
+ARCH=${1:-amd64}
 
 cat > "${DIR}/Dockerfile" << EOF
 # Arch Linux baseline docker container
@@ -14,7 +14,7 @@ FROM scratch
 MAINTAINER Grey Christoforo <grey@christoforo.net>
 
 # copy in super minimal root filesystem archive
-ADD archlinux-amd64.tar.xz /
+ADD archlinux-${ARCH}.tar.xz /
 
 # perform initial container setup tasks
 RUN setup-arch-docker-container
@@ -34,7 +34,7 @@ if [ ! -e ${TMP_ROOT} ]; then
     exit 1
 fi
 #TODO: work in ARCH here
-bash <(curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/arch-bootstrap.sh') -s1 "${TMP_ROOT}"
+bash <(curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/arch-bootstrap.sh') -a${ARCH} -s1 "${TMP_ROOT}"
 echo -e "\033[1mRoot filesystem generation complete.\033[0m"
 
 # inject our setup script
