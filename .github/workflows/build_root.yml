@@ -1,0 +1,38 @@
+name: build_root
+
+on:
+  schedule:
+    - cron: '36 4 * * 1'
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read,write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get current date
+        id: date
+        run: echo "TODAY_IS=$(date +'%Y%m%d')" >> $GITHUB_ENV
+
+      - name: Generate version string
+        id: versionstring
+        run: echo "THIS_VERSTRING=${{ env.TODAY_IS }}.0.${{ github.run_number }}" >> $GITHUB_ENV
+
+      - name: Install deps
+        run: |
+          sudo apt-get install -y fakeroot fakechroot zstd
+
+      - name: Build root tarball
+        run: |
+          ci/do-update.sh x86_64
+          ci/do-commit.sh
