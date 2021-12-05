@@ -4,7 +4,7 @@ set -e -u -o pipefail
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)
 
 # build architecture
-ARCH=${1:-amd64}
+ARCH=${1:-x86_64}
 
 cat > "${DIR}/Dockerfile" << EOF
 # Arch Linux baseline docker container
