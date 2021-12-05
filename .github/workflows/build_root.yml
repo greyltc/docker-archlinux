@@ -32,7 +32,11 @@ jobs:
         run: |
           sudo apt-get install -y fakeroot fakechroot zstd
 
-      - name: Build and commit root tarball(s)
+      - name: Build root tarball(s)
         run: |
           ci/update.sh x86_64
+
+      - name: Commit
+        if: github.event_name != 'pull_request'
+        run: |
           ci/commit.sh ${{ env.THIS_VERSTRING }}
