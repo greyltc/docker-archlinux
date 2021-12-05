@@ -1,7 +1,9 @@
 [1mGenerating Arch Linux root filesystem...[0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  7205  100  7205    0     0  32165      0 --:--:-- --:--:-- --:--:-- 32165
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  7205  100  7205    0     0  32165      0 --:--:-- --:--:-- --:--:-- 32165
 --- Step 1: Creating minimal root fs
 --- destination directory: ./tmproot
 --- core repository: http://mirror.rackspace.com/archlinux/core/os/x86_64
@@ -8477,7 +8479,9 @@ usr/share/man/man1/dash.1.gz
 [1mInstalling setup script.[0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   972  100   972    0     0   5855      0 --:--:-- --:--:-- --:--:--  5855
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   972  100   972    0     0   5855      0 --:--:-- --:--:-- --:--:--  5855
 [1mDoing Docker things to the root file system.[0m
 ~/build/greyltc/docker-archlinux/tmproot ~/build/greyltc/docker-archlinux
 ~/build/greyltc/docker-archlinux

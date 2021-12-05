@@ -1,11 +1,11 @@
-[![](https://images.microbadger.com/badges/image/greyltc/archlinux.svg)](http://microbadger.com/images/greyltc/archlinux) [![](https://images.microbadger.com/badges/version/greyltc/archlinux.svg)](https://hub.docker.com/r/greyltc/archlinux/) [![Travis Build Status](https://travis-ci.org/greyltc/docker-archlinux.svg?branch=master)](https://travis-ci.org/greyltc/docker-archlinux)
+[![ci workflow](https://img.shields.io/github/workflow/status/docker/metadata-action/test?label=ci&logo=github&style=flat-square)](https://github.com/greyltc/docker-archlinux/actions?workflow=ci)
 
 docker-archlinux
 ====================
 Minimal Arch Linux docker image with trustable, traceable & inspectable origin   
 
 ## Intro
-This project contains a script, `buildme.sh`, which uses a slightly modified Arch bootstrapping script from [this project](
+This project contains a script, `build-root-tarxz.sh`, which uses a slightly modified Arch bootstrapping script from [this project](
 https://github.com/tokland/arch-bootstrap) to create an Arch Linux root filesystem archive suitable for use in a Docker container.
 
 The filesystem used in [the greyltc/archlinux container on the Docker registry](https://hub.docker.com/r/greyltc/archlinux) is in the tar.xz file in this repo. Feel free to inspect it to prove to yourself that it's safe before using it in your project!
@@ -23,7 +23,7 @@ Use your favorite Linux distro's package manager to install the following comman
 `git clone https://github.com/greyltc/docker-archlinux.git`  
 1. **Build the root file system archive**  
 `cd docker-archlinux`  
-`./build_root_targz.sh # this generates a new root filesystem archive: archlinux.tar.xz`  
+`./build-root-tarxz.sh # this generates a new root filesystem archive: archlinux.tar.xz`  
 1. **Build your baseline Arch Linux docker image**  
 `docker build -t archlinux .`  
 1. **Profit.**
