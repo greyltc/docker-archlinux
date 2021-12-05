@@ -2,9 +2,9 @@
 set -e -u -o pipefail
 
 pushd $(git rev-parse --show-toplevel)
-./build-root-tarxz.sh |& tee build.log
-git add thisBuild.log
-git add archlinux.tar.xz
+./build-root-tarxz.sh amd64 |& tee build.log
+git add build.log
+git add archlinux-amd64.tar.xz
 git add Dockerfile
 git commit -m "$(date): bump to latest Arch Linux"
 git push -u origin master
