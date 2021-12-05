@@ -32,7 +32,7 @@ jobs:
         run: |
           sudo apt-get install -y fakeroot fakechroot zstd
 
-      - name: Build root tarball
+      - name: Build and commit root tarball(s)
         run: |
-          ci/do-update.sh x86_64
-          ci/do-commit.sh
+          ci/update.sh x86_64
+          ci/commit.sh ${{ env.THIS_VERSTRING }}
