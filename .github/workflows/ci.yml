@@ -86,7 +86,7 @@ jobs:
 
       - name: Test
         run: |
-          docker run --rm ${{ env.TEST_TAG }}
+          docker run --rm ${{ env.TEST_TAG }} uname -a
 
       # Push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
