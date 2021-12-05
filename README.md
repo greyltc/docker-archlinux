@@ -1,4 +1,4 @@
-[![ci](https://github.com/greyltc/docker-archlinux/actions/workflows/ci.yml/badge.svg)](https://github.com/greyltc/docker-archlinux/actions/workflows/ci.yml)
+[![build_root](https://github.com/greyltc/docker-archlinux/actions/workflows/build_root.yml/badge.svg)](https://github.com/greyltc/docker-archlinux/actions/workflows/build_root.yml)
 
 docker-archlinux
 ====================
