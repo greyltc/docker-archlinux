@@ -35,7 +35,7 @@ jobs:
         run: |
           ci/update.sh x86_64
 
-      - name: Commit
+      - name: Commit root tarball(s)
         if: github.event_name != 'pull_request'
         run: |
           ci/commit.sh ${{ env.THIS_VERSTRING }}
