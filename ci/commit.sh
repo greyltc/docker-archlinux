@@ -6,4 +6,5 @@ then
   git commit -m "version ${TAG} root tarball(s) rebuilt"
   git tag -a "v${TAG}" -m "rebuilt root tarball(s)"
   git push -u origin master --tags
+  export ROOT_REF=$(git rev-parse HEAD)
 fi
