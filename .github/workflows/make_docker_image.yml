@@ -51,7 +51,8 @@ jobs:
         run: |
           git config --global user.name 'CI Robot'
           git config --global user.email 'ci@robot.fake'
-          ci/commit.sh ${{ env.THIS_VERSTRING }}
+          echo "ROOT_REF=$(ci/commit.sh ${{ env.THIS_VERSTRING }})" >> $GITHUB_ENV
+
 
   build_image:
 
@@ -64,6 +65,12 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+        with:
+          ref: ${{ env.ROOT_REF }}
+
+      - name: Double secret pull
+        run: |
+          docker run --rm ${{ env.TEST_TAG }} uname -a
   
 #      - name: Set up QEMU
 #        id: qemu
