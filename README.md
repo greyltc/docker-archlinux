@@ -1,4 +1,5 @@
-[![make_docker_image](https://github.com/greyltc/docker-archlinux/actions/workflows/make_docker_image.yml/badge.svg)](https://github.com/greyltc/docker-archlinux/actions/workflows/make_docker_image.yml)
+[![make_root](https://github.com/greyltc/docker-archlinux/actions/workflows/make_root.yml/badge.svg)](https://github.com/greyltc/docker-archlinux/actions/workflows/make_root.yml)
+[![make_image](https://github.com/greyltc/docker-archlinux/actions/workflows/make_image.yml/badge.svg)](https://github.com/greyltc/docker-archlinux/actions/workflows/make_image.yml)
 
 docker-archlinux
 ====================
