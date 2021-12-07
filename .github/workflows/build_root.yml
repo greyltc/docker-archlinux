@@ -38,6 +38,6 @@ jobs:
       - name: Commit
         if: github.event_name != 'pull_request'
         run: |
-          git config -- global user.name 'CI Robot'
-          git config -- global user.name 'ci@robot.fake'
+          git config --global user.name 'CI Robot'
+          git config --global user.name 'ci@robot.fake'
           ci/commit.sh ${{ env.THIS_VERSTRING }}
