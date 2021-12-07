@@ -20,11 +20,12 @@ env:
   TEST_TAG: greyltc/archlinux:test
 
 jobs:
-  bootstrap_root:
+  build_image:
 
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      packages: write
 
     steps:
       - name: Checkout repo
@@ -52,26 +53,6 @@ jobs:
           git config --global user.name 'CI Robot'
           git config --global user.email 'ci@robot.fake'
           ci/commit.sh ${{ env.THIS_VERSTRING }}
-          echo "ROOT_REF=${ROOT_REF}" >> $GITHUB_ENV
-
-
-  build_image:
-
-    runs-on: ubuntu-latest
-    needs: bootstrap_root
-    permissions:
-      contents: read
-      packages: write
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ env.ROOT_REF }}
-
-      - name: Double secret pull
-        run: |
-          docker run --rm ${{ env.TEST_TAG }} uname -a
   
 #      - name: Set up QEMU
 #        id: qemu
