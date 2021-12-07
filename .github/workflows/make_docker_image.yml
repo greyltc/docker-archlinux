@@ -51,7 +51,8 @@ jobs:
         run: |
           git config --global user.name 'CI Robot'
           git config --global user.email 'ci@robot.fake'
-          echo "ROOT_REF=$(ci/commit.sh ${{ env.THIS_VERSTRING }})" >> $GITHUB_ENV
+          ci/commit.sh ${{ env.THIS_VERSTRING }}
+          echo "ROOT_REF=${ROOT_REF}" >> $GITHUB_ENV
 
 
   build_image:
