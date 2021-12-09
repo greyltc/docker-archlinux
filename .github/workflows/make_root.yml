@@ -3,6 +3,8 @@ name: make_root
 on:
   schedule:
     - cron: '36 4 * * 1'
+  push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -16,8 +18,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PAT }}
+#        with:
+#          token: ${{ secrets.PAT }}
 
       - name: Get current date
         id: date
@@ -41,3 +43,8 @@ jobs:
           git config --global user.name 'CI Robot'
           git config --global user.email 'ci@robot.fake'
           ci/commit.sh ${{ env.THIS_VERSTRING }}
+          curl \
+            -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/greyltc/docker-archlinux/actions/workflows/make_image.yml/dispatches \
+            -d '{"ref":"v${{ env.THIS_VERSTRING }}"}'
