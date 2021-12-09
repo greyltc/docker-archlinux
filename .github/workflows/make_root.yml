@@ -3,8 +3,6 @@ name: make_root
 on:
   schedule:
     - cron: '36 4 * * 1'
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
