@@ -1,8 +1,9 @@
 name: make_image
 
-on:
-  push:
-    tags: [ 'v*.*.*' ]
+on: workflow_dispatch
+#on:
+#  push:
+#    tags: [ 'v*.*.*' ]
 
 env:
   # Use docker.io for Docker Hub if empty
