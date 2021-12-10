@@ -44,7 +44,7 @@ jobs:
           git config --global user.email 'ci@robot.fake'
           ci/commit.sh ${{ env.THIS_VERSTRING }}
           curl -v --request POST \
-            --url https://api.github.com/repos/${{ github.actor }}/${{ github.repository }}/actions/workflows/make_image.yml/dispatches \
+            --url https://api.github.com/repos/${{ github.repository }}/actions/workflows/make_image.yml/dispatches \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
             --data '{"ref":"v${{ env.THIS_VERSTRING }}"}'
