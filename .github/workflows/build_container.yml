@@ -41,7 +41,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: out
-          key: ${{ runner.os }}-${{ hashFiles('*.build.log.txt') }}
+          key: ${{ runner.os }}-${{ github.run_number }}-${{ hashFiles('*.build.log.txt') }}
 
   job1:
     name: Build Docker Container
@@ -72,7 +72,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: out
-          key: ${{ runner.os }}-${{ hashFiles('*.build.log.txt') }}
+          key: ${{ runner.os }}-${{ github.run_number }}-${{ hashFiles('*.build.log.txt') }}
 
       - name: Get current date
         id: date
