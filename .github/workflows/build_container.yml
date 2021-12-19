@@ -136,7 +136,7 @@ jobs:
             --url https://api.github.com/repos/${{ github.repository }}/releases \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
-            --data '{"draft":true,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"${{ env.THIS_VERSTRING }}"}' \
+            --data '{"draft":true,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"Version ${{ env.THIS_VERSTRING }}"}' \
             --output rel_resp.json
           id=$(cat rel_resp.json | jq '.id')
           asset_file=out/x86_64/archlinux-x86_64.tar.xz
