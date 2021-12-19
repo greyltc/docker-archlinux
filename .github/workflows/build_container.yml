@@ -136,7 +136,7 @@ jobs:
       - name: Release
         if: github.event_name != 'pull_request'
         run: |
-          curl -v \
+          curl --verbose \
             --url https://api.github.com/repos/${{ github.repository }}/releases \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
