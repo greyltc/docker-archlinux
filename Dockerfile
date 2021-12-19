@@ -8,7 +8,7 @@ MAINTAINER Grey Christoforo <grey@christoforo.net>
 ADD archlinux-x86_64.tar.xz /
 
 # perform initial container setup tasks
-RUN setup-arch-docker-container
+RUN provision-container
 
 # this allows the system profile to be sourced at every shell
 ENV ENV /etc/profile
