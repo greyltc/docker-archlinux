@@ -39,7 +39,7 @@ echo -e "\033[1mRoot filesystem generation complete.\033[0m"
 
 # inject our setup script
 echo -e "\033[1mInstalling setup script.\033[0m"
-install -m755 -D "${DIR}/setup-arch-docker-container.sh" "${TMP_ROOT}/usr/bin/setup-arch-docker-container"
+install -m755 -D "${DIR}/provision-container.sh" "${TMP_ROOT}/usr/bin/provision-container"
 
 # inject the details fixer
 curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fix-details.sh' > "${TMP_ROOT}/usr/bin/fix-details"
