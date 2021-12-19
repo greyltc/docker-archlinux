@@ -43,6 +43,10 @@ jobs:
           path: out
           key: ${{ runner.os }}-${{ github.run_number }}-${{ hashFiles('*.build.log.txt') }}
 
+      - name: Check the Dockerfile
+        run: |
+          cat out/x86_64/Dockerfile
+
   job1:
     name: Build Docker Container
     needs: job0
