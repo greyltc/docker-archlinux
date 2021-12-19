@@ -36,16 +36,13 @@ jobs:
         run: |
           ARCH=x86_64  bash -c 'mkdir -p out/${ARCH} && ./build-root-tarxz.sh ${ARCH} |& tee out/${ARCH}/archlinux-${ARCH}.build.log.txt && mv -t out/${ARCH} *.tar.xz Dockerfile'
           #ARCH=aarch64 bash -c 'mkdir -p out/${ARCH} && ./build-root-tarxz.sh ${ARCH} |& tee out/${ARCH}/archlinux-${ARCH}.build.log.txt && mv -t out/${ARCH} *.tar.xz Dockerfile'
+          cp out/x86_64/Dockerfile .  # put the x86_64 one on the top level
 
       - name: Cache root tarball(s)
         uses: actions/cache@v2
         with:
           path: out
           key: ${{ runner.os }}-${{ github.run_number }}-${{ hashFiles('*.build.log.txt') }}
-
-      - name: Check the Dockerfile
-        run: |
-          cat out/x86_64/Dockerfile
 
   job1:
     name: Build Docker Container
@@ -71,10 +68,6 @@ jobs:
 
 #      - name: Available platforms
 #        run: echo ${{ steps.qemu.outputs.platforms }}
-
-      - name: Check the Dockerfile
-        run: |
-          cat out/x86_64/Dockerfile
 
       - name: Load root tarball(s)
         uses: actions/cache@v2
@@ -108,10 +101,6 @@ jobs:
         with:
           images: ${{ env.REGISTRY1 }}/${{ env.IMAGE_NAME1 }}
 
-      - name: Check the Dockerfile
-        run: |
-          cat out/x86_64/Dockerfile
-
       - name: Build final image and export for testing
         uses: docker/build-push-action@v2
         with:
@@ -140,6 +129,7 @@ jobs:
           git config --global user.email 'ci@robot.fake'
           mv out/**/*.build.log.txt .
           git add *.build.log.txt
+          git add Dockerfile
           git commit -m "version ${{ env.THIS_VERSTRING }} root tarball(s) rebuilt"
           git tag -a "v${{ env.THIS_VERSTRING }}" -m "rebuilt root tarball(s)"
           git push -u origin master --tags
