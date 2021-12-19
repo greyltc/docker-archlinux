@@ -100,7 +100,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY1 }}/${{ env.IMAGE_NAME1 }}
 
-      - name: Build final image and export to docker
+      - name: Build final image and export for testing
         uses: docker/build-push-action@v2
         with:
           context: out/x86_64
@@ -113,7 +113,7 @@ jobs:
 
       # Push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
-      - name: Build and push Docker image
+      - name: Push the image
         uses: docker/build-push-action@v2
         with:
           context: out/x86_64
