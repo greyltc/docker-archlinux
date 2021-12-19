@@ -72,6 +72,10 @@ jobs:
 #      - name: Available platforms
 #        run: echo ${{ steps.qemu.outputs.platforms }}
 
+      - name: Check the Dockerfile
+        run: |
+          cat out/x86_64/Dockerfile
+
       - name: Load root tarball(s)
         uses: actions/cache@v2
         with:
