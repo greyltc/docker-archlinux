@@ -148,7 +148,7 @@ jobs:
 
       # Push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
-      - name: Push the image
+      - name: Push to registry
         uses: docker/build-push-action@v2
         with:
           context: out/x86_64
