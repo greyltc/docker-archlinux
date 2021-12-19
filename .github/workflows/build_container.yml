@@ -121,13 +121,25 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Commit to repo
+      - name: Commit to repo with tag
         if: github.event_name != 'pull_request'
         run: |
           git config --global user.name 'CI Robot'
           git config --global user.email 'ci@robot.fake'
-          mv ~/out/**/*.build.log.txt .
+          mv out/**/*.build.log.txt .
           git add *.build.log.txt
           git commit -m "version ${{ env.THIS_VERSTRING }} root tarball(s) rebuilt"
           git tag -a "v${{ env.THIS_VERSTRING }}" -m "rebuilt root tarball(s)"
           git push -u origin master --tags
+      
+      # https://docs.github.com/en/rest/reference/releases#create-a-release
+      - name: Release
+        if: github.event_name != 'pull_request'
+        run: |
+          curl -v --request POST \
+            --url https://api.github.com/repos/${{ github.repository }}/releases \
+            --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+            --header "Accept: application/vnd.github.v3+json" \
+            --data '{"draft":"true"}' \
+            --data '{"tag_name":"v${{ env.THIS_VERSTRING }}"}' \
+            --data '{"name":"${{ env.THIS_VERSTRING }}"}'
