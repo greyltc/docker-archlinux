@@ -128,7 +128,7 @@ jobs:
       - name: Release
         if: github.event_name != 'pull_request'
         run: |
-          curl \
+          curl --silent \
             --url https://api.github.com/repos/${{ github.repository }}/releases \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
@@ -136,7 +136,7 @@ jobs:
           response=$?
           id=$(echo "${response}" | grep '"id":' | sed 's|[^0-9]||g')
           asset_file=out/x86_64/archlinux-x86_64.tar.xz
-          curl --verbose\
+          curl --silent --verbose \
             --url https://api.github.com/repos/${{ github.repository }}/releases/${id}/assets?name="$(basename ${asset_file})" \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
