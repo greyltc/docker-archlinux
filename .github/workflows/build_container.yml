@@ -101,28 +101,18 @@ jobs:
         with:
           images: ${{ env.REGISTRY1 }}/${{ env.IMAGE_NAME1 }}
 
-      - name: Build final image and export for testing
+      - name: Docker build
         uses: docker/build-push-action@v2
         with:
           context: out/x86_64
           load: true
           tags: ${{ env.TEST_TAG }}
 
-      - name: Test the image
+      - name: Test the container
         run: |
           docker run --rm ${{ env.TEST_TAG }} uname -a
 
-      # Push Docker image with Buildx (don't push on PR)
-      # https://github.com/docker/build-push-action
-      - name: Push the image
-        uses: docker/build-push-action@v2
-        with:
-          context: out/x86_64
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-
-      - name: Commit to repo with tag
+      - name: Commit with tag
         if: github.event_name != 'pull_request'
         run: |
           git config --global user.name 'CI Robot'
@@ -154,3 +144,13 @@ jobs:
             --data-binary "@${asset_file}"
           response=$?
           echo "${response}"
+
+      # Push Docker image with Buildx (don't push on PR)
+      # https://github.com/docker/build-push-action
+      - name: Push the image
+        uses: docker/build-push-action@v2
+        with:
+          context: out/x86_64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
