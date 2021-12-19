@@ -99,6 +99,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
+          tags: |
+            type=raw,value=${{ env.THIS_VERSTRING }}
+          flavor: |
+            latest=true
           images: ${{ env.REGISTRY1 }}/${{ env.IMAGE_NAME1 }}
 
       - name: Docker build
