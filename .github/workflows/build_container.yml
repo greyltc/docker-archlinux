@@ -36,7 +36,6 @@ jobs:
         run: |
           ARCH=x86_64  bash -c 'mkdir -p out/${ARCH} && ./build-root-tarxz.sh ${ARCH} |& tee out/${ARCH}/archlinux-${ARCH}.build.log.txt && mv -t out/${ARCH} *.tar.xz Dockerfile'
           #ARCH=aarch64 bash -c 'mkdir -p out/${ARCH} && ./build-root-tarxz.sh ${ARCH} |& tee out/${ARCH}/archlinux-${ARCH}.build.log.txt && mv -t out/${ARCH} *.tar.xz Dockerfile'
-          cp out/x86_64/Dockerfile .  # put the x86_64 one on the top level
 
       - name: Cache root tarball(s)
         uses: actions/cache@v2
@@ -123,6 +122,8 @@ jobs:
           git config --global user.email 'ci@robot.fake'
           mv out/**/*.build.log.txt .
           git add *.build.log.txt
+          sed 's|^ADD.*|ADD https://github.com/greyltc/docker-archlinux/releases/download/v${{ env.THIS_VERSTRING }}/archlinux-x86_64.tar.xz|g' -i out/x86_64/Dockerfile  # use the release asset
+          mv out/x86_64/Dockerfile .  # put the x86_64 one on the top level
           git add Dockerfile
           git commit -m "version ${{ env.THIS_VERSTRING }} root tarball(s) rebuilt"
           git tag -a "v${{ env.THIS_VERSTRING }}" -m "rebuilt root tarball(s)"
