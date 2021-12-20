@@ -139,7 +139,7 @@ jobs:
             --data '{"draft":true,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"Version ${{ env.THIS_VERSTRING }}"}' \
             --output rel_resp.json
           ASSET_FILE=out/x86_64/archlinux-x86_64.tar.xz
-          UL_URL=$(cat rel_resp.json | jq '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})|g")
+          UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})|g")
           curl --silent --verbose \
             --url ${UL_URL} \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
