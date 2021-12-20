@@ -139,12 +139,14 @@ jobs:
             --data '{"draft":true,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"Version ${{ env.THIS_VERSTRING }}"}' \
             --output rel_resp.json
           id=$(cat rel_resp.json | jq '.id')
-          asset_file=out/x86_64/archlinux-x86_64.tar.xz
+          ASSET_FILE=out/x86_64/archlinux-x86_64.tar.xz
           curl --silent --verbose \
-            --url https://api.github.com/repos/${{ github.repository }}/releases/${id}/assets?name="$(basename ${asset_file})" \
+            --url https://api.github.com/repos/${{ github.repository }}/releases/${id}/assets?name=$(basename ${ASSET_FILE}) \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
-            --data-binary "@${asset_file}"
+            --header "Content-Type: $(file -b --mime-type ${ASSET_FILE})" \
+            --data-binary @${ASSET_FILE}
+          md5sum ${asset_file}
 
       # Push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
