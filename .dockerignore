@@ -1,8 +1,9 @@
 .git/
 .github/
-ci/
 README.md
-setup-arch-docker-container.sh
+LICENSE
+provision-container.sh
 Dockerfile
-build.log
-build-root-targz.sh
+*.log.txt
+build-root-tarxz.sh
+cleanup-image.sh
