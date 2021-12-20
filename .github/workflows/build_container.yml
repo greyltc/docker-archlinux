@@ -138,12 +138,10 @@ jobs:
             --header "Accept: application/vnd.github.v3+json" \
             --data '{"draft":true,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"Version ${{ env.THIS_VERSTRING }}"}' \
             --output rel_resp.json
-          id=$(cat rel_resp.json | jq '.id')
-          UL_URL=$(cat rel_resp.json | jq '.upload_url')
-          echo "upload url = ${UL_URL}"
           ASSET_FILE=out/x86_64/archlinux-x86_64.tar.xz
+          UL_URL=$(cat rel_resp.json | jq '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})|g")
           curl --silent --verbose \
-            --url https://api.github.com/repos/${{ github.repository }}/releases/${id}/assets?name=$(basename ${ASSET_FILE}) \
+            --url ${UL_URL} \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
             --header "Content-Type: $(file -b --mime-type ${ASSET_FILE})" \
