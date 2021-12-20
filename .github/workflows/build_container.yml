@@ -139,6 +139,8 @@ jobs:
             --data '{"draft":true,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"Version ${{ env.THIS_VERSTRING }}"}' \
             --output rel_resp.json
           id=$(cat rel_resp.json | jq '.id')
+          UL_URL=$(cat rel_resp.json | jq '.upload_url')
+          echo "upload url = ${UL_URL}"
           ASSET_FILE=out/x86_64/archlinux-x86_64.tar.xz
           curl --silent --verbose \
             --url https://api.github.com/repos/${{ github.repository }}/releases/${id}/assets?name=$(basename ${ASSET_FILE}) \
@@ -146,7 +148,6 @@ jobs:
             --header "Accept: application/vnd.github.v3+json" \
             --header "Content-Type: $(file -b --mime-type ${ASSET_FILE})" \
             --data-binary @${ASSET_FILE}
-          md5sum ${asset_file}
 
       # Push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
