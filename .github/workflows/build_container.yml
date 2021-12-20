@@ -12,8 +12,8 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY1: ghcr.io
   REGISTRY2: docker.io
-  # github.repository as <account>/<repo>
-  IMAGE_NAME1: ${{ github.repository }}
+  #  ${{ github.repository }} as <account>/<repo>
+  IMAGE_NAME1: greyltc/archlinux
   IMAGE_NAME2: greyltc/archlinux
   TEST_TAG: greyltc/archlinux:test
 
@@ -136,7 +136,7 @@ jobs:
             --url https://api.github.com/repos/${{ github.repository }}/releases \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
-            --data '{"draft":true,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"Version ${{ env.THIS_VERSTRING }}"}' \
+            --data '{"draft":false,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"Version ${{ env.THIS_VERSTRING }}"}' \
             --output rel_resp.json
           ASSET_FILE=out/x86_64/archlinux-x86_64.tar.xz
           UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})|g")
