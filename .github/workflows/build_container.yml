@@ -132,6 +132,7 @@ jobs:
         run: |
           pwd
           ls -alh out/x86_64
+          file ${{ github.workspace }}/out/x86_64/archlinux.tar.xz
 
       - name: Docker build
         uses: docker/build-push-action@v2
