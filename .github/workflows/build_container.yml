@@ -35,8 +35,8 @@ jobs:
 
       - name: Build root tarball(s)
         run: |
-          ARCH=x86_64  bash -c 'mkdir -p out/${ARCH} && ./build-root-tarxz.sh ${ARCH} |& tee out/${ARCH}/archlinux-${ARCH}.build.log.txt && mv -t out/${ARCH} *.tar.xz Dockerfile'
-          #ARCH=aarch64 bash -c 'mkdir -p out/${ARCH} && ./build-root-tarxz.sh ${ARCH} |& tee out/${ARCH}/archlinux-${ARCH}.build.log.txt && mv -t out/${ARCH} *.tar.xz Dockerfile'
+          ARCH=x86_64  bash -c 'mkdir -p out/${ARCH} && ./build-root-tarxz.sh ${ARCH} |& tee out/${ARCH}/archlinux-${ARCH}.build.log.txt && mv -t out/${ARCH} *.tar.xz'
+          #ARCH=aarch64 bash -c 'mkdir -p out/${ARCH} && ./build-root-tarxz.sh ${ARCH} |& tee out/${ARCH}/archlinux-${ARCH}.build.log.txt && mv -t out/${ARCH} *.tar.xz'
 
       - name: Cache root tarball(s)
         uses: actions/cache@v2
