@@ -127,10 +127,16 @@ jobs:
             latest=true
           images: ${{ env.REGISTRY2 }}/${{ env.IMAGE_NAME2 }}
 
+      - name: Get current place
+        id: where
+        run: |
+          pwd
+          ls -alh
+
       - name: Docker build
         uses: docker/build-push-action@v2
         with:
-          context: file://${{ github.workspace }}/out/x86_64/archlinux.tar.xz
+          context: file:/${{ github.workspace }}/out/x86_64/archlinux.tar.xz
           load: true
           tags: ${{ env.TEST_TAG }}
 
