@@ -6,7 +6,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)
 # build architecture
 ARCH=${1:-x86_64}
 
-cat > "${DIR}/Dockerfile" <<"END"
+cat > "${DIR}/Dockerfile" <<END
 # Arch Linux baseline docker container
 # Generated on `date` using code in this GitHub repo:
 # https://github.com/greyltc/docker-archlinux
