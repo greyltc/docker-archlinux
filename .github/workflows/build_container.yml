@@ -130,7 +130,7 @@ jobs:
       - name: Docker build
         uses: docker/build-push-action@v2
         with:
-          context: out/x86_64/archlinux.tar.xz
+          context: file://out/x86_64/archlinux.tar.xz
           load: true
           tags: ${{ env.TEST_TAG }}
 
@@ -143,7 +143,7 @@ jobs:
       - name: Push to registry1
         uses: docker/build-push-action@v2
         with:
-          context: out/x86_64/archlinux.tar.xz
+          context: file://out/x86_64/archlinux.tar.xz
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta1.outputs.tags }}
           labels: ${{ steps.meta1.outputs.labels }}
@@ -153,7 +153,7 @@ jobs:
       - name: Push to registry2
         uses: docker/build-push-action@v2
         with:
-          context: out/x86_64/archlinux.tar.xz
+          context: file://out/x86_64/archlinux.tar.xz
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta2.outputs.tags }}
           labels: ${{ steps.meta2.outputs.labels }}
