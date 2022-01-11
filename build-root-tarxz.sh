@@ -6,7 +6,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)
 # build architecture
 ARCH=${1:-x86_64}
 
-cat > "${DIR}/Dockerfile" << EOF
+cat > "${DIR}/Dockerfile" <<"END"
 # Arch Linux baseline docker container
 # Generated on `date` using code in this GitHub repo:
 # https://github.com/greyltc/docker-archlinux
@@ -21,7 +21,7 @@ RUN provision-container
 
 # this allows the system profile to be sourced at every shell
 ENV ENV /etc/profile
-EOF
+END
 
 # make the root filesystem
 echo -e "\033[1mGenerating Arch Linux root filesystem...\033[0m"
