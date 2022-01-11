@@ -6,15 +6,14 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)
 # build architecture
 ARCH=${1:-x86_64}
 
-cat > "${DIR}/Dockerfile" <<END
+TMP_ROOT=$(mktemp -d)
+
+cat > "${TMP_ROOT}/Dockerfile" <<END
 # Arch Linux baseline docker container
 # Generated on `date` using code in this GitHub repo:
 # https://github.com/greyltc/docker-archlinux
 FROM scratch
 MAINTAINER Grey Christoforo <grey@christoforo.net>
-
-# copy in super minimal root filesystem archive
-ADD archlinux-${ARCH}.tar.xz /
 
 # perform initial container setup tasks
 RUN provision-container
@@ -25,8 +24,6 @@ END
 
 # make the root filesystem
 echo -e "\033[1mGenerating Arch Linux root filesystem...\033[0m"
-
-TMP_ROOT=$(mktemp -d)
 
 # Bail out if the temp directory wasn't created successfully.
 if [ ! -e ${TMP_ROOT} ]; then
