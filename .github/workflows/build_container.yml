@@ -165,7 +165,7 @@ jobs:
           git config --global user.email 'ci@robot.fake'
           mv out/**/*.build.log.txt .
           git add *.build.log.txt
-          sed 's|^ADD.*|ADD https://github.com/greyltc/docker-archlinux/releases/download/v${{ env.THIS_VERSTRING }}/archlinux-x86_64.tar.xz|g' -i out/x86_64/Dockerfile  # use the release asset
+          sed 's|^ADD.*|ADD https://github.com/greyltc/docker-archlinux/releases/download/v${{ env.THIS_VERSTRING }}/archlinux-x86_64.tar.xz /|g' -i out/x86_64/Dockerfile  # use the release asset
           mv out/x86_64/Dockerfile .  # put the x86_64 one on the top level
           git add Dockerfile
           git commit -m "version ${{ env.THIS_VERSTRING }} root tarball(s) rebuilt"
