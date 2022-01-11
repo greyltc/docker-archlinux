@@ -79,7 +79,7 @@ popd
 rm -rf "${DIR}/archlinux-${ARCH}.tar.xz"
 pushd "${TMP_ROOT}"
 echo -e "\033[1mCompressing root filesystem archive...\033[0m"
-XZ_OPT="-9e --threads=0" tar --owner=0 --group=0 --xattrs --acls -Jcf "${DIR}/archlinux-${ARCH}.tar.xz" *
+XZ_OPT="-9e --threads=0" tar --owner=0 --group=0 --xattrs --acls -Jcf "${DIR}/archlinux.tar.xz" *
 popd
 echo -e "\033[1mRoot fs archive generation complete.\033[0m"
 
