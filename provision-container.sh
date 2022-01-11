@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 set -e
 
 # this might fail in the chroot during setup, so let's run it now to build the cache
