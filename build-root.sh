@@ -58,6 +58,9 @@ rm -rf etc/passwd*
 rm -rf etc/shadow*
 popd  # $TMP_ROOT
 
+# mini-test of the root
+#chroot "${TMP_ROOT}" /bin/cat /usr/lib/os-release
+
 # ensure the target is clean
 rm -rf "${DIR}/${OUT}/${ARCH}"
 mkdir -p "${DIR}/${OUT}/${ARCH}"
@@ -82,8 +85,11 @@ END
 
 # tar the fs and move it from tmp to ${OUT}/${ARCH}/archlinux-root.tar
 pushd "${TMP_ROOT}"
-tar --owner=0 --group=0 --xattrs --acls -Jf "${DIR}/${OUT}/${ARCH}/archlinux-root.tar" *
-popd
+tar -cJf --owner=0 --group=0 --xattrs --acls  ../archlinux-root.tar *
+popd  # $TMP_ROOT
+
+# make sure this at least exists
+file "${OUT}/${ARCH}/archlinux-root.tar"
 
 # clean up the tmp folder
 rm -rf "${TMP_ROOT}"
