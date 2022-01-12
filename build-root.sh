@@ -6,47 +6,45 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)
 # build architecture
 ARCH=${1:-x86_64}
 
+# build the fs in some temporary place
 TMP_ROOT=$(mktemp -d)
 
+# generate the docerfile
 cat > "${TMP_ROOT}/Dockerfile" <<END
 # Arch Linux baseline docker container
 # Generated on `date` using code in this GitHub repo:
 # https://github.com/greyltc/docker-archlinux
 FROM scratch
-MAINTAINER Grey Christoforo <grey@christoforo.net>
+MAINTAINER Greyson Christoforo <grey@christoforo.net>
+
+# put the whole build context into the image
+ADD * /
 
 # perform initial container setup tasks
 RUN provision-container
 
-# this allows the system profile to be sourced at every shell
+# allow the system profile to be sourced at every shell
 ENV ENV /etc/profile
 END
 
 # make the root filesystem
-echo -e "\033[1mGenerating Arch Linux root filesystem...\033[0m"
-
-# Bail out if the temp directory wasn't created successfully.
-if [ ! -e ${TMP_ROOT} ]; then
-    >&2 echo "Failed to create temp directory"
-    exit 1
-fi
-#TODO: work in ARCH here
+echo "Generating Arch Linux root filesystem..."
 bash <(curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/arch-bootstrap.sh') -a${ARCH} -s1 "${TMP_ROOT}"
-echo -e "\033[1mRoot filesystem generation complete.\033[0m"
+echo "Root filesystem generation complete."
 
 # inject our setup script
-echo -e "\033[1mInstalling setup script.\033[0m"
+echo "Installing setup script."
 install -m755 -D "${DIR}/provision-container.sh" "${TMP_ROOT}/usr/bin/provision-container"
 
-# inject the details fixer
+# inject our details fixer
 curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fix-details.sh' > "${TMP_ROOT}/usr/bin/fix-details"
 chmod +x "${TMP_ROOT}/usr/bin/fix-details"
 
-# inject the image size reducer
-install -m755 -D "${DIR}/cleanup-image.sh" "$TMP_ROOT/usr/sbin/cleanup-image"
+# inject our image size reducer
+install -m755 -D "${DIR}/cleanup-image.sh" "${TMP_ROOT}/usr/sbin/cleanup-image"
 
 # dockerify the rootfs
-echo -e "\033[1mDoing Docker things to the root file system.\033[0m"
+echo "Doing Docker things to the root file system."
 pushd "${TMP_ROOT}"
 rm -rf dev
 mkdir -p dev
@@ -65,7 +63,7 @@ fakeroot mknod -m 666 full c 1 7
 fakeroot mknod -m 600 initctl p
 fakeroot mknod -m 666 ptmx c 5 2
 ln -sf /proc/self/fd fd
-popd
+popd   # dev
 
 # remove some files that we don't need here
 rm -rf usr/share/man/*
@@ -73,14 +71,11 @@ rm -rf etc/hosts*
 rm -rf etc/resolv.conf*
 rm -rf etc/passwd*
 rm -rf etc/shadow*
-popd
+popd  # $TMP_ROOT
 
-# make the root filesystem archive
-rm -rf "${DIR}/archlinux-${ARCH}.tar.xz"
-pushd "${TMP_ROOT}"
-echo -e "\033[1mCompressing root filesystem archive...\033[0m"
-XZ_OPT="-9e --threads=0" tar --owner=0 --group=0 --xattrs --acls -Jcf "${DIR}/archlinux.tar.xz" *
-popd
-echo -e "\033[1mRoot fs archive generation complete.\033[0m"
+# move the fs from tmp to out/
+rm -rf "${DIR}/out/${ARCH}"
+mkdir -p "${DIR}/out"
+mv "${TMP_ROOT}" "${DIR}/out/${ARCH}"
 
-rm -rf "${TMP_ROOT}"
+echo "Root filesystem is now ready in ${DIR}/out/${ARCH}"
