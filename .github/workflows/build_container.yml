@@ -133,13 +133,12 @@ jobs:
         run: |
           pwd
           ls -alh out/x86_64
-          file ${{ github.workspace }}/out/x86_64/archlinux.tar.xz
 
       - name: Docker build
         uses: docker/build-push-action@v2
         with:
-          context: "file://localhost${{ github.workspace }}/out/x86_64/archlinux.tar.xz"
-          load: false
+          context: out/x86_64/
+          load: true
           tags: ${{ env.TEST_TAG }}
 
       - name: Test the container
@@ -161,7 +160,7 @@ jobs:
       - name: Push to registry2
         uses: docker/build-push-action@v2
         with:
-          context: file://${{ github.workspace }}/out/x86_64/archlinux.tar.xz
+          context: out/x86_64/
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta2.outputs.tags }}
           labels: ${{ steps.meta2.outputs.labels }}
@@ -183,13 +182,16 @@ jobs:
       - name: Release
         if: github.event_name != 'pull_request'
         run: |
+          pushd "${{ github.workspace }}/out/x86_64"
+          XZ_OPT="-9e --threads=0" tar --owner=0 --group=0 --xattrs --acls -Jcf "${{ github.workspace }}/archlinux-x86_64.tar.xz" *
+          popd
+          ASSET_FILE=${{ github.workspace }}/archlinux-x86_64.tar.xz
           curl --silent \
             --url https://api.github.com/repos/${{ github.repository }}/releases \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
             --data '{"draft":false,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"Version ${{ env.THIS_VERSTRING }}"}' \
             --output rel_resp.json
-          ASSET_FILE=out/x86_64/archlinux-x86_64.tar.xz
           UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})|g")
           curl --silent --verbose \
             --url ${UL_URL} \
