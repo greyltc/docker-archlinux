@@ -137,8 +137,8 @@ jobs:
       - name: Docker build
         uses: docker/build-push-action@v2
         with:
-          context: ${{ github.workspace }}/out/x86_64/archlinux.tar.xz
-          load: true
+          context: "file://localhost/${{ github.workspace }}/out/x86_64/archlinux.tar.xz"
+          load: false
           tags: ${{ env.TEST_TAG }}
 
       - name: Test the container
