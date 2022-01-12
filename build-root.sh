@@ -21,7 +21,7 @@ FROM scratch
 MAINTAINER Greyson Christoforo <grey@christoforo.net>
 
 # put the whole build context into the image
-ADD * /
+COPY * /
 
 # perform initial container setup tasks
 RUN provision-container
