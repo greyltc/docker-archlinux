@@ -6,6 +6,9 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)
 # build architecture
 ARCH=${1:-x86_64}
 
+# output folder (relative to this script)
+OUT=${2:-out}
+
 # build the fs in some temporary place
 TMP_ROOT=$(mktemp -d)
 
@@ -73,9 +76,9 @@ rm -rf etc/passwd*
 rm -rf etc/shadow*
 popd  # $TMP_ROOT
 
-# move the fs from tmp to out/
-rm -rf "${DIR}/out/${ARCH}"
-mkdir -p "${DIR}/out"
-mv "${TMP_ROOT}" "${DIR}/out/${ARCH}"
+# move the fs from tmp to ${OUT}/
+rm -rf "${DIR}/${OUT}/${ARCH}"
+mkdir -p "${DIR}/${OUT}"
+mv "${TMP_ROOT}" "${DIR}/${OUT}/${ARCH}"
 
-echo "Root filesystem is now ready in ${DIR}/out/${ARCH}"
+echo "Root filesystem is now ready in ${DIR}/${OUT}/${ARCH}"
