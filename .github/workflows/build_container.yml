@@ -195,5 +195,6 @@ jobs:
             --header "Accept: application/vnd.github.v3+json" \
             --header "Content-Type: $(file -b --mime-type ${ASSET_FILE})" \
             --data-urlencode "name=$(basename ${ASSET_FILE})" \
-            --data-urlencode "label=x86_64 Docker build context" \
-            --data-binary @${ASSET_FILE}
+            --data-binary @${ASSET_FILE} \
+            --output asset_resp.json
+          cat asset_resp.json | jq --raw-output '.'
