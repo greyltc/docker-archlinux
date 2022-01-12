@@ -85,11 +85,11 @@ END
 
 # tar the fs and move it from tmp to ${OUT}/${ARCH}/archlinux-root.tar
 pushd "${TMP_ROOT}"
-tar --create --file "${OUT}/${ARCH}/archlinux-root.tar" --owner=0 --group=0 --xattrs --acls *
+tar --create --file "${DIR}/${OUT}/${ARCH}/archlinux-root.tar" --owner=0 --group=0 --xattrs --acls *
 popd  # $TMP_ROOT
 
 # make sure this at least exists
-file -E "${OUT}/${ARCH}/archlinux-root.tar"
+file -E "${DIR}/${OUT}/${ARCH}/archlinux-root.tar"
 
 # clean up the tmp folder
 rm -rf "${TMP_ROOT}"
