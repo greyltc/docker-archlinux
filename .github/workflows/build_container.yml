@@ -197,6 +197,6 @@ jobs:
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
             --header "Content-Type: $(file -b --mime-type ${ASSET_FILE})" \
-            --data {"name":$(basename ${ASSET_FILE}),"label":"x86_64 Docker build context"} \
+            --data '{"name":"docker-archlinux-x86_64.tar.xz","label":"x86_64 Docker build context"}' \
             --data-binary @${ASSET_FILE}
   
