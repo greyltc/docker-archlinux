@@ -20,7 +20,7 @@ env:
 
 jobs:
   job0:
-    name: Build Root
+    name: Build Docker Context
     runs-on: ubuntu-latest
     permissions:
       contents: read
