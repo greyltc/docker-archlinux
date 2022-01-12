@@ -35,6 +35,7 @@ jobs:
 
       - name: Build root tarball(s)
         run: |
+          set -o pipefail
           mkdir -p out
           bash build-root.sh x86_64 out |& tee out/archlinux-x86_64.build.log.txt
           #ARCH=aarch64 bash -c './build-root.sh ${ARCH} out |& tee out/archlinux-${ARCH}.build.log.txt && mv -t out/${ARCH} *.tar.xz'
