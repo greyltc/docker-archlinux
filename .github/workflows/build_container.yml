@@ -129,12 +129,6 @@ jobs:
             latest=true
           images: ${{ env.REGISTRY2 }}/${{ env.IMAGE_NAME2 }}
 
-      - name: Get current place
-        id: where
-        run: |
-          pwd
-          ls -alh out/x86_64
-
       - name: Docker build
         uses: docker/build-push-action@v2
         with:
@@ -144,7 +138,7 @@ jobs:
 
       - name: Test the container
         run: |
-          docker run --rm ${{ env.TEST_TAG }} uname -a
+          docker run --rm ${{ env.TEST_TAG }} cat /usr/lib/os-release
 
       # Push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
@@ -192,11 +186,13 @@ jobs:
             --data '{"draft":false,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"Version ${{ env.THIS_VERSTRING }}"}' \
             --output rel_resp.json
           #UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})&label=x86_64 Docker build context|g")
-          UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})|g")
+          #UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})|g")
+          UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*||g")
+          set -x
           curl --silent --verbose \
             --url "${UL_URL}" \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
             --header "Content-Type: $(file -b --mime-type ${ASSET_FILE})" \
+            --data '{"name":"docker-archlinux-x86_64.tar.xz"}' \
             --data-binary @${ASSET_FILE}
-  
