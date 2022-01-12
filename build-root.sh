@@ -12,24 +12,6 @@ OUT=${2:-out}
 # build the fs in some temporary place
 TMP_ROOT=$(mktemp -d)
 
-# generate the docerfile
-cat > "${TMP_ROOT}/Dockerfile" <<END
-# Arch Linux baseline docker container
-# Generated on `date` using code in this GitHub repo:
-# https://github.com/greyltc/docker-archlinux
-FROM scratch
-MAINTAINER Greyson Christoforo <grey@christoforo.net>
-
-# put the whole build context into the image
-COPY * /
-
-# perform initial container setup tasks
-RUN provision-container
-
-# allow the system profile to be sourced at every shell
-ENV ENV /etc/profile
-END
-
 # make the root filesystem
 echo "Generating Arch Linux root filesystem..."
 bash <(curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/arch-bootstrap.sh') -a${ARCH} -s1 "${TMP_ROOT}"
@@ -76,9 +58,34 @@ rm -rf etc/passwd*
 rm -rf etc/shadow*
 popd  # $TMP_ROOT
 
-# move the fs from tmp to ${OUT}/
+# ensure the target is clean
 rm -rf "${DIR}/${OUT}/${ARCH}"
-mkdir -p "${DIR}/${OUT}"
-mv "${TMP_ROOT}" "${DIR}/${OUT}/${ARCH}"
+mkdir -p "${DIR}/${OUT}/${ARCH}"
 
-echo "Root filesystem is now ready in ${DIR}/${OUT}/${ARCH}"
+# generate the dockerfile
+cat > "${DIR}/${OUT}/${ARCH}/Dockerfile" <<END
+# Arch Linux baseline docker container
+# Generated on `date` using code in this GitHub repo:
+# https://github.com/greyltc/docker-archlinux
+FROM scratch
+MAINTAINER Greyson Christoforo <grey@christoforo.net>
+
+# put the root fs archive into the image
+ADD archlinux-root.tar /
+
+# perform initial container setup tasks
+RUN provision-container
+
+# allow the system profile to be sourced at every shell
+ENV ENV /etc/profile
+END
+
+# tar the fs and move it from tmp to ${OUT}/${ARCH}/archlinux-root.tar
+pushd "${TMP_ROOT}"
+tar --owner=0 --group=0 --xattrs --acls -Jf "${DIR}/${OUT}/${ARCH}/archlinux-root.tar" *
+popd
+
+# clean up the tmp folder
+rm -rf "${TMP_ROOT}"
+
+echo "Root filesystem is now ready in ${DIR}/${OUT}/${ARCH}/archlinux-root.tar"
