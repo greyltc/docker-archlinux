@@ -183,7 +183,7 @@ jobs:
       - name: Release
         if: github.event_name != 'pull_request'
         run: |
-          XZ_OPT="-9e --threads=0" tar --owner=0 --group=0 --xattrs --acls -Jcf "${{ github.workspace }}/archlinux-x86_64.tar.xz" "${{ github.workspace }}"/out/x86_64/*
+          XZ_OPT="-9e --threads=0" tar --create --file "${{ github.workspace }}/archlinux-x86_64.tar.xz" --xz "${{ github.workspace }}"/out/x86_64/*
           ASSET_FILE="${{ github.workspace }}/archlinux-x86_64.tar.xz"
           curl --silent \
             --url https://api.github.com/repos/${{ github.repository }}/releases \
