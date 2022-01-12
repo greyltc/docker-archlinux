@@ -35,8 +35,9 @@ jobs:
 
       - name: Build root tarball(s)
         run: |
-          ARCH=x86_64  bash -c 'mkdir -p out/${ARCH} && ./build-root-tarxz.sh ${ARCH} |& tee out/${ARCH}/archlinux-${ARCH}.build.log.txt && mv -t out/${ARCH} *.tar.xz'
-          #ARCH=aarch64 bash -c 'mkdir -p out/${ARCH} && ./build-root-tarxz.sh ${ARCH} |& tee out/${ARCH}/archlinux-${ARCH}.build.log.txt && mv -t out/${ARCH} *.tar.xz'
+          mkdir -p out
+          bash build-root.sh x86_64 out |& tee out/archlinux-x86_64.build.log.txt
+          #ARCH=aarch64 bash -c './build-root.sh ${ARCH} out |& tee out/archlinux-${ARCH}.build.log.txt && mv -t out/${ARCH} *.tar.xz'
 
       - name: Cache root tarball(s)
         uses: actions/cache@v2
@@ -170,10 +171,10 @@ jobs:
         run: |
           git config --global user.name 'CI Robot'
           git config --global user.email 'ci@robot.fake'
-          mv out/**/*.build.log.txt .
+          mv out/*.build.log.txt .
           git add *.build.log.txt
           
-          git add README.md
+          git add README.md  # TODO: sed asset URL into readme
           git commit -m "version ${{ env.THIS_VERSTRING }} root tarball(s) rebuilt"
           git tag -a "v${{ env.THIS_VERSTRING }}" -m "rebuilt root tarball(s)"
           git push -u origin master --tags
