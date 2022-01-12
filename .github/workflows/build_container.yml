@@ -183,8 +183,8 @@ jobs:
       - name: Release
         if: github.event_name != 'pull_request'
         run: |
-          XZ_OPT="-9e --threads=0" tar --create --file "${{ github.workspace }}/archlinux-x86_64.tar.xz" --xz "${{ github.workspace }}"/out/x86_64/*
-          ASSET_FILE="${{ github.workspace }}/archlinux-x86_64.tar.xz"
+          ASSET_FILE="${{ github.workspace }}/docker-archlinux-x86_64.tar.xz"
+          XZ_OPT="-9e --threads=0" tar --create --file "${ASSET_FILE}" --xz "${{ github.workspace }}"/out/x86_64/*
           curl --silent \
             --url https://api.github.com/repos/${{ github.repository }}/releases \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
