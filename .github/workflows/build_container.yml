@@ -203,8 +203,8 @@ jobs:
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
             --header "Content-Type: $(file --brief --mime-type ${ASSET_FILE})" \
-            --get \
             --data "name=docker-archlinux-x86_64.tar.xz" \
-            --data-raw - \
+            --data "label=docker_build_context" \
+            --data-binary @${ASSET_FILE} \
             --output asset_resp.json
           cat asset_resp.json | jq --raw-output '.'
