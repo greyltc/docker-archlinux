@@ -189,12 +189,12 @@ jobs:
           #UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})|g")
           UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*||g")
           set -x
-          curl --silent --verbose \
+          curl --verbose \
             --url "${UL_URL}" \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
             --header "Content-Type: $(file -b --mime-type ${ASSET_FILE})" \
-            --data-urlencode "name=$(basename ${ASSET_FILE})" \
+            --data "name=docker-archlinux-x86_64.tar.xz" \
             --data-binary @${ASSET_FILE} \
             --output asset_resp.json
           cat asset_resp.json | jq --raw-output '.'
