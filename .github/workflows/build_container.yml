@@ -185,22 +185,26 @@ jobs:
             --header "Accept: application/vnd.github.v3+json" \
             --data '{"draft":false,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"Version ${{ env.THIS_VERSTRING }}"}' \
             --output rel_resp.json
-          cat rel_resp.json | jq --raw-output '.'
-          cat rel_resp.json | jq --raw-output '.upload_url'
+          #cat rel_resp.json | jq --raw-output '.'
+          #cat rel_resp.json | jq --raw-output '.upload_url'
           echo "Release Done."
+          RELEASE_ID=$(cat rel_resp.json | jq --raw-output '.id')
+          ASSET_UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url')
+          ASSET_UL_URL="https://uploads.github.com/repos/${{ github.repository }}/releases/${RELEASE_ID}/assets"
+          ASSET_UL_URL="${ASSET_UL_URL}?name=$(basename ${ASSET_FILE})"
+          ASSET_UL_URL="${ASSET_UL_URL}&label=build_context"
+          echo ${ASSET_UL_URL}
           #UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})&label=x86_64 Docker build context|g")
           #UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})|g")
           UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*||g")
-          UL_URL
           set -x
-          curl --verbose \
+          cat ${ASSET_FILE} | curl --verbose \
             --url "${UL_URL}" \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
             --header "Content-Type: $(file --brief --mime-type ${ASSET_FILE})" \
             --get \
             --data "name=docker-archlinux-x86_64.tar.xz" \
-            --request POST \
-            --data-binary @${ASSET_FILE} \
+            --data-raw - \
             --output asset_resp.json
           cat asset_resp.json | jq --raw-output '.'
