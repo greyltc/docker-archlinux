@@ -185,6 +185,7 @@ jobs:
             --header "Accept: application/vnd.github.v3+json" \
             --data '{"draft":false,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"Version ${{ env.THIS_VERSTRING }}"}' \
             --output rel_resp.json
+          cat rel_resp.json | jq --raw-output '.upload_url'
           #UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})&label=x86_64 Docker build context|g")
           #UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*|?name=$(basename ${ASSET_FILE})|g")
           UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*||g")
@@ -194,7 +195,7 @@ jobs:
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
             --header "Content-Type: $(file -b --mime-type ${ASSET_FILE})" \
-            --get
+            --get \
             --data "name=docker-archlinux-x86_64.tar.xz" \
             --data-binary @${ASSET_FILE} \
             --output asset_resp.json
