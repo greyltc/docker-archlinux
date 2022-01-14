@@ -202,8 +202,9 @@ jobs:
           cat asset_resp.json | jq --raw-output '.'
           ASSET_URL=$(cat asset_resp.json | jq --raw-output '.url')
           
-          # update asset name=$(basename ${ASSET_FILE})
+          # update asset
           curl --silent \
+            --request PATCH \
             --url "${ASSET_URL}" \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
@@ -211,6 +212,3 @@ jobs:
             --data-urlencode "label=x86_64 Docker Build Context" \
             --output asset_update.json
           cat asset_update.json | jq --raw-output '.'
-            
-          
-          
