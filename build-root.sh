@@ -65,23 +65,8 @@ popd  # $TMP_ROOT
 rm -rf "${DIR}/${OUT}/${ARCH}"
 mkdir -p "${DIR}/${OUT}/${ARCH}"
 
-# generate the dockerfile
-cat > "${DIR}/${OUT}/${ARCH}/Dockerfile" <<END
-FROM scratch AS root
-ADD archlinux-root.tar /
-ENV LANG=en_US.UTF-8
-RUN provision-container
-ENV ENV=/etc/profile
-LABEL org.opencontainers.image.created="$(date --utc --iso-8601=seconds)"
-LABEL org.opencontainers.image.url="https://github.com/greyltc/docker-archlinux"
-LABEL org.opencontainers.image.source="https://github.com/greyltc/docker-archlinux.git"
-LABEL org.opencontainers.image.version="0.0.0"
-LABEL org.opencontainers.image.revision="v0.0.0"
-LABEL org.opencontainers.image.vendor="greyltc"
-LABEL org.opencontainers.image.title="docker-archlinux"
-LABEL org.opencontainers.image.description="Baseline Arch Linux"
-LABEL org.opencontainers.image.licenses="GPL-2.0-or-later"
-END
+# copy over the dockerfile
+cp Dockerfile "${DIR}/${OUT}/${ARCH}"
 
 # tar the fs and move it from tmp to ${OUT}/${ARCH}/archlinux-root.tar
 pushd "${TMP_ROOT}"
