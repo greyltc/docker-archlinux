@@ -14,9 +14,9 @@ cat << 'EOF' > /sbin/get-new-mirrors
 #!/usr/bin/env bash
 set -e -u -o pipefail
 echo "Finding the fastest Arch mirrors..."
-curl --silent "https://archlinux.org/mirrorlist/?country=all&protocol=https&ip_version=4&use_mirror_status=on" > /tmp/mirrorlist
-sed -i 's/^#Server/Server/' /tmp/mirrorlist
-rankmirrors -n 6 /tmp/mirrorlist > /tmp/fastmirrorlist
+curl --silent --get --url https://archlinux.org/mirrorlist/ --data "country=all" --data "ip_version=4" --data "use_mirror_status=on" --data "protocol=https" > /tmp/mirrorlist
+sed 's/^#Server/Server/' --in-place /tmp/mirrorlist
+rankmirrors -n 10 --max-time 3 /tmp/mirrorlist > /tmp/fastmirrorlist
 mv /tmp/fastmirrorlist /etc/pacman.d/mirrorlist
 pacman -Syy
 echo "Mirrorlist updated."
