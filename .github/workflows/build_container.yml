@@ -191,7 +191,7 @@ jobs:
           ASSET_UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*||g")
 
           # upload asset
-          ASSET_UL_URL="${ASSET_UL_URL_BASE}?name=asset"
+          ASSET_UL_URL="${ASSET_UL_URL}?name=asset"
           curl --silent \
             --url "${ASSET_UL_URL}" \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
