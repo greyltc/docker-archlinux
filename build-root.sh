@@ -72,7 +72,7 @@ ADD archlinux-root.tar /
 ENV LANG=en_US.UTF-8
 RUN provision-container
 ENV ENV=/etc/profile
-LABEL org.opencontainers.image.created="1970-01-01T00:00:00+00:00"
+LABEL org.opencontainers.image.created="$(date --utc --iso-8601=seconds)"
 LABEL org.opencontainers.image.url="https://github.com/greyltc/docker-archlinux"
 LABEL org.opencontainers.image.source="https://github.com/greyltc/docker-archlinux.git"
 LABEL org.opencontainers.image.version="0.0.0"
