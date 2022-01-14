@@ -67,20 +67,20 @@ mkdir -p "${DIR}/${OUT}/${ARCH}"
 
 # generate the dockerfile
 cat > "${DIR}/${OUT}/${ARCH}/Dockerfile" <<END
-# Arch Linux baseline docker container
-# Generated on `date` using code in this GitHub repo:
-# https://github.com/greyltc/docker-archlinux
-FROM scratch
-MAINTAINER Greyson Christoforo <grey@christoforo.net>
-
-# put the root fs archive into the image
+FROM scratch AS root
 ADD archlinux-root.tar /
-
-# perform initial container setup tasks
+ENV LANG=en_US.UTF-8
 RUN provision-container
-
-# allow the system profile to be sourced at every shell
-ENV ENV /etc/profile
+ENV ENV=/etc/profile
+LABEL org.opencontainers.image.created="1970-01-01T00:00:00+00:00"
+LABEL org.opencontainers.image.url="https://github.com/greyltc/docker-archlinux"
+LABEL org.opencontainers.image.source="https://github.com/greyltc/docker-archlinux.git"
+LABEL org.opencontainers.image.version="0.0.0"
+LABEL org.opencontainers.image.revision="v0.0.0"
+LABEL org.opencontainers.image.vendor="greyltc"
+LABEL org.opencontainers.image.title="docker-archlinux"
+LABEL org.opencontainers.image.description="Baseline Arch Linux"
+LABEL org.opencontainers.image.licenses="GPL-2.0-or-later"
 END
 
 # tar the fs and move it from tmp to ${OUT}/${ARCH}/archlinux-root.tar
