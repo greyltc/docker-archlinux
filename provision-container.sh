@@ -29,8 +29,7 @@ chmod +x /sbin/get-new-mirrors
 # PATH is always what we expect it to be by setting ENV=/etc/profile
 # in the Dockerfile
 pacman -Syyu --noconfirm --noprogressbar zsh
-rm /usr/bin/sh
-ln -s /usr/bin/zsh /usr/bin/sh
+ln -sfT zsh /usr/bin/sh
 
 # setup gnupg
 echo "keyserver hkp://keys.gnupg.net" >> /usr/share/gnupg/gpg-conf.skel
@@ -43,6 +42,9 @@ cp -r $(find /etc/skel -name ".*") /root
 
 # set the root user's password to blank
 #echo "root:" | chpasswd -e
+
+# lock root account
+#passwd --lock root
 
 # do image size reducing things
 cleanup-image
