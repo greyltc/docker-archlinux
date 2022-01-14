@@ -53,7 +53,7 @@ jobs:
     permissions:
       contents: write
       packages: write
-      
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -167,8 +167,9 @@ jobs:
           git config --global user.email 'ci@robot.fake'
           mv out/*.build.log.txt .
           git add *.build.log.txt
-          
-          git add README.md  # TODO: sed asset URL into readme
+
+          sed "s|curl --location --silent.*|curl --location --silent ${{ github.server_url }}/${{ github.repository }}/releases/download/v${{ env.THIS_VERSTRING }}/docker-archlinux-x86_64.tar.xz | docker build --tag arch-localbuild -|g" --in-place README.md
+          git add README.md
           git commit -m "version ${{ env.THIS_VERSTRING }} root tarball(s) rebuilt"
           git tag -a "v${{ env.THIS_VERSTRING }}" -m "rebuilt root tarball(s)"
           git push -u origin master --tags
@@ -187,12 +188,11 @@ jobs:
             --output rel_resp.json
           cat rel_resp.json | jq --raw-output '.'
           echo "Release Done."
-
-          echo ${ASSET_UL_URL}
           ASSET_UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*||g")
-          ASSET_UL_URL="${ASSET_UL_URL}?name=$(basename ${ASSET_FILE})"
-          ASSET_UL_URL="${ASSET_UL_URL}&label=build_context"
-          curl --verbose \
+
+          # upload asset
+          ASSET_UL_URL="${ASSET_UL_URL_BASE}?name=asset"
+          curl --silent \
             --url "${ASSET_UL_URL}" \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
@@ -200,3 +200,17 @@ jobs:
             --data-binary @${ASSET_FILE} \
             --output asset_resp.json
           cat asset_resp.json | jq --raw-output '.'
+          ASSET_URL=$(cat asset_resp.json | jq --raw-output '.url')
+          
+          # update asset name=$(basename ${ASSET_FILE})
+          curl --silent \
+            --url "${ASSET_URL}" \
+            --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+            --header "Accept: application/vnd.github.v3+json" \
+            --data-urlencode "name=$(basename ${ASSET_FILE})" \
+            --data-urlencode "label=x86_64 Docker Build Context" \
+            --output asset_update.json
+          cat asset_update.json | jq --raw-output '.'
+            
+          
+          
