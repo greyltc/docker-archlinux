@@ -180,6 +180,7 @@ jobs:
         run: |
           ASSET_FILE="${{ github.workspace }}/docker-archlinux-x86_64.tar.xz"
           XZ_OPT="-9e --threads=0" tar --create --file "${ASSET_FILE}" --xz --directory "${{ github.workspace }}"/out/x86_64 .
+
           curl --silent \
             --url https://api.github.com/repos/${{ github.repository }}/releases \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
@@ -191,6 +192,7 @@ jobs:
           ASSET_UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*||g")
 
           # upload asset
+          echo "Uploading asset..."
           ASSET_UL_URL="${ASSET_UL_URL}?name=asset"
           curl --silent \
             --url "${ASSET_UL_URL}" \
@@ -201,14 +203,17 @@ jobs:
             --output asset_resp.json
           cat asset_resp.json | jq --raw-output '.'
           ASSET_URL=$(cat asset_resp.json | jq --raw-output '.url')
-          
+          echo "Asset upload done."
+
           # update asset
-          curl --silent \
+          # --data-urlencode "label=x86_64 Docker Build Context" \
+          echo "Updating asset..."
+          curl --silent --verbose \
             --request PATCH \
             --url "${ASSET_URL}" \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
             --data-urlencode "name=$(basename ${ASSET_FILE})" \
-            --data-urlencode "label=x86_64 Docker Build Context" \
             --output asset_update.json
           cat asset_update.json | jq --raw-output '.'
+          echo "Asset update done."
