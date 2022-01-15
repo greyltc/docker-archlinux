@@ -206,14 +206,15 @@ jobs:
           echo "Asset upload done."
 
           # update asset
-          # --data-urlencode "label=x86_64 Docker Build Context" \
+          ASSET_NAME="name=$(basename ${ASSET_FILE})"
+          ASSET_LABEL="x86_64 Docker Build Context"
           echo "Updating asset..."
-          curl --silent --verbose \
+          jq -n --arg asset_name "${ASSET_NAME}" '{"name":$asset_name}' | curl --silent --verbose \
             --request PATCH \
             --url "${ASSET_URL}" \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header "Accept: application/vnd.github.v3+json" \
-            --data-urlencode "name=$(basename ${ASSET_FILE})" \
+            --data @- \
             --output asset_update.json
           cat asset_update.json | jq --raw-output '.'
           echo "Asset update done."
