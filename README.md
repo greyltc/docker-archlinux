@@ -25,9 +25,14 @@ docker pull greyltc/archlinux
 You can use docker to build this container yourself.
 ### From a release asset
 You can fetch a docker build context from a release asset and use that to build the container.
-```
-curl --location --silent https://github.com/greyltc/docker-archlinux/releases/download/v20220115.0.111/docker-archlinux-x86_64.tar.xz | docker build --tag arch-localbuild -
-```
+1. **Build your baseline Arch Linux docker image**
+    ```
+    docker build --tag arch-localbuild https://github.com/greyltc/docker-archlinux/releases/download/v20220115.0.110/docker-archlinux-x86_64.tar.xz
+    ```
+1. **Inspect the container**
+    ```
+    docker run --interactive --tty arch-localbuild bash
+    ```
 ### From scratch
 You can use the scripts in this repo to build this container from scratch.
 1. **Install dependencies**  
