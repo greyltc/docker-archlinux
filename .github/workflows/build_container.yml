@@ -206,10 +206,10 @@ jobs:
           echo "Asset upload done."
 
           # update asset
-          ASSET_NAME="name=$(basename ${ASSET_FILE})"
+          ASSET_NAME="$(basename ${ASSET_FILE})"
           ASSET_LABEL="x86_64 Docker Build Context"
           echo "Updating asset..."
-          jq -n --arg asset_name "${ASSET_NAME}" '{"name":$asset_name}' | curl --silent --verbose \
+          jq -n --arg arg_name "${ASSET_NAME}" --arg arg_label "${ASSET_LABEL}" '{"name":$arg_name,"label":$arg_label}' | curl --silent --verbose \
             --request PATCH \
             --url "${ASSET_URL}" \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
