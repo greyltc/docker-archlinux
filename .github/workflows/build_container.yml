@@ -167,8 +167,7 @@ jobs:
           git config --global user.email 'ci@robot.fake'
           mv out/*.build.log.txt .
           git add *.build.log.txt
-
-          sed "s,curl --location --silent.*,curl --location --silent ${{ github.server_url }}/${{ github.repository }}/releases/download/v${{ env.THIS_VERSTRING }}/docker-archlinux-x86_64.tar.xz | docker build --tag arch-localbuild -,g" --in-place README.md
+          sed "s|docker build --tag arch-localbuild https.*|docker build --tag arch-localbuild ${{ github.server_url }}/${{ github.repository }}/releases/download/v${{ env.THIS_VERSTRING }}/docker-archlinux-x86_64.tar.xz|g" --in-place README.md
           git add README.md
           git commit -m "version ${{ env.THIS_VERSTRING }} root tarball(s) rebuilt"
           git tag -a "v${{ env.THIS_VERSTRING }}" -m "rebuilt root tarball(s)"
