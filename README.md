@@ -47,5 +47,5 @@ Use your favorite Linux distro's package manager to install the following comman
     ```
 1. **Inspect the container**
     ```
-    docker run --interactive --tag arch-localbuild bash
+    docker run --interactive --tty arch-localbuild bash
     ```
