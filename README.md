@@ -26,7 +26,7 @@ You can use docker to build this container yourself.
 ### From a release asset
 You can fetch a docker build context from a release asset and use that to build the container.
 ```
-curl --location --silent https://github.com/greyltc/docker-archlinux/releases/download/v20220115.0.107/docker-archlinux-x86_64.tar.xz | docker build --tag arch-localbuild -
+curl --location --silent https://github.com/greyltc/docker-archlinux/releases/download/v20220115.0.108/docker-archlinux-x86_64.tar.xz | docker build --tag arch-localbuild -
 ```
 ### From scratch
 You can use the scripts in this repo to build this container from scratch.
