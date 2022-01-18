@@ -163,8 +163,8 @@ jobs:
       - name: Commit with tag
         if: github.event_name != 'pull_request'
         run: |
-          git config --global user.name 'CI Robot'
-          git config --global user.email 'ci@robot.fake'
+          git config --global user.name 'GitHub Actions Robot'
+          git config --global user.email 'github@actions.robot'
           mv out/*.build.log.txt .
           git add *.build.log.txt
           sed "s|docker build --tag arch-localbuild https.*|docker build --tag arch-localbuild ${{ github.server_url }}/${{ github.repository }}/releases/download/v${{ env.THIS_VERSTRING }}/docker-archlinux-x86_64.tar.xz|g" --in-place README.md
