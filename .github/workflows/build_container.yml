@@ -206,7 +206,7 @@ jobs:
           ASSET_NAME="$(basename ${ASSET_FILE})"
           ASSET_LABEL="x86_64 Docker Build Context"
           echo "Updating asset..."
-          jq -n --arg arg_name "${ASSET_NAME}" --arg arg_label "${ASSET_LABEL}" '{"name":$arg_name,"label":$arg_label}' | curl --silent --verbose \
+          jq -n --arg arg_name "${ASSET_NAME}" --arg arg_label "${ASSET_LABEL}" '{"name":$arg_name,"label":$arg_label}' | curl --silent \
             --request PATCH \
             --url "${ASSET_URL}" \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
