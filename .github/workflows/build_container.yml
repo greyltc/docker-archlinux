@@ -186,7 +186,6 @@ jobs:
             --header "Accept: application/vnd.github.v3+json" \
             --data '{"draft":false,"tag_name":"v${{ env.THIS_VERSTRING }}","name":"Version ${{ env.THIS_VERSTRING }}"}' \
             --output rel_resp.json
-          cat rel_resp.json | jq --raw-output '.'
           echo "Release Done."
           ASSET_UL_URL=$(cat rel_resp.json | jq --raw-output '.upload_url' | sed "s|{?.*||g")
 
@@ -200,7 +199,6 @@ jobs:
             --header "Content-Type: $(file --brief --mime-type ${ASSET_FILE})" \
             --data-binary @${ASSET_FILE} \
             --output asset_resp.json
-          cat asset_resp.json | jq --raw-output '.'
           ASSET_URL=$(cat asset_resp.json | jq --raw-output '.url')
           echo "Asset upload done."
 
@@ -215,6 +213,10 @@ jobs:
             --header "Accept: application/vnd.github.v3+json" \
             --data @- \
             --output asset_update.json
-          test "$(cat asset_update.json | jq --raw-output '.name')"x = "${ASSET_NAME}"xx
-          cat asset_update.json | jq --raw-output '.'
           echo "Asset update done."
+          if test "$(cat asset_update.json | jq --raw-output '.name')"x != "${ASSET_NAME}"x
+          then
+            echo "Could not verify asset update"
+            exit -1
+          fi
+          
