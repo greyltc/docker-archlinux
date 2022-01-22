@@ -215,5 +215,6 @@ jobs:
             --header "Accept: application/vnd.github.v3+json" \
             --data @- \
             --output asset_update.json
+          test "$(cat asset_update.json | jq --raw-output '.name')"x = "${ASSET_NAME}"xx
           cat asset_update.json | jq --raw-output '.'
           echo "Asset update done."
