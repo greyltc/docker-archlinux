@@ -27,7 +27,7 @@ You can use docker to build this container yourself.
 You can fetch a docker build context from a release asset and use that to build the container.
 1. **Build your baseline Arch Linux docker image**
     ```
-    docker build --tag arch-localbuild https://github.com/greyltc/docker-archlinux/releases/download/v20220118.0.123/docker-archlinux-x86_64.tar.xz
+    docker build --tag arch-localbuild https://github.com/greyltc/docker-archlinux/releases/download/v20220122.0.124/docker-archlinux-x86_64.tar.xz
     ```
 1. **Inspect the container**
     ```
