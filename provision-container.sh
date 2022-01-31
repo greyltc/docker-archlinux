@@ -10,19 +10,8 @@ pacman --noconfirm --noprogressbar -Syyu --overwrite \* base pacman-contrib
 # fix up some small details, contents here: https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fix-details.sh
 fix-details
 
-cat << 'EOF' > /sbin/get-new-mirrors
-#!/usr/bin/env bash
-set -e -u -o pipefail
-echo "Finding the fastest Arch mirrors..."
-curl --silent --get --url https://archlinux.org/mirrorlist/ --data "country=all" --data "ip_version=4" --data "use_mirror_status=on" --data "protocol=https" > /tmp/mirrorlist
-sed 's/^#Server/Server/' --in-place /tmp/mirrorlist
-rankmirrors --verbose -n 10 --max-time 3 /tmp/mirrorlist > /tmp/fastmirrorlist
-mv /tmp/fastmirrorlist /etc/pacman.d/mirrorlist
-pacman -Syy
-echo "Mirrorlist updated."
-EOF
-chmod +x /sbin/get-new-mirrors
-/sbin/get-new-mirrors
+# update mirrorlist
+get-new-mirrors
 
 # install zsh shell and use it as sh, also update all packages
 # this allows us to source /etc/profile from every RUN command so that 

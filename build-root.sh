@@ -21,6 +21,10 @@ echo "Root filesystem generation complete."
 echo "Installing setup script."
 install -m755 -D "${DIR}/provision-container.sh" "${TMP_ROOT}/usr/bin/provision-container"
 
+# inject our mirror updater
+echo "Installing mirror update script"
+install -m755 -D "${DIR}/get-new-mirrors.sh" "${TMP_ROOT}/usr/bin/get-new-mirrors"
+
 # inject our details fixer
 curl --silent --tlsv1.3 --location 'https://raw.githubusercontent.com/greyltc/arch-bootstrap/master/fix-details.sh' > "${TMP_ROOT}/usr/bin/fix-details"
 chmod +x "${TMP_ROOT}/usr/bin/fix-details"
