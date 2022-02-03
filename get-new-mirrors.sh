@@ -12,5 +12,5 @@ echo "Fast mirror list found. Relocating list."
 mv /tmp/fastmirrorlist /etc/pacman.d/mirrorlist
 rm -rf /etc/pacman.d/mirrorlist.pacnew
 pacman -Syy
-echo "Mirrorlist updated."
-
+echo "Mirrorlist updated to be:"
+cat /etc/pacman.d/mirrorlist
