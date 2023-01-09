@@ -1,13 +1,13 @@
 Generating Arch Linux root filesystem...
 --- Step 1: Creating minimal root fs
---- destination directory: /tmp/tmp.VgG3ZhiQ4M
+--- destination directory: /tmp/tmp.edhQZbVBsm
 --- core repository: http://mirror.rackspace.com/archlinux/core/os/x86_64
---- temporary directory: /tmp/tmp.nup1sftExL
+--- temporary directory: /tmp/tmp.FQ6hRAmoK5
 --- fetch packages list: http://mirror.rackspace.com/archlinux/core/os/x86_64/
 --- get ready to ignore a bunch of SCHILY.fflags errors!
 --- pacman package and dependencies: acl archlinux-keyring brotli bzip2 curl e2fsprogs expat glibc gpgme keyutils krb5 libarchive libassuan libedit libgpg-error libidn2 libnghttp2 libpsl libssh2 libunistring lz4 ncurses openssl pacman pacman-mirrorlist xz zlib zstd filesystem dash
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/acl-2.3.1-2-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/acl-2.3.1-2-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/acl-2.3.1-2-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -109,7 +109,7 @@ usr/share/man/man3/acl_valid.3.gz
 usr/share/man/man5/
 usr/share/man/man5/acl.5.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/archlinux-keyring-20221220-1-any.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/archlinux-keyring-20221220-1-any.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/archlinux-keyring-20221220-1-any.pkg.tar.zst
 .BUILDINFO
 .INSTALL
 .MTREE
@@ -131,7 +131,7 @@ usr/share/pacman/keyrings/archlinux-revoked
 usr/share/pacman/keyrings/archlinux-trusted
 usr/share/pacman/keyrings/archlinux.gpg
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/brotli-1.0.9-9-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/brotli-1.0.9-9-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/brotli-1.0.9-9-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -174,7 +174,7 @@ usr/share/man/man3/decode.h.3.gz
 usr/share/man/man3/encode.h.3.gz
 usr/share/man/man3/types.h.3.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/bzip2-1.0.8-5-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/bzip2-1.0.8-5-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/bzip2-1.0.8-5-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -206,8 +206,8 @@ usr/share/man/man1/bunzip2.1.gz
 usr/share/man/man1/bzcat.1.gz
 usr/share/man/man1/bzip2.1.gz
 usr/share/man/man1/bzip2recover.1.gz
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/curl-7.87.0-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/curl-7.87.0-1-x86_64.pkg.tar.zst
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/curl-7.87.0-2-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/curl-7.87.0-2-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -734,7 +734,7 @@ usr/share/zsh/
 usr/share/zsh/site-functions/
 usr/share/zsh/site-functions/_curl
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/e2fsprogs-1.46.5-4-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/e2fsprogs-1.46.5-4-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/e2fsprogs-1.46.5-4-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -941,7 +941,7 @@ usr/share/ss/
 usr/share/ss/ct_c.awk
 usr/share/ss/ct_c.sed
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/expat-2.5.0-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/expat-2.5.0-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/expat-2.5.0-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -978,7 +978,7 @@ usr/share/man/
 usr/share/man/man1/
 usr/share/man/man1/xmlwf.1.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/glibc-2.36-6-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/glibc-2.36-6-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/glibc-2.36-6-x86_64.pkg.tar.zst
 .BUILDINFO
 .INSTALL
 .MTREE
@@ -2581,7 +2581,7 @@ var/db/
 var/db/Makefile
 var/db/nscd/
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/gpgme-1.18.0-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/gpgme-1.18.0-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/gpgme-1.18.0-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -2665,7 +2665,7 @@ usr/share/info/gpgme.info-1.gz
 usr/share/info/gpgme.info-2.gz
 usr/share/info/gpgme.info.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/keyutils-1.6.3-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/keyutils-1.6.3-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/keyutils-1.6.3-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -2745,7 +2745,7 @@ usr/share/man/man8/
 usr/share/man/man8/key.dns_resolver.8.gz
 usr/share/man/man8/request-key.8.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/krb5-1.20.1-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/krb5-1.20.1-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/krb5-1.20.1-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -2951,7 +2951,7 @@ var/lib/
 var/lib/krb5kdc/
 var/lib/krb5kdc/kdc.conf
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libarchive-3.6.2-2-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/libarchive-3.6.2-2-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/libarchive-3.6.2-2-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3022,7 +3022,7 @@ usr/share/man/man5/libarchive-formats.5.gz
 usr/share/man/man5/mtree.5.gz
 usr/share/man/man5/tar.5.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libassuan-2.5.5-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/libassuan-2.5.5-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/libassuan-2.5.5-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3049,7 +3049,7 @@ usr/share/doc/libassuan/README
 usr/share/info/
 usr/share/info/assuan.info.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libedit-20210910_3.1-2-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/libedit-20210910_3.1-2-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/libedit-20210910_3.1-2-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3119,7 +3119,7 @@ usr/share/man/man5/editrc.5.gz
 usr/share/man/man7/
 usr/share/man/man7/editline.7.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libgpg-error-1.46-2-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/libgpg-error-1.46-2-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/libgpg-error-1.46-2-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3217,7 +3217,7 @@ usr/share/locale/zh_TW/
 usr/share/locale/zh_TW/LC_MESSAGES/
 usr/share/locale/zh_TW/LC_MESSAGES/libgpg-error.mo
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libidn2-2.3.4-3-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/libidn2-2.3.4-3-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/libidn2-2.3.4-3-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3355,7 +3355,7 @@ usr/share/man/man3/idn2_to_unicode_8z8z.3.gz
 usr/share/man/man3/idn2_to_unicode_8zlz.3.gz
 usr/share/man/man3/idn2_to_unicode_lzlz.3.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libnghttp2-1.51.0-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/libnghttp2-1.51.0-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/libnghttp2-1.51.0-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3374,8 +3374,8 @@ usr/share/
 usr/share/licenses/
 usr/share/licenses/libnghttp2/
 usr/share/licenses/libnghttp2/COPYING
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libpsl-0.21.1-3-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/libpsl-0.21.1-3-x86_64.pkg.tar.zst
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libpsl-0.21.2-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/libpsl-0.21.2-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3387,7 +3387,7 @@ usr/include/libpsl.h
 usr/lib/
 usr/lib/libpsl.so
 usr/lib/libpsl.so.5
-usr/lib/libpsl.so.5.3.3
+usr/lib/libpsl.so.5.3.4
 usr/lib/pkgconfig/
 usr/lib/pkgconfig/libpsl.pc
 usr/share/
@@ -3417,7 +3417,7 @@ usr/share/man/man1/psl.1.gz
 usr/share/man/man3/
 usr/share/man/man3/libpsl.3.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libssh2-1.10.0-3-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/libssh2-1.10.0-3-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/libssh2-1.10.0-3-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3610,7 +3610,7 @@ usr/share/man/man3/libssh2_userauth_publickey_fromfile_ex.3.gz
 usr/share/man/man3/libssh2_userauth_publickey_frommemory.3.gz
 usr/share/man/man3/libssh2_version.3.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/libunistring-1.1-2-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/libunistring-1.1-2-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/libunistring-1.1-2-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3671,7 +3671,7 @@ usr/share/doc/libunistring/libunistring_toc.html
 usr/share/info/
 usr/share/info/libunistring.info.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/lz4-1:1.9.4-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/lz4-1:1.9.4-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/lz4-1:1.9.4-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3699,8 +3699,8 @@ usr/share/man/man1/lz4.1.gz
 usr/share/man/man1/lz4c.1.gz
 usr/share/man/man1/lz4cat.1.gz
 usr/share/man/man1/unlz4.1.gz
---- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/ncurses-6.3-3-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/ncurses-6.3-3-x86_64.pkg.tar.zst
+--- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/ncurses-6.4-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/ncurses-6.4-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -3744,27 +3744,27 @@ usr/lib/libcursesw.so
 usr/lib/libform.so
 usr/lib/libformw.so
 usr/lib/libformw.so.6
-usr/lib/libformw.so.6.3
+usr/lib/libformw.so.6.4
 usr/lib/libformw_g.a
 usr/lib/libmenu.so
 usr/lib/libmenuw.so
 usr/lib/libmenuw.so.6
-usr/lib/libmenuw.so.6.3
+usr/lib/libmenuw.so.6.4
 usr/lib/libmenuw_g.a
 usr/lib/libncurses++.so
 usr/lib/libncurses++w.so
 usr/lib/libncurses++w.so.6
-usr/lib/libncurses++w.so.6.3
+usr/lib/libncurses++w.so.6.4
 usr/lib/libncurses++w_g.a
 usr/lib/libncurses.so
 usr/lib/libncursesw.so
 usr/lib/libncursesw.so.6
-usr/lib/libncursesw.so.6.3
+usr/lib/libncursesw.so.6.4
 usr/lib/libncursesw_g.a
 usr/lib/libpanel.so
 usr/lib/libpanelw.so
 usr/lib/libpanelw.so.6
-usr/lib/libpanelw.so.6.3
+usr/lib/libpanelw.so.6.4
 usr/lib/libpanelw_g.a
 usr/lib/libtic.so
 usr/lib/libtic.so.6
@@ -4862,6 +4862,7 @@ usr/share/terminfo/a/adm42-ns
 usr/share/terminfo/a/adm5
 usr/share/terminfo/a/aepro
 usr/share/terminfo/a/aixterm
+usr/share/terminfo/a/aixterm+sl
 usr/share/terminfo/a/aixterm-16color
 usr/share/terminfo/a/aixterm-m
 usr/share/terminfo/a/aixterm-m-old
@@ -4914,6 +4915,7 @@ usr/share/terminfo/a/ampex80
 usr/share/terminfo/a/annarbor4080
 usr/share/terminfo/a/ansi
 usr/share/terminfo/a/ansi+arrows
+usr/share/terminfo/a/ansi+cpr
 usr/share/terminfo/a/ansi+csr
 usr/share/terminfo/a/ansi+cup
 usr/share/terminfo/a/ansi+enq
@@ -4971,6 +4973,7 @@ usr/share/terminfo/a/ansiw
 usr/share/terminfo/a/ap-vm80
 usr/share/terminfo/a/apl
 usr/share/terminfo/a/apollo
+usr/share/terminfo/a/apollo+vt132
 usr/share/terminfo/a/apollo_15P
 usr/share/terminfo/a/apollo_19L
 usr/share/terminfo/a/apollo_color
@@ -5033,6 +5036,7 @@ usr/share/terminfo/a/att4425-w
 usr/share/terminfo/a/att4426
 usr/share/terminfo/a/att500
 usr/share/terminfo/a/att505
+usr/share/terminfo/a/att505-22
 usr/share/terminfo/a/att505-24
 usr/share/terminfo/a/att510a
 usr/share/terminfo/a/att510d
@@ -5156,6 +5160,7 @@ usr/share/terminfo/b/bq300-rv
 usr/share/terminfo/b/bq300-w
 usr/share/terminfo/b/bq300-w-8rv
 usr/share/terminfo/b/bq300-w-rv
+usr/share/terminfo/b/bracketed+paste
 usr/share/terminfo/b/bsdos-pc
 usr/share/terminfo/b/bsdos-pc-m
 usr/share/terminfo/b/bsdos-pc-mono
@@ -5488,6 +5493,7 @@ usr/share/terminfo/d/dec-vt330
 usr/share/terminfo/d/dec-vt340
 usr/share/terminfo/d/dec-vt400
 usr/share/terminfo/d/decansi
+usr/share/terminfo/d/decid+cpr
 usr/share/terminfo/d/decpro
 usr/share/terminfo/d/decwriter
 usr/share/terminfo/d/delta
@@ -5950,6 +5956,7 @@ usr/share/terminfo/k/kermit
 usr/share/terminfo/k/kermit-am
 usr/share/terminfo/k/kitty
 usr/share/terminfo/k/kitty+common
+usr/share/terminfo/k/kitty+setal
 usr/share/terminfo/k/kitty-direct
 usr/share/terminfo/k/klone+acs
 usr/share/terminfo/k/klone+color
@@ -6089,6 +6096,8 @@ usr/share/terminfo/m/modgraph2
 usr/share/terminfo/m/modgraph48
 usr/share/terminfo/m/mono-emx
 usr/share/terminfo/m/morphos
+usr/share/terminfo/m/mosh
+usr/share/terminfo/m/mosh-256color
 usr/share/terminfo/m/mouse-sun
 usr/share/terminfo/m/mrxvt
 usr/share/terminfo/m/mrxvt-256color
@@ -6137,8 +6146,10 @@ usr/share/terminfo/n/ncr260intan
 usr/share/terminfo/n/ncr260intpp
 usr/share/terminfo/n/ncr260intwan
 usr/share/terminfo/n/ncr260intwpp
+usr/share/terminfo/n/ncr260vp+sl
 usr/share/terminfo/n/ncr260vppp
 usr/share/terminfo/n/ncr260vpwpp
+usr/share/terminfo/n/ncr260vt+sl
 usr/share/terminfo/n/ncr260vt100an
 usr/share/terminfo/n/ncr260vt100pp
 usr/share/terminfo/n/ncr260vt100wan
@@ -6218,6 +6229,7 @@ usr/share/terminfo/n/newscbm-o
 usr/share/terminfo/n/newscbm33
 usr/share/terminfo/n/next
 usr/share/terminfo/n/nextshell
+usr/share/terminfo/n/no+brackets
 usr/share/terminfo/n/northstar
 usr/share/terminfo/n/nsterm
 usr/share/terminfo/n/nsterm+7
@@ -6246,6 +6258,7 @@ usr/share/terminfo/n/nsterm-build326
 usr/share/terminfo/n/nsterm-build343
 usr/share/terminfo/n/nsterm-build361
 usr/share/terminfo/n/nsterm-build400
+usr/share/terminfo/n/nsterm-build440
 usr/share/terminfo/n/nsterm-c
 usr/share/terminfo/n/nsterm-c-7
 usr/share/terminfo/n/nsterm-c-acs
@@ -6593,6 +6606,7 @@ usr/share/terminfo/s/screen-256color
 usr/share/terminfo/s/screen-256color-bce
 usr/share/terminfo/s/screen-256color-bce-s
 usr/share/terminfo/s/screen-256color-s
+usr/share/terminfo/s/screen-base
 usr/share/terminfo/s/screen-bce
 usr/share/terminfo/s/screen-bce.Eterm
 usr/share/terminfo/s/screen-bce.gnome
@@ -6754,6 +6768,13 @@ usr/share/terminfo/t/tek4207
 usr/share/terminfo/t/tek4207-s
 usr/share/terminfo/t/tek4404
 usr/share/terminfo/t/teken
+usr/share/terminfo/t/teken-16color
+usr/share/terminfo/t/teken-2018
+usr/share/terminfo/t/teken-2022
+usr/share/terminfo/t/teken-sc
+usr/share/terminfo/t/teken-sc+fkeys
+usr/share/terminfo/t/teken-vt
+usr/share/terminfo/t/teken-vt+fkeys
 usr/share/terminfo/t/teleray
 usr/share/terminfo/t/teletec
 usr/share/terminfo/t/teraterm
@@ -6814,7 +6835,6 @@ usr/share/terminfo/t/ts100-ctxt
 usr/share/terminfo/t/ts100-sp
 usr/share/terminfo/t/ts1p
 usr/share/terminfo/t/tt
-usr/share/terminfo/t/tt505-22
 usr/share/terminfo/t/tt52
 usr/share/terminfo/t/tty33
 usr/share/terminfo/t/tty35
@@ -7265,6 +7285,7 @@ usr/share/terminfo/w/wy99gt-vb
 usr/share/terminfo/w/wy99gt-w
 usr/share/terminfo/w/wy99gt-w-vb
 usr/share/terminfo/w/wy99gt-wvb
+usr/share/terminfo/w/wyse+sl
 usr/share/terminfo/w/wyse-325
 usr/share/terminfo/w/wyse-75ap
 usr/share/terminfo/w/wyse-vp
@@ -7368,6 +7389,7 @@ usr/share/terminfo/w/wyse99gt-w
 usr/share/terminfo/w/wyse99gt-wvb
 usr/share/terminfo/x/
 usr/share/terminfo/x/x10term
+usr/share/terminfo/x/x10term+sl
 usr/share/terminfo/x/x1700
 usr/share/terminfo/x/x1700-lm
 usr/share/terminfo/x/x1720
@@ -7382,6 +7404,7 @@ usr/share/terminfo/x/xerox-lm
 usr/share/terminfo/x/xerox1720
 usr/share/terminfo/x/xerox820
 usr/share/terminfo/x/xfce
+usr/share/terminfo/x/xgterm
 usr/share/terminfo/x/xiterm
 usr/share/terminfo/x/xl83
 usr/share/terminfo/x/xnuppc
@@ -7440,14 +7463,17 @@ usr/share/terminfo/x/xterm+256color2
 usr/share/terminfo/x/xterm+256setaf
 usr/share/terminfo/x/xterm+88color
 usr/share/terminfo/x/xterm+88color2
+usr/share/terminfo/x/xterm+acs
 usr/share/terminfo/x/xterm+alt+title
 usr/share/terminfo/x/xterm+alt1049
+usr/share/terminfo/x/xterm+alt47
 usr/share/terminfo/x/xterm+app
 usr/share/terminfo/x/xterm+direct
 usr/share/terminfo/x/xterm+direct16
 usr/share/terminfo/x/xterm+direct2
 usr/share/terminfo/x/xterm+direct256
 usr/share/terminfo/x/xterm+edit
+usr/share/terminfo/x/xterm+focus
 usr/share/terminfo/x/xterm+indirect
 usr/share/terminfo/x/xterm+kbs
 usr/share/terminfo/x/xterm+keypad
@@ -7468,6 +7494,7 @@ usr/share/terminfo/x/xterm+pcf2
 usr/share/terminfo/x/xterm+pcfkeys
 usr/share/terminfo/x/xterm+r6f2
 usr/share/terminfo/x/xterm+sl
+usr/share/terminfo/x/xterm+sl-alt
 usr/share/terminfo/x/xterm+sl-twm
 usr/share/terminfo/x/xterm+sm+1002
 usr/share/terminfo/x/xterm+sm+1003
@@ -7502,6 +7529,8 @@ usr/share/terminfo/x/xterm-new
 usr/share/terminfo/x/xterm-nic
 usr/share/terminfo/x/xterm-noapp
 usr/share/terminfo/x/xterm-old
+usr/share/terminfo/x/xterm-p370
+usr/share/terminfo/x/xterm-p371
 usr/share/terminfo/x/xterm-pcolor
 usr/share/terminfo/x/xterm-r5
 usr/share/terminfo/x/xterm-r6
@@ -7562,7 +7591,7 @@ usr/share/terminfo/z/ztx
 usr/share/terminfo/z/ztx-1-a
 usr/share/terminfo/z/ztx11
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/openssl-3.0.7-4-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/openssl-3.0.7-4-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/openssl-3.0.7-4-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -13255,7 +13284,7 @@ usr/share/man/man7/proxy-certificates.7ssl.gz
 usr/share/man/man7/ssl.7ssl.gz
 usr/share/man/man7/x509.7ssl.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-6.0.2-5-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/pacman-6.0.2-5-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/pacman-6.0.2-5-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -13659,7 +13688,7 @@ var/cache/pacman/pkg/
 var/lib/
 var/lib/pacman/
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/pacman-mirrorlist-20221204-1-any.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/pacman-mirrorlist-20221204-1-any.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/pacman-mirrorlist-20221204-1-any.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -13667,7 +13696,7 @@ etc/
 etc/pacman.d/
 etc/pacman.d/mirrorlist
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/xz-5.4.0-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/xz-5.4.0-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/xz-5.4.0-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -13908,7 +13937,7 @@ usr/share/man/ro/man1/xzgrep.1.gz
 usr/share/man/ro/man1/xzless.1.gz
 usr/share/man/ro/man1/xzmore.1.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/zlib-1:1.2.13-2-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/zlib-1:1.2.13-2-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/zlib-1:1.2.13-2-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -13931,7 +13960,7 @@ usr/share/man/
 usr/share/man/man3/
 usr/share/man/man3/zlib.3.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/zstd-1.5.2-7-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/zstd-1.5.2-7-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/zstd-1.5.2-7-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -13975,7 +14004,7 @@ usr/share/man/man1/zstdcat.1.gz
 usr/share/man/man1/zstdgrep.1.gz
 usr/share/man/man1/zstdless.1.gz
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/filesystem-2022.10.18-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/filesystem-2022.10.18-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/filesystem-2022.10.18-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .MTREE
 .PKGINFO
@@ -14100,7 +14129,7 @@ var/spool/
 var/spool/mail/
 var/tmp/
 --- download package: http://mirror.rackspace.com/archlinux/core/os/x86_64/dash-0.5.11.5-1-x86_64.pkg.tar.zst
---- uncompress package: /tmp/tmp.nup1sftExL/dash-0.5.11.5-1-x86_64.pkg.tar.zst
+--- uncompress package: /tmp/tmp.FQ6hRAmoK5/dash-0.5.11.5-1-x86_64.pkg.tar.zst
 .BUILDINFO
 .INSTALL
 .MTREE
@@ -14121,11 +14150,11 @@ Root filesystem generation complete.
 Installing setup script.
 Installing mirror update script
 Doing Docker things to the root file system.
-/tmp/tmp.VgG3ZhiQ4M ~/work/docker-archlinux/docker-archlinux
-/tmp/tmp.VgG3ZhiQ4M/dev /tmp/tmp.VgG3ZhiQ4M ~/work/docker-archlinux/docker-archlinux
-/tmp/tmp.VgG3ZhiQ4M ~/work/docker-archlinux/docker-archlinux
+/tmp/tmp.edhQZbVBsm ~/work/docker-archlinux/docker-archlinux
+/tmp/tmp.edhQZbVBsm/dev /tmp/tmp.edhQZbVBsm ~/work/docker-archlinux/docker-archlinux
+/tmp/tmp.edhQZbVBsm ~/work/docker-archlinux/docker-archlinux
 ~/work/docker-archlinux/docker-archlinux
-/tmp/tmp.VgG3ZhiQ4M ~/work/docker-archlinux/docker-archlinux
+/tmp/tmp.edhQZbVBsm ~/work/docker-archlinux/docker-archlinux
 ~/work/docker-archlinux/docker-archlinux
 /home/runner/work/docker-archlinux/docker-archlinux/out/x86_64/archlinux-root.tar: POSIX tar archive
 Root filesystem is now ready in /home/runner/work/docker-archlinux/docker-archlinux/out/x86_64/archlinux-root.tar
